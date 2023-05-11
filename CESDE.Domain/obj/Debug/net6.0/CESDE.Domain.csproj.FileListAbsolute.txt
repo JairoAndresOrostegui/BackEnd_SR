@@ -1,0 +1,24 @@
+C:\CESDE_V2\CESDE.Domain\bin\Debug\net6.0\CESDE.Domain.deps.json
+C:\CESDE_V2\CESDE.Domain\bin\Debug\net6.0\CESDE.Domain.dll
+C:\CESDE_V2\CESDE.Domain\bin\Debug\net6.0\CESDE.Domain.pdb
+C:\CESDE_V2\CESDE.Domain\obj\Debug\net6.0\CESDE.Domain.csproj.AssemblyReference.cache
+C:\CESDE_V2\CESDE.Domain\obj\Debug\net6.0\CESDE.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\CESDE_V2\CESDE.Domain\obj\Debug\net6.0\CESDE.Domain.AssemblyInfoInputs.cache
+C:\CESDE_V2\CESDE.Domain\obj\Debug\net6.0\CESDE.Domain.AssemblyInfo.cs
+C:\CESDE_V2\CESDE.Domain\obj\Debug\net6.0\CESDE.Domain.csproj.CoreCompileInputs.cache
+C:\CESDE_V2\CESDE.Domain\obj\Debug\net6.0\CESDE.Domain.dll
+C:\CESDE_V2\CESDE.Domain\obj\Debug\net6.0\refint\CESDE.Domain.dll
+C:\CESDE_V2\CESDE.Domain\obj\Debug\net6.0\CESDE.Domain.pdb
+C:\CESDE_V2\CESDE.Domain\obj\Debug\net6.0\ref\CESDE.Domain.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE.Domain\bin\Debug\net6.0\CESDE.Domain.deps.json
+D:\CESDE\BackEnd-main Nuevo\CESDE.Domain\bin\Debug\net6.0\CESDE.Domain.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE.Domain\bin\Debug\net6.0\CESDE.Domain.pdb
+D:\CESDE\BackEnd-main Nuevo\CESDE.Domain\obj\Debug\net6.0\CESDE.Domain.csproj.AssemblyReference.cache
+D:\CESDE\BackEnd-main Nuevo\CESDE.Domain\obj\Debug\net6.0\CESDE.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\CESDE\BackEnd-main Nuevo\CESDE.Domain\obj\Debug\net6.0\CESDE.Domain.AssemblyInfoInputs.cache
+D:\CESDE\BackEnd-main Nuevo\CESDE.Domain\obj\Debug\net6.0\CESDE.Domain.AssemblyInfo.cs
+D:\CESDE\BackEnd-main Nuevo\CESDE.Domain\obj\Debug\net6.0\CESDE.Domain.csproj.CoreCompileInputs.cache
+D:\CESDE\BackEnd-main Nuevo\CESDE.Domain\obj\Debug\net6.0\CESDE.Domain.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE.Domain\obj\Debug\net6.0\refint\CESDE.Domain.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE.Domain\obj\Debug\net6.0\CESDE.Domain.pdb
+D:\CESDE\BackEnd-main Nuevo\CESDE.Domain\obj\Debug\net6.0\ref\CESDE.Domain.dll

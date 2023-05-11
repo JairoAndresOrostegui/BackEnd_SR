@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\CESDE_V2.props" />
+</Project>

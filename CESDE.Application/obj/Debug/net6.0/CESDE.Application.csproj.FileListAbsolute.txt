@@ -1,0 +1,30 @@
+C:\CESDE_V2\CESDE.Application\bin\Debug\net6.0\CESDE.Application.deps.json
+C:\CESDE_V2\CESDE.Application\bin\Debug\net6.0\CESDE.Application.dll
+C:\CESDE_V2\CESDE.Application\bin\Debug\net6.0\CESDE.Application.pdb
+C:\CESDE_V2\CESDE.Application\bin\Debug\net6.0\CESDE.Domain.dll
+C:\CESDE_V2\CESDE.Application\bin\Debug\net6.0\CESDE.Domain.pdb
+C:\CESDE_V2\CESDE.Application\obj\Debug\net6.0\CESDE.Application.csproj.AssemblyReference.cache
+C:\CESDE_V2\CESDE.Application\obj\Debug\net6.0\CESDE.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\CESDE_V2\CESDE.Application\obj\Debug\net6.0\CESDE.Application.AssemblyInfoInputs.cache
+C:\CESDE_V2\CESDE.Application\obj\Debug\net6.0\CESDE.Application.AssemblyInfo.cs
+C:\CESDE_V2\CESDE.Application\obj\Debug\net6.0\CESDE.Application.csproj.CoreCompileInputs.cache
+C:\CESDE_V2\CESDE.Application\obj\Debug\net6.0\CESDE.Application.csproj.CopyComplete
+C:\CESDE_V2\CESDE.Application\obj\Debug\net6.0\CESDE.Application.dll
+C:\CESDE_V2\CESDE.Application\obj\Debug\net6.0\refint\CESDE.Application.dll
+C:\CESDE_V2\CESDE.Application\obj\Debug\net6.0\CESDE.Application.pdb
+C:\CESDE_V2\CESDE.Application\obj\Debug\net6.0\ref\CESDE.Application.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE.Application\bin\Debug\net6.0\CESDE.Application.deps.json
+D:\CESDE\BackEnd-main Nuevo\CESDE.Application\bin\Debug\net6.0\CESDE.Application.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE.Application\bin\Debug\net6.0\CESDE.Application.pdb
+D:\CESDE\BackEnd-main Nuevo\CESDE.Application\bin\Debug\net6.0\CESDE.Domain.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE.Application\bin\Debug\net6.0\CESDE.Domain.pdb
+D:\CESDE\BackEnd-main Nuevo\CESDE.Application\obj\Debug\net6.0\CESDE.Application.csproj.AssemblyReference.cache
+D:\CESDE\BackEnd-main Nuevo\CESDE.Application\obj\Debug\net6.0\CESDE.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\CESDE\BackEnd-main Nuevo\CESDE.Application\obj\Debug\net6.0\CESDE.Application.AssemblyInfoInputs.cache
+D:\CESDE\BackEnd-main Nuevo\CESDE.Application\obj\Debug\net6.0\CESDE.Application.AssemblyInfo.cs
+D:\CESDE\BackEnd-main Nuevo\CESDE.Application\obj\Debug\net6.0\CESDE.Application.csproj.CoreCompileInputs.cache
+D:\CESDE\BackEnd-main Nuevo\CESDE.Application\obj\Debug\net6.0\CESDE.Application.csproj.CopyComplete
+D:\CESDE\BackEnd-main Nuevo\CESDE.Application\obj\Debug\net6.0\CESDE.Application.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE.Application\obj\Debug\net6.0\refint\CESDE.Application.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE.Application\obj\Debug\net6.0\CESDE.Application.pdb
+D:\CESDE\BackEnd-main Nuevo\CESDE.Application\obj\Debug\net6.0\ref\CESDE.Application.dll

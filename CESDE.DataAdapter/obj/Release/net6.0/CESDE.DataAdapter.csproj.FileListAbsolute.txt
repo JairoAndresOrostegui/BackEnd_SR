@@ -1,0 +1,95 @@
+C:\CESDE_V2\CESDE.DataAdapter\bin\Release\net6.0\CESDE.DataAdapter.deps.json
+C:\CESDE_V2\CESDE.DataAdapter\bin\Release\net6.0\CESDE.DataAdapter.runtimeconfig.json
+C:\CESDE_V2\CESDE.DataAdapter\bin\Release\net6.0\CESDE.DataAdapter.dll
+C:\CESDE_V2\CESDE.DataAdapter\bin\Release\net6.0\CESDE.DataAdapter.pdb
+C:\CESDE_V2\CESDE.DataAdapter\bin\Release\net6.0\CESDE.Application.dll
+C:\CESDE_V2\CESDE.DataAdapter\bin\Release\net6.0\CESDE.Domain.dll
+C:\CESDE_V2\CESDE.DataAdapter\bin\Release\net6.0\CESDE.Application.pdb
+C:\CESDE_V2\CESDE.DataAdapter\bin\Release\net6.0\CESDE.Domain.pdb
+C:\CESDE_V2\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.csproj.AssemblyReference.cache
+C:\CESDE_V2\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.GeneratedMSBuildEditorConfig.editorconfig
+C:\CESDE_V2\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.AssemblyInfoInputs.cache
+C:\CESDE_V2\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.AssemblyInfo.cs
+C:\CESDE_V2\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.csproj.CoreCompileInputs.cache
+C:\CESDE_V2\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.csproj.CopyComplete
+C:\CESDE_V2\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.dll
+C:\CESDE_V2\CESDE.DataAdapter\obj\Release\net6.0\refint\CESDE.DataAdapter.dll
+C:\CESDE_V2\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.pdb
+C:\CESDE_V2\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.genruntimeconfig.cache
+C:\CESDE_V2\CESDE.DataAdapter\obj\Release\net6.0\ref\CESDE.DataAdapter.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE.DataAdapter\bin\Release\net6.0\CESDE.DataAdapter.deps.json
+D:\CESDE\BackEnd-main Nuevo\CESDE.DataAdapter\bin\Release\net6.0\CESDE.DataAdapter.runtimeconfig.json
+D:\CESDE\BackEnd-main Nuevo\CESDE.DataAdapter\bin\Release\net6.0\CESDE.DataAdapter.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE.DataAdapter\bin\Release\net6.0\CESDE.DataAdapter.pdb
+D:\CESDE\BackEnd-main Nuevo\CESDE.DataAdapter\bin\Release\net6.0\CESDE.Application.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE.DataAdapter\bin\Release\net6.0\CESDE.Domain.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE.DataAdapter\bin\Release\net6.0\CESDE.Application.pdb
+D:\CESDE\BackEnd-main Nuevo\CESDE.DataAdapter\bin\Release\net6.0\CESDE.Domain.pdb
+D:\CESDE\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.csproj.AssemblyReference.cache
+D:\CESDE\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.GeneratedMSBuildEditorConfig.editorconfig
+D:\CESDE\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.AssemblyInfoInputs.cache
+D:\CESDE\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.AssemblyInfo.cs
+D:\CESDE\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.csproj.CoreCompileInputs.cache
+D:\CESDE\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.csproj.CopyComplete
+D:\CESDE\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\refint\CESDE.DataAdapter.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.pdb
+D:\CESDE\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.genruntimeconfig.cache
+D:\CESDE\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\ref\CESDE.DataAdapter.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE.DataAdapter\bin\Release\net6.0\CESDE.DataAdapter.deps.json
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE.DataAdapter\bin\Release\net6.0\CESDE.DataAdapter.runtimeconfig.json
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE.DataAdapter\bin\Release\net6.0\CESDE.DataAdapter.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE.DataAdapter\bin\Release\net6.0\CESDE.DataAdapter.pdb
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE.DataAdapter\bin\Release\net6.0\CESDE.Application.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE.DataAdapter\bin\Release\net6.0\CESDE.Domain.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE.DataAdapter\bin\Release\net6.0\CESDE.Application.pdb
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE.DataAdapter\bin\Release\net6.0\CESDE.Domain.pdb
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.csproj.AssemblyReference.cache
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.AssemblyInfoInputs.cache
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.AssemblyInfo.cs
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.csproj.CopyComplete
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\refint\CESDE.DataAdapter.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.pdb
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.genruntimeconfig.cache
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\ref\CESDE.DataAdapter.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE.DataAdapter\bin\Release\net6.0\CESDE.DataAdapter.deps.json
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE.DataAdapter\bin\Release\net6.0\CESDE.DataAdapter.runtimeconfig.json
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE.DataAdapter\bin\Release\net6.0\CESDE.DataAdapter.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE.DataAdapter\bin\Release\net6.0\CESDE.DataAdapter.pdb
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE.DataAdapter\bin\Release\net6.0\CESDE.Application.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE.DataAdapter\bin\Release\net6.0\CESDE.Domain.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE.DataAdapter\bin\Release\net6.0\CESDE.Application.pdb
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE.DataAdapter\bin\Release\net6.0\CESDE.Domain.pdb
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.csproj.AssemblyReference.cache
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.AssemblyInfoInputs.cache
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.AssemblyInfo.cs
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.csproj.CoreCompileInputs.cache
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.csproj.CopyComplete
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\refint\CESDE.DataAdapter.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.pdb
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.genruntimeconfig.cache
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE.DataAdapter\obj\Release\net6.0\ref\CESDE.DataAdapter.dll
+F:\Its\Cesde\BackEnd_SR\CESDE.DataAdapter\bin\Release\net6.0\CESDE.DataAdapter.deps.json
+F:\Its\Cesde\BackEnd_SR\CESDE.DataAdapter\bin\Release\net6.0\CESDE.DataAdapter.runtimeconfig.json
+F:\Its\Cesde\BackEnd_SR\CESDE.DataAdapter\bin\Release\net6.0\CESDE.DataAdapter.dll
+F:\Its\Cesde\BackEnd_SR\CESDE.DataAdapter\bin\Release\net6.0\CESDE.DataAdapter.pdb
+F:\Its\Cesde\BackEnd_SR\CESDE.DataAdapter\bin\Release\net6.0\CESDE.Application.dll
+F:\Its\Cesde\BackEnd_SR\CESDE.DataAdapter\bin\Release\net6.0\CESDE.Domain.dll
+F:\Its\Cesde\BackEnd_SR\CESDE.DataAdapter\bin\Release\net6.0\CESDE.Application.pdb
+F:\Its\Cesde\BackEnd_SR\CESDE.DataAdapter\bin\Release\net6.0\CESDE.Domain.pdb
+F:\Its\Cesde\BackEnd_SR\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.csproj.AssemblyReference.cache
+F:\Its\Cesde\BackEnd_SR\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.GeneratedMSBuildEditorConfig.editorconfig
+F:\Its\Cesde\BackEnd_SR\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.AssemblyInfoInputs.cache
+F:\Its\Cesde\BackEnd_SR\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.AssemblyInfo.cs
+F:\Its\Cesde\BackEnd_SR\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.csproj.CoreCompileInputs.cache
+F:\Its\Cesde\BackEnd_SR\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.csproj.CopyComplete
+F:\Its\Cesde\BackEnd_SR\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.dll
+F:\Its\Cesde\BackEnd_SR\CESDE.DataAdapter\obj\Release\net6.0\refint\CESDE.DataAdapter.dll
+F:\Its\Cesde\BackEnd_SR\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.pdb
+F:\Its\Cesde\BackEnd_SR\CESDE.DataAdapter\obj\Release\net6.0\CESDE.DataAdapter.genruntimeconfig.cache
+F:\Its\Cesde\BackEnd_SR\CESDE.DataAdapter\obj\Release\net6.0\ref\CESDE.DataAdapter.dll

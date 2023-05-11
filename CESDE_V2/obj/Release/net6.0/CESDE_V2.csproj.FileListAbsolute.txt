@@ -1,0 +1,355 @@
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\appsettings.Development.json
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\appsettings.json
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\CESDE_V2.exe
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\CESDE_V2.deps.json
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\CESDE_V2.runtimeconfig.json
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\CESDE_V2.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\CESDE_V2.pdb
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\Microsoft.OpenApi.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\CESDE_V2\CESDE_V2\obj\Release\net6.0\CESDE_V2.csproj.AssemblyReference.cache
+C:\CESDE_V2\CESDE_V2\obj\Release\net6.0\CESDE_V2.GeneratedMSBuildEditorConfig.editorconfig
+C:\CESDE_V2\CESDE_V2\obj\Release\net6.0\CESDE_V2.AssemblyInfoInputs.cache
+C:\CESDE_V2\CESDE_V2\obj\Release\net6.0\CESDE_V2.AssemblyInfo.cs
+C:\CESDE_V2\CESDE_V2\obj\Release\net6.0\CESDE_V2.csproj.CoreCompileInputs.cache
+C:\CESDE_V2\CESDE_V2\obj\Release\net6.0\CESDE_V2.MvcApplicationPartsAssemblyInfo.cs
+C:\CESDE_V2\CESDE_V2\obj\Release\net6.0\CESDE_V2.MvcApplicationPartsAssemblyInfo.cache
+C:\CESDE_V2\CESDE_V2\obj\Release\net6.0\staticwebassets\msbuild.CESDE_V2.Microsoft.AspNetCore.StaticWebAssets.props
+C:\CESDE_V2\CESDE_V2\obj\Release\net6.0\staticwebassets\msbuild.build.CESDE_V2.props
+C:\CESDE_V2\CESDE_V2\obj\Release\net6.0\staticwebassets\msbuild.buildMultiTargeting.CESDE_V2.props
+C:\CESDE_V2\CESDE_V2\obj\Release\net6.0\staticwebassets\msbuild.buildTransitive.CESDE_V2.props
+C:\CESDE_V2\CESDE_V2\obj\Release\net6.0\staticwebassets.pack.json
+C:\CESDE_V2\CESDE_V2\obj\Release\net6.0\staticwebassets.build.json
+C:\CESDE_V2\CESDE_V2\obj\Release\net6.0\staticwebassets.development.json
+C:\CESDE_V2\CESDE_V2\obj\Release\net6.0\scopedcss\bundle\CESDE_V2.styles.css
+C:\CESDE_V2\CESDE_V2\obj\Release\net6.0\CESDE_V2.csproj.CopyComplete
+C:\CESDE_V2\CESDE_V2\obj\Release\net6.0\CESDE_V2.dll
+C:\CESDE_V2\CESDE_V2\obj\Release\net6.0\refint\CESDE_V2.dll
+C:\CESDE_V2\CESDE_V2\obj\Release\net6.0\CESDE_V2.pdb
+C:\CESDE_V2\CESDE_V2\obj\Release\net6.0\CESDE_V2.genruntimeconfig.cache
+C:\CESDE_V2\CESDE_V2\obj\Release\net6.0\ref\CESDE_V2.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\Microsoft.Data.SqlClient.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\Microsoft.Identity.Client.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\System.Configuration.ConfigurationManager.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\System.Drawing.Common.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\System.Runtime.Caching.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\System.Security.Permissions.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\System.Windows.Extensions.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\CESDE.Application.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\CESDE.DataAdapter.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\CESDE.Domain.dll
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\CESDE.Application.pdb
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\CESDE.DataAdapter.pdb
+C:\CESDE_V2\CESDE_V2\bin\Release\net6.0\CESDE.Domain.pdb
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\appsettings.Development.json
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\appsettings.json
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE_V2.exe
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE_V2.deps.json
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE_V2.runtimeconfig.json
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE_V2.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE_V2.pdb
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.Data.SqlClient.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.Identity.Client.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.OpenApi.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\System.Configuration.ConfigurationManager.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\System.Drawing.Common.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\System.Runtime.Caching.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\System.Security.Permissions.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\System.Windows.Extensions.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE.Application.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE.DataAdapter.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE.Domain.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE.Application.pdb
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE.DataAdapter.pdb
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE.Domain.pdb
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.csproj.AssemblyReference.cache
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.GeneratedMSBuildEditorConfig.editorconfig
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.AssemblyInfoInputs.cache
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.AssemblyInfo.cs
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.csproj.CoreCompileInputs.cache
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.MvcApplicationPartsAssemblyInfo.cs
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.MvcApplicationPartsAssemblyInfo.cache
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\staticwebassets\msbuild.CESDE_V2.Microsoft.AspNetCore.StaticWebAssets.props
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\staticwebassets\msbuild.build.CESDE_V2.props
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\staticwebassets\msbuild.buildMultiTargeting.CESDE_V2.props
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\staticwebassets\msbuild.buildTransitive.CESDE_V2.props
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\staticwebassets.pack.json
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\staticwebassets.build.json
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\staticwebassets.development.json
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\scopedcss\bundle\CESDE_V2.styles.css
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.csproj.CopyComplete
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\refint\CESDE_V2.dll
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.pdb
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.genruntimeconfig.cache
+D:\CESDE\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\ref\CESDE_V2.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\appsettings.Development.json
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\appsettings.json
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE_V2.exe
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE_V2.deps.json
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE_V2.runtimeconfig.json
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE_V2.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE_V2.pdb
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.Identity.Client.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.OpenApi.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\System.Drawing.Common.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\System.Runtime.Caching.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\System.Security.Permissions.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\System.Windows.Extensions.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE.Application.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE.DataAdapter.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE.Domain.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE.Application.pdb
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE.DataAdapter.pdb
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE.Domain.pdb
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.csproj.AssemblyReference.cache
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.AssemblyInfoInputs.cache
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.AssemblyInfo.cs
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\staticwebassets\msbuild.CESDE_V2.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\staticwebassets\msbuild.build.CESDE_V2.props
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\staticwebassets\msbuild.buildMultiTargeting.CESDE_V2.props
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\staticwebassets\msbuild.buildTransitive.CESDE_V2.props
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\staticwebassets.pack.json
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\staticwebassets.build.json
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\staticwebassets.development.json
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\scopedcss\bundle\CESDE_V2.styles.css
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.csproj.CopyComplete
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\refint\CESDE_V2.dll
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.pdb
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.genruntimeconfig.cache
+C:\Users\ASUS\Downloads\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\ref\CESDE_V2.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\appsettings.Development.json
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\appsettings.json
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE_V2.exe
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE_V2.deps.json
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE_V2.runtimeconfig.json
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE_V2.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE_V2.pdb
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.Identity.Client.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.OpenApi.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\System.Drawing.Common.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\System.Runtime.Caching.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\System.Security.Permissions.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\System.Windows.Extensions.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE.Application.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE.DataAdapter.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE.Domain.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE.Application.pdb
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE.DataAdapter.pdb
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\bin\Release\net6.0\CESDE.Domain.pdb
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.csproj.AssemblyReference.cache
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.AssemblyInfoInputs.cache
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.AssemblyInfo.cs
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.csproj.CoreCompileInputs.cache
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\staticwebassets\msbuild.CESDE_V2.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\staticwebassets\msbuild.build.CESDE_V2.props
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\staticwebassets\msbuild.buildMultiTargeting.CESDE_V2.props
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\staticwebassets\msbuild.buildTransitive.CESDE_V2.props
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\staticwebassets.pack.json
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\staticwebassets.build.json
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\staticwebassets.development.json
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\scopedcss\bundle\CESDE_V2.styles.css
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.csproj.CopyComplete
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\refint\CESDE_V2.dll
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.pdb
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\CESDE_V2.genruntimeconfig.cache
+C:\Users\karlo\Downloads\BackEnd-main Nuevo (1)\BackEnd-main Nuevo\CESDE_V2\obj\Release\net6.0\ref\CESDE_V2.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\appsettings.Development.json
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\appsettings.json
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\CESDE_V2.exe
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\CESDE_V2.deps.json
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\CESDE_V2.runtimeconfig.json
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\CESDE_V2.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\CESDE_V2.pdb
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\Microsoft.Data.SqlClient.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\Microsoft.EntityFrameworkCore.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\Microsoft.Extensions.Caching.Memory.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\Microsoft.Extensions.DependencyInjection.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\Microsoft.Identity.Client.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\Microsoft.IdentityModel.Logging.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\Microsoft.IdentityModel.Protocols.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\Microsoft.IdentityModel.Tokens.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\Microsoft.OpenApi.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\Microsoft.Win32.SystemEvents.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\System.Configuration.ConfigurationManager.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\System.Drawing.Common.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\System.IdentityModel.Tokens.Jwt.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\System.Runtime.Caching.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\System.Security.Cryptography.ProtectedData.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\System.Security.Permissions.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\System.Windows.Extensions.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\CESDE.Application.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\CESDE.DataAdapter.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\CESDE.Domain.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\CESDE.Application.pdb
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\CESDE.DataAdapter.pdb
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\bin\Release\net6.0\CESDE.Domain.pdb
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\obj\Release\net6.0\CESDE_V2.csproj.AssemblyReference.cache
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\obj\Release\net6.0\CESDE_V2.GeneratedMSBuildEditorConfig.editorconfig
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\obj\Release\net6.0\CESDE_V2.AssemblyInfoInputs.cache
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\obj\Release\net6.0\CESDE_V2.AssemblyInfo.cs
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\obj\Release\net6.0\CESDE_V2.csproj.CoreCompileInputs.cache
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\obj\Release\net6.0\CESDE_V2.MvcApplicationPartsAssemblyInfo.cs
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\obj\Release\net6.0\CESDE_V2.MvcApplicationPartsAssemblyInfo.cache
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\obj\Release\net6.0\staticwebassets.build.json
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\obj\Release\net6.0\staticwebassets.development.json
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\obj\Release\net6.0\scopedcss\bundle\CESDE_V2.styles.css
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\obj\Release\net6.0\CESDE_V2.csproj.CopyComplete
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\obj\Release\net6.0\CESDE_V2.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\obj\Release\net6.0\refint\CESDE_V2.dll
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\obj\Release\net6.0\CESDE_V2.pdb
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\obj\Release\net6.0\CESDE_V2.genruntimeconfig.cache
+F:\Its\Cesde\BackEnd_SR\CESDE_V2\obj\Release\net6.0\ref\CESDE_V2.dll
