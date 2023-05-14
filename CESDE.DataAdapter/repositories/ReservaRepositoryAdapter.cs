@@ -216,7 +216,7 @@ namespace CESDE.DataAdapter.repositories
                                     reserva_dia_id = reserva.reservaDia.id_reserva,
                                     id_reserva = entidadMap.id_reserva,
                                     reserva_dia_dia = item,
-                                    reserva_dia_hora_inicio = int.Parse(reserva.reservaDia.reserva_dia_hora_inicio),
+                                    reserva_dia_hora_inicio = reserva.reservaDia.reserva_dia_hora_inicio,
                                     //reserva_dia_hora_fin = reserva.reservaDia.reserva_dia_hora_fin
                               };
 
@@ -280,7 +280,7 @@ namespace CESDE.DataAdapter.repositories
                                     reserva_dia_id = reserva.reservaDia.reserva_dia_id,
                                     id_reserva = entidadMap.id_reserva,
                                     reserva_dia_dia = item.ToLower(),
-                                    reserva_dia_hora_inicio = int.Parse(reserva.reservaDia.reserva_dia_hora_inicio),
+                                    reserva_dia_hora_inicio = reserva.reservaDia.reserva_dia_hora_inicio,
                                     //reserva_dia_hora_fin = reserva.reservaDia.reserva_dia_hora_fin
                               };
 
