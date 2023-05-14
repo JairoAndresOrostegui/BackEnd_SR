@@ -17,7 +17,7 @@ namespace CESDE.DataAdapter.models
             [Column(TypeName = "varchar(15)")]
             public string reserva_dia_dia { get; set; }
 
-            [Column(TypeName = "numeric(18, 0)")]
+            [Column(TypeName = "int")]
             public int reserva_dia_hora_inicio { get; set; }
 
             //[Column(TypeName = "varchar(50)")]

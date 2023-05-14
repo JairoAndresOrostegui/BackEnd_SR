@@ -67,7 +67,7 @@ namespace CESDE.DataAdapter.repositories
                                     reserva_dia_id = reser.reserva_dia_id,
                                     id_reserva = reser.id_reserva,
                                     reserva_dia_dia = reser.reserva_dia_dia.UpperFirstChar(),
-                                    reserva_dia_hora_inicio = reser.reserva_dia_hora_inicio,
+                                    reserva_dia_hora_inicio =  reser.reserva_dia_hora_inicio,
                                     //reserva_dia_hora_fin = reser.reserva_dia_hora_fin
                               }).ToList()
                         }).ToListAsync();
