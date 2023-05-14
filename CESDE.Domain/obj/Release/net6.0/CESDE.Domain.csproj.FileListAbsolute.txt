@@ -58,3 +58,15 @@ F:\Its\Cesde\BackEnd_SR\CESDE.Domain\obj\Release\net6.0\CESDE.Domain.dll
 F:\Its\Cesde\BackEnd_SR\CESDE.Domain\obj\Release\net6.0\refint\CESDE.Domain.dll
 F:\Its\Cesde\BackEnd_SR\CESDE.Domain\obj\Release\net6.0\CESDE.Domain.pdb
 F:\Its\Cesde\BackEnd_SR\CESDE.Domain\obj\Release\net6.0\ref\CESDE.Domain.dll
+C:\Users\zirox\OneDrive\Escritorio\work\BackEnd_SR\CESDE.Domain\bin\Release\net6.0\CESDE.Domain.deps.json
+C:\Users\zirox\OneDrive\Escritorio\work\BackEnd_SR\CESDE.Domain\bin\Release\net6.0\CESDE.Domain.dll
+C:\Users\zirox\OneDrive\Escritorio\work\BackEnd_SR\CESDE.Domain\bin\Release\net6.0\CESDE.Domain.pdb
+C:\Users\zirox\OneDrive\Escritorio\work\BackEnd_SR\CESDE.Domain\obj\Release\net6.0\CESDE.Domain.csproj.AssemblyReference.cache
+C:\Users\zirox\OneDrive\Escritorio\work\BackEnd_SR\CESDE.Domain\obj\Release\net6.0\CESDE.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zirox\OneDrive\Escritorio\work\BackEnd_SR\CESDE.Domain\obj\Release\net6.0\CESDE.Domain.AssemblyInfoInputs.cache
+C:\Users\zirox\OneDrive\Escritorio\work\BackEnd_SR\CESDE.Domain\obj\Release\net6.0\CESDE.Domain.AssemblyInfo.cs
+C:\Users\zirox\OneDrive\Escritorio\work\BackEnd_SR\CESDE.Domain\obj\Release\net6.0\CESDE.Domain.csproj.CoreCompileInputs.cache
+C:\Users\zirox\OneDrive\Escritorio\work\BackEnd_SR\CESDE.Domain\obj\Release\net6.0\CESDE.Domain.dll
+C:\Users\zirox\OneDrive\Escritorio\work\BackEnd_SR\CESDE.Domain\obj\Release\net6.0\refint\CESDE.Domain.dll
+C:\Users\zirox\OneDrive\Escritorio\work\BackEnd_SR\CESDE.Domain\obj\Release\net6.0\CESDE.Domain.pdb
+C:\Users\zirox\OneDrive\Escritorio\work\BackEnd_SR\CESDE.Domain\obj\Release\net6.0\ref\CESDE.Domain.dll

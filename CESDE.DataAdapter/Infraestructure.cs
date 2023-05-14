@@ -11,13 +11,14 @@ namespace CESDE.DataAdapter
       {
             public static void AddRegisterCESDE_DbContext(this IServiceCollection services, IConfiguration configuration)
             {
-                  var connectionString = configuration.GetConnectionString("Conexion");
-                  services.AddDbContext<CESDE_Context>(builder =>
-                  {
-                        builder.UseSqlServer(connectionString);
-                  }, ServiceLifetime.Transient);
+                var connectionString = configuration.GetConnectionString("Conexion");
+                 
+                services.AddDbContext<CESDE_Context>(builder =>
+                {
+                    builder.UseSqlServer(connectionString);
+                }, ServiceLifetime.Transient);
 
-                  services.AddHttpContextAccessor();
+            services.AddHttpContextAccessor();
                   services.AddConfigureJWT(configuration);
                   services.AddRepositories();
             }

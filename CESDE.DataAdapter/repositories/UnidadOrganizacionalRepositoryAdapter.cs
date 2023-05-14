@@ -487,7 +487,7 @@ namespace CESDE.DataAdapter.repositories
                                           id_reserva = res.id_reserva,
                                           reserva_dia_dia = res.reserva_dia_dia,
                                           reserva_dia_hora_inicio = res.reserva_dia_hora_inicio,
-                                          reserva_dia_hora_fin = res.reserva_dia_hora_fin
+                                          //reserva_dia_hora_fin = res.reserva_dia_hora_fin
                                     }).ToList()
                               }).ToListAsync();
 
@@ -538,8 +538,8 @@ namespace CESDE.DataAdapter.repositories
                                     {
                                           if (parametroReservaDTO.reserva_dia_dia.Any(x => lsDias.reserva_dia_dia.Contains(x.ToString())))
                                           {
-                                                var formatHoraInicioData = DateTime.Parse(lsDias.reserva_dia_hora_inicio);
-                                                var formatHoraFinData = DateTime.Parse(lsDias.reserva_dia_hora_fin);
+                                                var formatHoraInicioData = DateTime.Parse(lsDias.reserva_dia_hora_inicio.ToString());
+                                                var formatHoraFinData = DateTime.Parse(lsDias.reserva_dia_hora_fin.ToString());
 
                                                 var formatHoraInicio = DateTime.Parse(parametroReservaDTO.reserva_dia_hora_inicio);
                                                 var formatHoraFin = DateTime.Parse(parametroReservaDTO.reserva_dia_hora_fin);
@@ -577,8 +577,8 @@ namespace CESDE.DataAdapter.repositories
                                     {
                                           if (parametroReservaDTO.reserva_dia_dia.Any(x => lsDias.reserva_dia_dia.Contains(x.ToString())))
                                           {
-                                                var formatHoraInicioData = DateTime.Parse(lsDias.reserva_dia_hora_inicio);
-                                                var formatHoraFinData = DateTime.Parse(lsDias.reserva_dia_hora_fin);
+                                                var formatHoraInicioData = DateTime.Parse(lsDias.reserva_dia_hora_inicio.ToString());
+                                                var formatHoraFinData = DateTime.Parse(lsDias.reserva_dia_hora_fin.ToString());
 
                                                 var formatHoraInicio = DateTime.Parse(parametroReservaDTO.reserva_dia_hora_inicio);
                                                 var formatHoraFin = DateTime.Parse(parametroReservaDTO.reserva_dia_hora_fin);
@@ -616,7 +616,7 @@ namespace CESDE.DataAdapter.repositories
                                     {
                                           if (parametroReservaDTO.reserva_dia_dia.Any(x => lsDias.reserva_dia_dia.Contains(x.ToString())))
                                           {
-                                                var formatHoraInicioData = DateTime.Parse(lsDias.reserva_dia_hora_inicio);
+                                                var formatHoraInicioData = DateTime.Parse(lsDias.reserva_dia_hora_inicio.ToString());
                                                 var formatHoraFinData = DateTime.Parse(lsDias.reserva_dia_hora_fin);
 
                                                 var formatHoraInicio = DateTime.Parse(parametroReservaDTO.reserva_dia_hora_inicio);

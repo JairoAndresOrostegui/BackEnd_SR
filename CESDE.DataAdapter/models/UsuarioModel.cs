@@ -60,6 +60,6 @@ namespace CESDE.DataAdapter.models
         public RolModel ForKeyRol_Usuario { get; set; }
         public UnidadOrganizacionalModel ForKeyUnidad_Usuario { get; set; }
 
-        public List<ReservaModel> ForKeyReserva_Usuario { get; set; }
+        //public List<ReservaModel> ForKeyReserva_Usuario { get; set; }
     }
 }

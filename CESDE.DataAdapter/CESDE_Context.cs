@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CESDE.DataAdapter
 {
+    
     public class CESDE_Context : DbContext
     {
         public CESDE_Context(DbContextOptions options) : base(options) { }
@@ -11,6 +12,7 @@ namespace CESDE.DataAdapter
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //Relación de Usuario
+
             modelBuilder.Entity<UsuarioModel>()
                   .HasOne(fr => fr.ForKeyPersona).WithOne(fr => fr.ForKeyUsuario)
                   .HasForeignKey<UsuarioModel>(key => key.id_persona);
@@ -37,10 +39,6 @@ namespace CESDE.DataAdapter
                   .HasOne(fr => fr.ForKeyTipoEspacioUnidad).WithMany(fr => fr.ForKeyUnidadOrganiTipoEspacio)
                   .HasForeignKey(key => key.id_tipo_espacio);
 
-            //Relaciones de Reserva
-            modelBuilder.Entity<ReservaModel>()
-                  .HasOne(fr => fr.ForKeyUnidadOrg_Reserva).WithMany(fr => fr.ForKeyReserva_UnidadOrg)
-                  .HasForeignKey(key => key.id_unidad_organizacional);
 
             //Relaciones de Unidad Organizacional - Caracteristica
             modelBuilder.Entity<UnidadOrganizacionalCaracteristicaModel>()

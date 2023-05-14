@@ -46,14 +46,14 @@ namespace CESDE.DataAdapter.models
             [Column(TypeName = "int")]
             public int nivel { get; set; }
 
-            [Column(TypeName = "varchar(50)")]
+            [Column(TypeName = "varchar(5)")]
             public string codigo_programa { get; set; }
 
             [Column(TypeName = "varchar(250)")]
             public string nombre_programa { get; set; }
 
-            [Column(TypeName = "numeric(18, 0)")]
-            public long? id_rol { get; set; }
+            //[Column(TypeName = "numeric(18, 0)")]
+            //public long? id_rol { get; set; }
 
             [Column(TypeName = "varchar(250)")]
             public string submodulo { get; set; }
@@ -62,11 +62,11 @@ namespace CESDE.DataAdapter.models
             [Column(TypeName = "varchar(50)")]
             public string jornada { get; set; }
 
-            //[Column(TypeName = "varchar(250)")]
-            //public string submodulo_reserva { get; set; }
+        //[Column(TypeName = "varchar(250)")]
+        //public string submodulo_reserva { get; set; }
 
-            public UnidadOrganizacionalModel ForKeyUnidadOrg_Reserva { get; set; }
+        public UnidadOrganizacionalModel ForKeyUnidadOrg_Reserva { get; set; }
 
-            public List<ReservaDiaModel> ForKeyReservaDia_Reserva { get; set; }
+        public List<ReservaDiaModel> ForKeyReservaDia_Reserva { get; set; }
       }
 }

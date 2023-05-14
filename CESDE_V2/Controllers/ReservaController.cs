@@ -46,11 +46,13 @@ namespace CESDE_API.Controllers
                   }
                   catch (Exception ex)
                   {
-                        return Ok(new { message = ex.Message });
+                        return new NotFoundObjectResult(ex.Message);
                   }
             }
 
-            [HttpGet("buscar")]
+          
+
+        [HttpGet("buscar")]
             public async Task<IActionResult> GetBySearch(string type, string search)
             {
                   try
@@ -119,7 +121,7 @@ namespace CESDE_API.Controllers
                         return Ok(new { message = ex.Message });
                   }
             }
-
+        
             [HttpGet("informe-sede")]
             public async Task<IActionResult> GetContarOcupacionAulas(long id_sede)
             {
@@ -147,6 +149,7 @@ namespace CESDE_API.Controllers
                         return Ok(new { message = ex.Message });
                   }
             }
+   
 
             [HttpPost]
             public async Task<IActionResult> SaveReserva([FromBody] InsertarReservaDTO reserva)

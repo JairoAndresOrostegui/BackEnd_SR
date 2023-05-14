@@ -6,6 +6,6 @@
             public long id_reserva { get; set; }
             public string[] reserva_dia_dia { get; set; }
             public string reserva_dia_hora_inicio { get; set; }
-            public string reserva_dia_hora_fin { get; set; }
+            //public int reserva_dia_hora_fin { get; set; }
       }
 }
