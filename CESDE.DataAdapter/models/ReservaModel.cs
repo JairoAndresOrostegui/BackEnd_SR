@@ -59,8 +59,8 @@ namespace CESDE.DataAdapter.models
             public string submodulo { get; set; }
 
 
-            [Column(TypeName = "varchar(50)")]
-            public string jornada { get; set; }
+            //[Column(TypeName = "varchar(50)")]
+            //public string jornada { get; set; }
 
         //[Column(TypeName = "varchar(250)")]
         //public string submodulo_reserva { get; set; }

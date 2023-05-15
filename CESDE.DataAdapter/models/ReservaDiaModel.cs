@@ -20,9 +20,12 @@ namespace CESDE.DataAdapter.models
             [Column(TypeName = "int")]
             public int reserva_dia_hora_inicio { get; set; }
 
-            //[Column(TypeName = "varchar(50)")]
-            //public string reserva_dia_hora_fin { get; set; }
+            [Column(TypeName = "varchar(15)")]
+            public string jornada { get; set; }
 
-            public ReservaModel ForKeyReserva_ReservaDia { get; set; }
+        //[Column(TypeName = "varchar(50)")]
+        //public string reserva_dia_hora_fin { get; set; }
+
+        public ReservaModel ForKeyReserva_ReservaDia { get; set; }
       }
 }

@@ -25,6 +25,8 @@ namespace CESDE.Domain.DTO.Reserva
             public string jornada { get; set; }
             public string submodulo { get; set; }
 
+            public string sede { get; set; }
+
 
             public ReservaDiaDTO reservaDia { get; set; }
       }
