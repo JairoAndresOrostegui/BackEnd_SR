@@ -7,5 +7,7 @@
             public string reserva_dia_dia { get; set; }
             public int reserva_dia_hora_inicio { get; set; }
             //public int reserva_dia_hora_fin { get; set; }
+
+            public string jornada { get; set; }
       }
 }

@@ -22,12 +22,12 @@ namespace CESDE.Domain.DTO.Reserva
             public string codigo_programa { get; set; }
             public string nombre_programa { get; set; }
             //public long id_rol { get; set; }
-            public string jornada { get; set; }
+            //public string jornada { get; set; }
             public string submodulo { get; set; }
 
             public string sede { get; set; }
 
 
-            public ReservaDiaDTO reservaDia { get; set; }
+            public List<ReservaDiaDTO> reservaDia { get; set; }
       }
 }

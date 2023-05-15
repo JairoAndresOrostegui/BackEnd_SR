@@ -196,17 +196,20 @@ namespace CESDE.DataAdapter.repositories
                         if (reserva_dia_existente.Count != 0)
                         {
                             
-                            ReservaDiaModel reservas_dia = new ReservaDiaModel()
+                            reserva.reservaDia.ForEach(async r =>
                             {
-                                //reserva_dia_id = reserva.reservaDia.id_reserva,
-                                id_reserva = reserva_dia_existente.First(),
-                                reserva_dia_dia = reserva.reservaDia.reserva_dia_dia,
-                                reserva_dia_hora_inicio = reserva.reservaDia.reserva_dia_hora_inicio,
-                                jornada = reserva.jornada
-                                //reserva_dia_hora_fin = reserva.reservaDia.reserva_dia_hora_fin
-                            };
-                            _context.ReservaDiaModels.Add(reservas_dia);
-                            await _context.SaveChangesAsync();
+                                ReservaDiaModel reservas_dia = new ReservaDiaModel()
+                                {
+                                    //reserva_dia_id = reserva.reservaDia.id_reserva,
+                                    id_reserva = reserva_dia_existente.First(),
+                                    reserva_dia_dia = r.reserva_dia_dia,
+                                    reserva_dia_hora_inicio = r.reserva_dia_hora_inicio,
+                                    jornada = r.jornada
+                                    //reserva_dia_hora_fin = reserva.reservaDia.reserva_dia_hora_fin
+                                };
+                                _context.ReservaDiaModels.Add(reservas_dia);
+                                await _context.SaveChangesAsync();
+                            });
                            
                          } else {
                             var entidadMap = new ReservaModel()
@@ -234,20 +237,22 @@ namespace CESDE.DataAdapter.repositories
                             await _context.SaveChangesAsync();
 
 
-
-                            ReservaDiaModel reservas = new ReservaDiaModel()
+                            reserva.reservaDia.ForEach(async r =>
                             {
-                                //reserva_dia_id = reserva.reservaDia.id_reserva,
-                                id_reserva = entidadMap.id_reserva,
-                                reserva_dia_dia = reserva.reservaDia.reserva_dia_dia,
-                                reserva_dia_hora_inicio = reserva.reservaDia.reserva_dia_hora_inicio,
-                                jornada = reserva.jornada
-                                //reserva_dia_hora_fin = reserva.reservaDia.reserva_dia_hora_fin
-                            };
+                                ReservaDiaModel reservas = new ReservaDiaModel()
+                                {
+                                    //reserva_dia_id = reserva.reservaDia.id_reserva,
+                                    id_reserva = entidadMap.id_reserva,
+                                    reserva_dia_dia = r.reserva_dia_dia,
+                                    reserva_dia_hora_inicio = r.reserva_dia_hora_inicio,
+                                    jornada = r.jornada
+                                    //reserva_dia_hora_fin = reserva.reservaDia.reserva_dia_hora_fin
+                                };
+                                _context.ReservaDiaModels.Add(reservas);
+                                await _context.SaveChangesAsync();
+                            });
 
-                            _context.ReservaDiaModels.Add(reservas);
 
-                            await _context.SaveChangesAsync();
                          }
                   }
                   catch (Exception e)
@@ -297,19 +302,20 @@ namespace CESDE.DataAdapter.repositories
 
                         await _context.SaveChangesAsync();
 
-                        //INSERTA NUEVAMENTE LOS PERMISOS
-                        ReservaDiaModel reservas = new ReservaDiaModel()
-                        {
-                            reserva_dia_id = reserva.reservaDia.reserva_dia_id,
-                            id_reserva = entidadMap.id_reserva,
-                            reserva_dia_dia = reserva.reservaDia.reserva_dia_dia.ToLower(),
-                            reserva_dia_hora_inicio = reserva.reservaDia.reserva_dia_hora_inicio,
-                            //reserva_dia_hora_fin = reserva.reservaDia.reserva_dia_hora_fin
-                        };
-
-                        _context.ReservaDiaModels.Add(reservas);
-
-                        await _context.SaveChangesAsync();
+                        reserva.reservaDia.ForEach(async r =>
+                            {
+                                ReservaDiaModel reservas_dia = new ReservaDiaModel()
+                                {
+                                    //reserva_dia_id = reserva.reservaDia.id_reserva,
+                                    id_reserva = r.id_reserva,
+                                    reserva_dia_dia = r.reserva_dia_dia,
+                                    reserva_dia_hora_inicio = r.reserva_dia_hora_inicio,
+                                    jornada = r.jornada
+                                    //reserva_dia_hora_fin = reserva.reservaDia.reserva_dia_hora_fin
+                                };
+                                _context.ReservaDiaModels.Add(reservas_dia);
+                                await _context.SaveChangesAsync();
+                            });
                   }
                   catch (Exception e)
                   {
