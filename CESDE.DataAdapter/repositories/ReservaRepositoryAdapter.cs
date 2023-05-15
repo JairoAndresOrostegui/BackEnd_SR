@@ -195,21 +195,24 @@ namespace CESDE.DataAdapter.repositories
                         
                         if (reserva_dia_existente.Count != 0)
                         {
-                            
-                            reserva.reservaDia.ForEach(async r =>
+                            long id_reserva = reserva_dia_existente.First();
+
+
+                            reserva.reservaDia.ForEach(r =>
                             {
                                 ReservaDiaModel reservas_dia = new ReservaDiaModel()
                                 {
                                     //reserva_dia_id = reserva.reservaDia.id_reserva,
-                                    id_reserva = reserva_dia_existente.First(),
+                                    id_reserva = id_reserva,
                                     reserva_dia_dia = r.reserva_dia_dia,
                                     reserva_dia_hora_inicio = r.reserva_dia_hora_inicio,
                                     jornada = r.jornada
                                     //reserva_dia_hora_fin = reserva.reservaDia.reserva_dia_hora_fin
                                 };
                                 _context.ReservaDiaModels.Add(reservas_dia);
-                                await _context.SaveChangesAsync();
+                                
                             });
+                            await _context.SaveChangesAsync();
                            
                          } else {
                             var entidadMap = new ReservaModel()
@@ -235,9 +238,10 @@ namespace CESDE.DataAdapter.repositories
 
                             _context.ReservaModels.Add(entidadMap);
                             await _context.SaveChangesAsync();
+                            
 
 
-                            reserva.reservaDia.ForEach(async r =>
+                            reserva.reservaDia.ForEach(r =>
                             {
                                 ReservaDiaModel reservas = new ReservaDiaModel()
                                 {
@@ -249,9 +253,9 @@ namespace CESDE.DataAdapter.repositories
                                     //reserva_dia_hora_fin = reserva.reservaDia.reserva_dia_hora_fin
                                 };
                                 _context.ReservaDiaModels.Add(reservas);
-                                await _context.SaveChangesAsync();
+                                
                             });
-
+                            await _context.SaveChangesAsync();
 
                          }
                   }
@@ -314,8 +318,9 @@ namespace CESDE.DataAdapter.repositories
                                     //reserva_dia_hora_fin = reserva.reservaDia.reserva_dia_hora_fin
                                 };
                                 _context.ReservaDiaModels.Add(reservas_dia);
-                                await _context.SaveChangesAsync();
+                                
                             });
+                            await _context.SaveChangesAsync();
                   }
                   catch (Exception e)
                   {

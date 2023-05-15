@@ -1,5 +1,5 @@
 Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
- ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_reserva_unidad_organizacional1". The conflict occurred in database "DBCESDEV2", table "dbo.unidad_organizacional", column 'id_unidad_organizacional'.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_reserva_dia_reserva". The conflict occurred in database "DBCESDEV2", table "dbo.reserva", column 'id_reserva'.
 The statement has been terminated.
    at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
    at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
@@ -12,7 +12,7 @@ The statement has been terminated.
    at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
    at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
    at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
-ClientConnectionId:b4edd182-9f96-4fc9-8257-83fa0c3d884b
+ClientConnectionId:5d30a758-b112-4fd2-b1f7-0eaa77a6df25
 Error Number:547,State:0,Class:16
    --- End of inner exception stack trace ---
    at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
@@ -24,4 +24,4 @@ Error Number:547,State:0,Class:16
    at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
    at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
    at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-   at CESDE.DataAdapter.repositories.ReservaRepositoryAdapter.SaveReserva(InsertarReservaDTO reserva) in C:\Users\zirox\OneDrive\Escritorio\work\BackEnd_SR\CESDE.DataAdapter\repositories\ReservaRepositoryAdapter.cs:line 233
+   at CESDE.DataAdapter.repositories.ReservaRepositoryAdapter.SaveReserva(InsertarReservaDTO reserva) in C:\Users\zirox\OneDrive\Escritorio\work\BackEnd_SR\CESDE.DataAdapter\repositories\ReservaRepositoryAdapter.cs:line 255
