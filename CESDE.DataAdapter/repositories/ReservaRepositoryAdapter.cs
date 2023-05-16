@@ -266,70 +266,77 @@ namespace CESDE.DataAdapter.repositories
                   }
             }
 
-            public async Task UpdateReserva(InsertarReservaDTO reserva)
+        public async Task UpdateReserva(InsertarReservaDTO reserva)
+        {
+            try
             {
-                  try
-                  {
-                        var validate = await _context.ReservaModels.AnyAsync(sear => sear.id_reserva == reserva.id_reserva);
-                        if (!validate)
-                              throw new Exception(Enums.MessageDoesNotExist);
+                var existingReserva = await _context.ReservaModels.FirstOrDefaultAsync(sear => sear.id_reserva == reserva.id_reserva);
+                if (existingReserva == null)
+                {
+                    throw new Exception(Enums.MessageDoesNotExist);
+                }
 
-                        var entidadMap = new ReservaModel()
+                
+                existingReserva.id_unidad_organizacional = reserva.id_unidad_organizacional;
+                existingReserva.identificador_grupo = reserva.identificador_grupo;
+                existingReserva.nombre_grupo = reserva.nombre_grupo.ToLower();
+                existingReserva.id_usuario_reserva = reserva.id_usuario_reserva;
+                existingReserva.fecha_inicio_reserva = reserva.fecha_inicio_reserva;
+                existingReserva.fecha_fin_reserva = reserva.fecha_fin_reserva;
+                existingReserva.descripcion_reserva = reserva.descripcion_reserva;
+                existingReserva.estado_reserva = reserva.estado_reserva.ToLower();
+                existingReserva.id_usuario_colaborador = reserva.id_usuario_colaborador;
+                existingReserva.nombre_usuario_colaborador = reserva.nombre_usuario_colaborador.ToLower();
+                existingReserva.nivel = reserva.nivel;
+                existingReserva.codigo_programa = reserva.codigo_programa;
+                existingReserva.nombre_programa = reserva.nombre_programa.ToLower();
+                existingReserva.submodulo = reserva.submodulo;
+
+                _context.Entry(existingReserva).State = EntityState.Modified;
+                _context.Update(existingReserva);
+                await _context.SaveChangesAsync();
+
+
+                foreach (var r in reserva.reservaDia)
+                {
+                    if (r.reserva_dia_id != 0)
+                    {
+                        var existingReservaDia = await _context.ReservaDiaModels.FindAsync(r.reserva_dia_id);
+                        if (existingReservaDia != null)
                         {
-                              //id_reserva = reserva.id_reserva,
-                              id_unidad_organizacional = reserva.id_unidad_organizacional,
-                              identificador_grupo = reserva.identificador_grupo,
-                              nombre_grupo = reserva.nombre_grupo.ToLower(),
-                              id_usuario_reserva = reserva.id_usuario_reserva,
-                              fecha_inicio_reserva = reserva.fecha_inicio_reserva,
-                              fecha_fin_reserva = reserva.fecha_fin_reserva,
-                              descripcion_reserva = reserva.descripcion_reserva,
-                              estado_reserva = reserva.estado_reserva.ToLower(),
-                              id_usuario_colaborador = reserva.id_usuario_colaborador,
-                              nombre_usuario_colaborador = reserva.nombre_usuario_colaborador.ToLower(),
-                              nivel = reserva.nivel,
-                              codigo_programa = reserva.codigo_programa,
-                              nombre_programa = reserva.nombre_programa.ToLower(),
-                              //id_rol = reserva.id_rol,
-                            submodulo = reserva.submodulo,
+                            existingReservaDia.reserva_dia_dia = r.reserva_dia_dia;
+                            existingReservaDia.reserva_dia_hora_inicio = r.reserva_dia_hora_inicio;
+                            existingReservaDia.jornada = r.jornada;
+                            _context.Update(existingReservaDia);
+                        }
+                    }
+                    else
+                    {
+                        ReservaDiaModel newReservaDia = new ReservaDiaModel()
+                        {
+                            id_reserva = reserva.id_reserva,
+                            reserva_dia_dia = r.reserva_dia_dia,
+                            reserva_dia_hora_inicio = r.reserva_dia_hora_inicio,
+                            jornada = r.jornada,
+                            //reserva_dia_hora_fin = r.reserva_dia_hora_fin
                         };
+                        _context.ReservaDiaModels.Add(newReservaDia);
+                    }
+                }
 
-                        _context.Update(entidadMap);
-                        await _context.SaveChangesAsync();
-
-                        //ELIMINAR TODAS LAS RESERVAS DÍAS
-                        var idReservaDia = await _context.ReservaDiaModels.Where(sear => sear.id_reserva == reserva.id_reserva)
-                              .Select(id => id.reserva_dia_id).ToListAsync();
-
-                        foreach (var reser in idReservaDia)
-                              _context.ReservaDiaModels.Remove(new ReservaDiaModel() { id_reserva = reser });
-
-                        await _context.SaveChangesAsync();
-
-                        reserva.reservaDia.ForEach(async r =>
-                            {
-                                ReservaDiaModel reservas_dia = new ReservaDiaModel()
-                                {
-                                    //reserva_dia_id = reserva.reservaDia.id_reserva,
-                                    id_reserva = r.id_reserva,
-                                    reserva_dia_dia = r.reserva_dia_dia,
-                                    reserva_dia_hora_inicio = r.reserva_dia_hora_inicio,
-                                    jornada = r.jornada
-                                    //reserva_dia_hora_fin = reserva.reservaDia.reserva_dia_hora_fin
-                                };
-                                _context.ReservaDiaModels.Add(reservas_dia);
-                                
-                            });
-                            await _context.SaveChangesAsync();
-                  }
-                  catch (Exception e)
-                  {
-                        
-                        throw;
-                  }
+                await _context.SaveChangesAsync();
             }
+            catch (Exception e)
+            {
+                DebugHelper.Log(e.ToString());
+                throw;
+            }
+        }
 
-            public async Task<List<FiltroReservaDTO>> GetProgramaByEscuela(string id_submodulo)
+
+
+
+        public async Task<List<FiltroReservaDTO>> GetProgramaByEscuela(string id_submodulo)
             {
                   List<FiltroReservaDTO> filtroReservaDTOs = new List<FiltroReservaDTO>();
 
