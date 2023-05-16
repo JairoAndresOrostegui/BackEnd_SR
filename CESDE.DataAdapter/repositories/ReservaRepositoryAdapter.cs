@@ -509,6 +509,39 @@ namespace CESDE.DataAdapter.repositories
                   return informe;
             }
 
+            public async Task<List<ReservaDTO>> GetUnidadesReservadas(long id_unidad_organizacional)
+            {
+                
+                        var unidades_reservadas = await _context.ReservaModels.Where(x =>
+                            x.id_unidad_organizacional == id_unidad_organizacional &&
+                            x.estado_reserva == "activo"
+                        )
+                        .Select(enti => new ReservaDTO()
+                        {
+                              id_reserva = enti.id_reserva,
+                              nombre_unidad_organizacional = enti.ForKeyUnidadOrg_Reserva.nombre_unidad_organizacional.UpperFirstChar(),
+                              nombre_submodulo = enti.nombre_grupo,
+                              fecha_inicio_reserva = enti.fecha_inicio_reserva,
+                              fecha_fin_reserva = enti.fecha_fin_reserva,
+                              nombre_usuario_colaborador = enti.nombre_usuario_colaborador,
+                              descripcion_reserva = enti.descripcion_reserva.UpperFirstChar(),
+                              estado_reserva = enti.estado_reserva.UpperFirstChar(),
+                              reservaDias = enti.ForKeyReservaDia_Reserva.Select(reser => new ReservaDia()
+                              {
+                                    reserva_dia_id = reser.reserva_dia_id,
+                                    id_reserva = reser.id_reserva,
+                                    reserva_dia_dia = reser.reserva_dia_dia.UpperFirstChar(),
+                                    reserva_dia_hora_inicio =  reser.reserva_dia_hora_inicio,
+                                    //reserva_dia_hora_fin = reser.reserva_dia_hora_fin
+                              }).ToList()
+                        }).ToListAsync();
+
+                  if (unidades_reservadas.Count() == 0)
+                        throw new Exception(Enums.MessageNoRecord);
+
+                return unidades_reservadas;
+            }
+
             public async Task<List<InformeOcupacionTodasSede>> GetContarOcupacionTodosEspacios()
             {
                   List<long> lsEspacios = new List<long>();

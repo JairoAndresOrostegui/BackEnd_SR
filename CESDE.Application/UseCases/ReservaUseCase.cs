@@ -45,5 +45,8 @@ namespace CESDE.Application.UseCases
 
             public async Task<List<InformeOcupacionTodasSede>> GetContarOcupacionTodosEspacios() =>
                   await _reservaRepository.GetContarOcupacionTodosEspacios();
+
+            public async Task<List<ReservaDTO>> GetUnidadesReservadas(long id_unidad_organizacional) =>
+                  await _reservaRepository.GetUnidadesReservadas(id_unidad_organizacional);
       }
 }

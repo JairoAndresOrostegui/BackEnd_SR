@@ -192,5 +192,19 @@ namespace CESDE_API.Controllers
                         return Ok(new { message = ex.Message });
                   }
             }
+
+            [HttpGet("unidades-reservadas")]
+            public async Task<IActionResult> GetUnidadesReservadas(long id_unidad_organizacional)
+            {
+                  try
+                  {
+                        var unidades = await _reservaRepositoryPort.GetUnidadesReservadas(id_unidad_organizacional);
+                        return Ok(unidades);
+                  }
+                  catch (Exception ex)
+                  {
+                        return Ok(new { message = ex.Message });
+                  }
+            }
       }
 }
