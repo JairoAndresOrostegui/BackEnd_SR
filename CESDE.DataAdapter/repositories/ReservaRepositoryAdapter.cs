@@ -189,8 +189,7 @@ namespace CESDE.DataAdapter.repositories
                             ent.nombre_grupo == reserva.nombre_grupo &&
                             ent.nivel == reserva.nivel &&
                             ent.fecha_inicio_reserva.Equals(reserva.fecha_inicio_reserva) &&
-                            ent.fecha_fin_reserva.Equals(reserva.fecha_fin_reserva) &&
-                            ent.ForKeyUnidadOrg_Reserva.nombre_unidad_organizacional == reserva.sede
+                            ent.fecha_fin_reserva.Equals(reserva.fecha_fin_reserva)
                         ).Select(ent => ent.id_reserva).ToList();
                         
                         if (reserva_dia_existente.Count != 0)
