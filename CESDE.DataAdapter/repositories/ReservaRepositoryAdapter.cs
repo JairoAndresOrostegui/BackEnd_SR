@@ -503,7 +503,7 @@ namespace CESDE.DataAdapter.repositories
                   lsEspacios = await _context.UnidadOrganizacionalModels.Where(x => x.id_unidad_organizacional_padre == id_sede &&
                         x.estado_unidad_organizacional == "activo").Select(x => x.id_unidad_organizacional).ToListAsync();
 
-                var lsReservas = await _context.ReservaModels.Where(x => x.estado_reserva.ToLower() == "disponible" && lsEspacios.Contains(x.id_unidad_organizacional))
+                var lsReservas = await _context.ReservaModels.Where(x => x.estado_reserva.ToLower() == "activo" && lsEspacios.Contains(x.id_unidad_organizacional))
                       .Select(x => x.id_reserva).ToListAsync();
 
                 int jornada1 = 0;
@@ -577,7 +577,7 @@ namespace CESDE.DataAdapter.repositories
                 
                 var unidades_reservadas = await _context.ReservaModels.Where(x =>
                     x.id_unidad_organizacional == id_unidad_organizacional &&
-                    x.estado_reserva.ToLower() == "disponible"
+                    x.estado_reserva.ToLower() == "activo"
                 ).Select(x => new
                 {
                     id_reserva = x.id_reserva,
@@ -649,7 +649,7 @@ namespace CESDE.DataAdapter.repositories
                     throw new Exception("No hay registros disponibles vinculados a id_sede");
                 }
 
-                var lsReservas = await _context.ReservaModels.Where(x => x.estado_reserva.ToLower() == "disponible" && lsEspacios.Contains(x.id_unidad_organizacional) && x.codigo_programa.ToLower() == codigo.ToLower())
+                var lsReservas = await _context.ReservaModels.Where(x => x.estado_reserva.ToLower() == "activo" && lsEspacios.Contains(x.id_unidad_organizacional) && x.codigo_programa.ToLower() == codigo.ToLower())
                       .Select(x => x.id_reserva).ToListAsync();
 
                 int jornada1 = 0;
@@ -742,7 +742,7 @@ namespace CESDE.DataAdapter.repositories
                               x.estado_unidad_organizacional == "activo").Select(x => x.id_unidad_organizacional).ToListAsync();
 
                         //BUSCO TODAS LAS RESERVAS DE ESOS ESPACIOS
-                        var lsReservas = await _context.ReservaModels.Where(x => x.estado_reserva.ToLower() == "disponible" && lsEspacios.Contains(x.id_unidad_organizacional))
+                        var lsReservas = await _context.ReservaModels.Where(x => x.estado_reserva.ToLower() == "activo" && lsEspacios.Contains(x.id_unidad_organizacional))
                               .Select(x => x.id_reserva).ToListAsync();
 
                         //RECORRO CADA RESERVA

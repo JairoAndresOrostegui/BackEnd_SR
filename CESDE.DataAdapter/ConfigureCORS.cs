@@ -11,7 +11,7 @@ namespace CESDE.DataAdapter
                         options.AddPolicy(name: cesdeCORS,
                               builder =>
                               {
-                                    builder.WithOrigins("http://190.217.58.177:58080/")
+                                    builder.WithOrigins("http://190.217.58.177:58080")
                                     .AllowAnyHeader()
                                     .AllowAnyMethod();
                               });
