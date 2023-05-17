@@ -514,7 +514,7 @@ namespace CESDE.DataAdapter.repositories
                   lsEspacios = await _context.UnidadOrganizacionalModels.Where(x => x.id_unidad_organizacional_padre == id_sede &&
                         x.estado_unidad_organizacional == "activo").Select(x => x.id_unidad_organizacional).ToListAsync();
 
-                var lsReservas = await _context.ReservaModels.Where(x => x.estado_reserva == "disponible" && lsEspacios.Contains(x.id_unidad_organizacional))
+                var lsReservas = await _context.ReservaModels.Where(x => x.estado_reserva.ToLower() == "disponible" && lsEspacios.Contains(x.id_unidad_organizacional))
                       .Select(x => x.id_reserva).ToListAsync();
 
                 int jornada1 = 0;
