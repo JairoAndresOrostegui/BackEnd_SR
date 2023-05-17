@@ -16,6 +16,6 @@ namespace CESDE.Domain.DTO.Reserva
             public string descripcion_reserva { get; set; }
             public string estado_reserva { get; set; }
 
-            public List<ReservaDia> reservaDias { get; set; }
+            public List<ReservaDiaDTO> reservaDias { get; set; }
       }
 }

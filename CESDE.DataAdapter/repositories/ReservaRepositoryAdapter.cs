@@ -63,12 +63,13 @@ namespace CESDE.DataAdapter.repositories
                               nombre_usuario_colaborador = enti.nombre_usuario_colaborador,
                               descripcion_reserva = enti.descripcion_reserva.UpperFirstChar(),
                               estado_reserva = enti.estado_reserva.UpperFirstChar(),
-                              reservaDias = enti.ForKeyReservaDia_Reserva.Select(reser => new ReservaDia()
+                              reservaDias = enti.ForKeyReservaDia_Reserva.Select(reser => new ReservaDiaDTO()
                               {
                                     reserva_dia_id = reser.reserva_dia_id,
                                     id_reserva = reser.id_reserva,
                                     reserva_dia_dia = reser.reserva_dia_dia.UpperFirstChar(),
                                     reserva_dia_hora_inicio =  reser.reserva_dia_hora_inicio,
+                                    jornada = reser.jornada
                                     //reserva_dia_hora_fin = reser.reserva_dia_hora_fin
                               }).ToList()
                         }).ToListAsync();
@@ -163,12 +164,13 @@ namespace CESDE.DataAdapter.repositories
                               fecha_fin_reserva = reserva.fecha_fin_reserva,
                               descripcion_reserva = reserva.descripcion_reserva.UpperFirstChar(),
                               estado_reserva = reserva.estado_reserva.UpperFirstChar(),
-                              reservaDias = reserva.ForKeyReservaDia_Reserva.Select(reser => new ReservaDia()
+                              reservaDias = reserva.ForKeyReservaDia_Reserva.Select(reser => new ReservaDiaDTO()
                               {
                                     reserva_dia_id = reser.reserva_dia_id,
                                     id_reserva = reser.id_reserva,
                                     reserva_dia_dia = reser.reserva_dia_dia.UpperFirstChar(),
                                     reserva_dia_hora_inicio = reser.reserva_dia_hora_inicio,
+                                    jornada = reser.jornada
                                     //reserva_dia_hora_fin = reser.reserva_dia_hora_fin
                               }).ToList()
                         });
@@ -367,12 +369,13 @@ namespace CESDE.DataAdapter.repositories
                               fecha_fin_reserva = reserva.fecha_fin_reserva,
                               descripcion_reserva = reserva.descripcion_reserva.UpperFirstChar(),
                               estado_reserva = reserva.estado_reserva.UpperFirstChar(),
-                              reservaDias = reserva.ForKeyReservaDia_Reserva.Select(reser => new ReservaDia()
+                              reservaDias = reserva.ForKeyReservaDia_Reserva.Select(reser => new ReservaDiaDTO()
                               {
                                     reserva_dia_id = reser.reserva_dia_id,
                                     id_reserva = reser.id_reserva,
                                     reserva_dia_dia = reser.reserva_dia_dia.UpperFirstChar(),
                                     reserva_dia_hora_inicio = reser.reserva_dia_hora_inicio,
+                                    jornada = reser.jornada
                                     //reserva_dia_hora_fin = reser.reserva_dia_hora_fin
                               }).ToList()
                         }).ToListAsync();
@@ -575,37 +578,75 @@ namespace CESDE.DataAdapter.repositories
                   return informe;
             }
 
-            public async Task<List<ReservaDTO>> GetUnidadesReservadas(long id_unidad_organizacional)
+            public async Task<InformeUnidadesReservadas> GetUnidadesReservadas(long id_unidad_organizacional)
             {
+                int jornada1 = 0;
+                int jornada2 = 0;
+                int jornada3 = 0;
+                int jornada4 = 0;
+                int jornada5 = 0;
                 
-                        var unidades_reservadas = await _context.ReservaModels.Where(x =>
-                            x.id_unidad_organizacional == id_unidad_organizacional &&
-                            x.estado_reserva == "activo"
-                        )
-                        .Select(enti => new ReservaDTO()
+                var unidades_reservadas = await _context.ReservaModels.Where(x =>
+                    x.id_unidad_organizacional == id_unidad_organizacional &&
+                    x.estado_reserva.ToLower() == "disponible"
+                ).Select(x => new
+                {
+                    id_reserva = x.id_reserva,
+                    nombre_unidad = x.ForKeyUnidadOrg_Reserva.nombre_unidad_organizacional
+                }).ToListAsync();
+
+                if (unidades_reservadas.Count == 0) { 
+                    throw new Exception("No existen unidades reservadas");
+                }
+
+                var contador_reservas_total = 0;
+
+                foreach(var item in unidades_reservadas)
+                {
+                    //Obteniendo lista de las jornadas
+                        var jornadas = await _context.ReservaDiaModels.Where(x => x.id_reserva == item.id_reserva)
+                            .Select(x => x.jornada).ToListAsync();
+                        
+                        // Obteniendo el numero contador total de reservas_dia en base a id_reserva
+                        var reservas_dia_contador = await _context.ReservaDiaModels.Where(x => x.id_reserva == item.id_reserva)
+                            .CountAsync();
+
+                        jornadas.ForEach(jornada =>
                         {
-                              id_reserva = enti.id_reserva,
-                              nombre_unidad_organizacional = enti.ForKeyUnidadOrg_Reserva.nombre_unidad_organizacional.UpperFirstChar(),
-                              nombre_submodulo = enti.nombre_grupo,
-                              fecha_inicio_reserva = enti.fecha_inicio_reserva,
-                              fecha_fin_reserva = enti.fecha_fin_reserva,
-                              nombre_usuario_colaborador = enti.nombre_usuario_colaborador,
-                              descripcion_reserva = enti.descripcion_reserva.UpperFirstChar(),
-                              estado_reserva = enti.estado_reserva.UpperFirstChar(),
-                              reservaDias = enti.ForKeyReservaDia_Reserva.Select(reser => new ReservaDia()
-                              {
-                                    reserva_dia_id = reser.reserva_dia_id,
-                                    id_reserva = reser.id_reserva,
-                                    reserva_dia_dia = reser.reserva_dia_dia.UpperFirstChar(),
-                                    reserva_dia_hora_inicio =  reser.reserva_dia_hora_inicio,
-                                    //reserva_dia_hora_fin = reser.reserva_dia_hora_fin
-                              }).ToList()
-                        }).ToListAsync();
-
-                  if (unidades_reservadas.Count() == 0)
-                        throw new Exception(Enums.MessageNoRecord);
-
-                return unidades_reservadas;
+                            if (jornada.ToLower() == Enums.jornada1)
+                            {
+                                  jornada1 += reservas_dia_contador;
+                            }
+                            else if (jornada.ToLower() == Enums.jornada2)
+                            {
+                                  jornada2 += reservas_dia_contador;
+                            }
+                            else if (jornada.ToLower() == Enums.jornada3)
+                            {
+                                  jornada3 += reservas_dia_contador;
+                            }
+                            else if (jornada.ToLower() == Enums.jornada4)
+                            {
+                                  jornada4 += reservas_dia_contador;
+                            }
+                            else if (jornada.ToLower() == Enums.jornada5)
+                            {
+                                  jornada5 += reservas_dia_contador;
+                            }
+                        });
+                        contador_reservas_total += reservas_dia_contador;
+                }
+                var informe = new InformeUnidadesReservadas()
+                 {
+                        nombre_unidad_organizacional = unidades_reservadas.First().nombre_unidad,
+                        cantidad_reserva = contador_reservas_total,
+                        jornada1 = jornada1,
+                        jornada2 = jornada2,
+                        jornada3 = jornada3,
+                        jornada4 = jornada4,
+                        jornada5 = jornada5
+                 };
+                return informe;
             }
 
             public async Task<List<InformeOcupacionTodasSede>> GetContarOcupacionTodosEspacios()
@@ -643,7 +684,7 @@ namespace CESDE.DataAdapter.repositories
                               x.estado_unidad_organizacional == "activo").Select(x => x.id_unidad_organizacional).ToListAsync();
 
                         //BUSCO TODAS LAS RESERVAS DE ESOS ESPACIOS
-                        var lsReservas = await _context.ReservaModels.Where(x => x.estado_reserva == "disponible" && lsEspacios.Contains(x.id_unidad_organizacional))
+                        var lsReservas = await _context.ReservaModels.Where(x => x.estado_reserva == "Disponible" && lsEspacios.Contains(x.id_unidad_organizacional))
                               .Select(x => x.id_reserva).ToListAsync();
 
                         //RECORRO CADA RESERVA
