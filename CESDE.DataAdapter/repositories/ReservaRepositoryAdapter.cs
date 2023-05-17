@@ -18,6 +18,7 @@ using Microsoft.Extensions.Logging;
 
 using System.Diagnostics;
 using System.IO;
+using System.Linq.Expressions;
 
 namespace CESDE.DataAdapter.repositories
 {
@@ -327,7 +328,7 @@ namespace CESDE.DataAdapter.repositories
             }
             catch (Exception e)
             {
-                DebugHelper.Log(e.ToString());
+                //DebugHelper.Log(e.ToString());
                 throw;
             }
         }
@@ -460,6 +461,47 @@ namespace CESDE.DataAdapter.repositories
                   return lsCombo;
             }
 
+            public async Task<List<ReservaDTO>> GetfiltrarUsuariosPorRol(long nivel_rol, string area_rol)
+            {
+                    var lista_reservas = new List<ReservaDTO>();
+                    var manejador_reservas = new List<ReservaModel>();
+
+                    // obteniendo todos los roles en el area dada
+                    var roles = await _context.RolModels.Where(x => x.area_rol == area_rol).Select(x => x.id_rol)
+                        .ToListAsync();
+
+                    if (roles.Count == 0) { 
+                        
+                    }
+
+                    foreach(var r in roles)
+                    {
+                        // Si el nivel_rol en la lista de roles es menor al nivel_rol dado
+                        // significa que podemos mostrar las resarvas vinculadas
+                        if (r <= nivel_rol)
+                        {
+                            
+                            // obtenemos todos los usuarios que contengan ese id_rol
+                            // luego obtenemos todos los id_unidad_organizacional para poder acceder a las reservas
+                            try {
+                                var reservas = await _context.UsuarioModels.Include(x => x.ForKeyUnidad_Usuario)
+                                .Where(res => res.id_rol == r).AnyAsync();
+
+                                //DebugHelper.Log(reservas.ToString());
+
+
+
+                    } catch(Exception e) { 
+                                //DebugHelper.Log(e.ToString());
+                            }
+                        }
+
+                    };
+
+                return lista_reservas;
+                    
+            }
+
             public async Task<InformeOcupacionSede> GetContarOcupacionAulas(long id_sede)
             {
                   List<long> lsEspacios = new List<long>();
@@ -469,29 +511,53 @@ namespace CESDE.DataAdapter.repositories
                   lsEspacios = await _context.UnidadOrganizacionalModels.Where(x => x.id_unidad_organizacional_padre == id_sede &&
                         x.estado_unidad_organizacional == "activo").Select(x => x.id_unidad_organizacional).ToListAsync();
 
-                var lsReservas = await _context.ReservaModels.Where(x => x.estado_reserva == "activo" && lsEspacios.Contains(x.id_unidad_organizacional))
+                var lsReservas = await _context.ReservaModels.Where(x => x.estado_reserva == "disponible" && lsEspacios.Contains(x.id_unidad_organizacional))
                       .Select(x => x.id_reserva).ToListAsync();
 
-                int[] jornadas_list = { 0, 0, 0, 0, 0};
+                int jornada1 = 0;
+                int jornada2 = 0;
+                int jornada3 = 0;
+                int jornada4 = 0;
+                int jornada5 = 0;
+
                 var contador_reservas_total = 0;
 
                 foreach (var item in lsReservas)
                 {
                         
-                        // Obteniendo lista de las jornadas
-                        //var jornadas = await _context.ReservaModels.Where(x => x.id_reserva == item)
-                        //    .Select(x => x.jornada).ToListAsync();
+                        //Obteniendo lista de las jornadas
+                        var jornadas = await _context.ReservaDiaModels.Where(x => x.id_reserva == item)
+                            .Select(x => x.jornada).ToListAsync();
                         
                         // Obteniendo el numero contador total de reservas_dia en base a id_reserva
-                       // var reservas_dia_contador = await _context.ReservaDiaModels.Where(x => x.id_reserva == item)
-                        //    .CountAsync();
+                        var reservas_dia_contador = await _context.ReservaDiaModels.Where(x => x.id_reserva == item)
+                            .CountAsync();
 
-                        //jornadas.ForEach(jornada =>
-                        //{
-                         //   InformesHelper.ResolverJornadas(jornada, reservas_dia_contador, jornadas_list);
-                        //});
+                        jornadas.ForEach(jornada =>
+                        {
+                            if (jornada.ToLower() == Enums.jornada1)
+                            {
+                                  jornada1 += reservas_dia_contador;
+                            }
+                            else if (jornada.ToLower() == Enums.jornada2)
+                            {
+                                  jornada2 += reservas_dia_contador;
+                            }
+                            else if (jornada.ToLower() == Enums.jornada3)
+                            {
+                                  jornada3 += reservas_dia_contador;
+                            }
+                            else if (jornada.ToLower() == Enums.jornada4)
+                            {
+                                  jornada4 += reservas_dia_contador;
+                            }
+                            else if (jornada.ToLower() == Enums.jornada5)
+                            {
+                                  jornada5 += reservas_dia_contador;
+                            }
+                        });
 
-                        //contador_reservas_total += reservas_dia_contador;
+                        contador_reservas_total += reservas_dia_contador;
                   }
 
 
@@ -499,11 +565,11 @@ namespace CESDE.DataAdapter.repositories
                   {
                         cantidad_tipoespacio = lsEspacios.Count(),
                         cantidad_reserva = contador_reservas_total,
-                        jornada1 = jornadas_list[0],
-                        jornada2 = jornadas_list[1],
-                        jornada3 = jornadas_list[2],
-                        jornada4 = jornadas_list[3],
-                        jornada5 = jornadas_list[4]
+                        jornada1 = jornada1,
+                        jornada2 = jornada2,
+                        jornada3 = jornada3,
+                        jornada4 = jornada4,
+                        jornada5 = jornada5
                   };
 
                   return informe;
@@ -565,7 +631,7 @@ namespace CESDE.DataAdapter.repositories
                   {
                         //RESET DE VARIABLES
                         lsReservasDias = 0;
-                        informe = null;
+                        //informe = null;
                         int jornada1 = 0;
                         int jornada2 = 0;
                         int jornada3 = 0;
@@ -577,16 +643,45 @@ namespace CESDE.DataAdapter.repositories
                               x.estado_unidad_organizacional == "activo").Select(x => x.id_unidad_organizacional).ToListAsync();
 
                         //BUSCO TODAS LAS RESERVAS DE ESOS ESPACIOS
-                        //var lsReservas = await _context.ReservaModels.Where(x => x.estado_reserva == "activo" && lsEspacios.Contains(x.id_unidad_organizacional))
-                              //.Select(x => new { reserva = x.id_reserva, jornada = x.jornada }).ToListAsync();
-
-                        
+                        var lsReservas = await _context.ReservaModels.Where(x => x.estado_reserva == "disponible" && lsEspacios.Contains(x.id_unidad_organizacional))
+                              .Select(x => x.id_reserva).ToListAsync();
 
                         //RECORRO CADA RESERVA
-                        //foreach (var item in lsReservas)
-                        //{
-                             
-                        //}
+                        foreach (var item in lsReservas)
+                        {
+                            var jornadas = await _context.ReservaDiaModels.Where(x => x.id_reserva == item)
+                            .Select(x => x.jornada).ToListAsync();
+                        
+                            // Obteniendo el numero contador total de reservas_dia en base a id_reserva
+                            var reservas_dia_contador = await _context.ReservaDiaModels.Where(x => x.id_reserva == item)
+                            .CountAsync();
+
+                            jornadas.ForEach(jornada =>
+                            {
+                                if (jornada.ToLower() == Enums.jornada1)
+                                {
+                                  jornada1 += reservas_dia_contador;
+                                }
+                                else if (jornada.ToLower() == Enums.jornada2)
+                                {
+                                  jornada2 += reservas_dia_contador;
+                                }
+                                else if (jornada.ToLower() == Enums.jornada3)
+                                {
+                                  jornada3 += reservas_dia_contador;
+                                }
+                                else if (jornada.ToLower() == Enums.jornada4)
+                                {
+                                  jornada4 += reservas_dia_contador;
+                                }
+                                else if (jornada.ToLower() == Enums.jornada5)
+                                {
+                                  jornada5 += reservas_dia_contador;
+                                }
+                                lsReservasDias += reservas_dia_contador;
+                            });
+
+                        }
 
                         informe = new InformeOcupacionTodasSede()
                         {

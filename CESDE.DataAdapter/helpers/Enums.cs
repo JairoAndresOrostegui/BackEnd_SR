@@ -52,11 +52,11 @@
 
             public static int Id_Sede_TipoEspacio = 2;
 
-            public static string jornada1 = "jornada:01";
-            public static string jornada2 = "jornada:02";
-            public static string jornada3 = "jornada:03";
-            public static string jornada4 = "jornada:04";
-            public static string jornada5 = "jornada:05";
+            public static string jornada1 = "01";
+            public static string jornada2 = "02";
+            public static string jornada3 = "03";
+            public static string jornada4 = "04";
+            public static string jornada5 = "05";
 
       }
 }

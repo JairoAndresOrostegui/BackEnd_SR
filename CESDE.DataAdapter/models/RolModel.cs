@@ -23,6 +23,9 @@ namespace CESDE.DataAdapter.models
         [Column(TypeName = "int")]
         public int nivel_rol { get; set; }
 
+        [Column(TypeName = "varchar(50)")]
+        public string area_rol { get; set; }
+
         public List<UsuarioModel> ForKeyUsuario_Rol { get; set; }
         public List<PermisosRolModel> ForKeyPermisos_Rol { get; set; }
         public List<RolEspacioModel> ForKeyRolEspacio_Rol { get; set; }

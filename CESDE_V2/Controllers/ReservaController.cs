@@ -206,5 +206,19 @@ namespace CESDE_API.Controllers
                         return Ok(new { message = ex.Message });
                   }
             }
+
+            [HttpGet("filtrar-rol-usuario")]
+            public async Task<IActionResult> GetFiltrarUsuarioRol(long nivel_rol, string area_rol)
+            {
+                  try
+                  {
+                        var unidades = await _reservaRepositoryPort.GetfiltrarUsuariosPorRol(nivel_rol, area_rol);
+                        return Ok(unidades);
+                  }
+                  catch (Exception ex)
+                  {
+                        return Ok(new { message = ex.Message });
+                  }
+            }
       }
 }
