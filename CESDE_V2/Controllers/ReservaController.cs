@@ -193,7 +193,7 @@ namespace CESDE_API.Controllers
                   }
             }
 
-            [HttpGet("unidades-reservadas")]
+            [HttpGet("informe-unidades-reservadas")]
             public async Task<IActionResult> GetUnidadesReservadas(long id_unidad_organizacional)
             {
                   try
