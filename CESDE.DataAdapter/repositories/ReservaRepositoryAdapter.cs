@@ -471,39 +471,27 @@ namespace CESDE.DataAdapter.repositories
                     var manejador_reservas = new List<ReservaModel>();
 
                     // obteniendo todos los roles en el area dada
-                    var roles = await _context.RolModels.Where(x => x.area_rol == area_rol).Select(x => x.id_rol)
+                    var roles = await _context.RolModels.Where(x => x.area_rol == area_rol && x.nivel_rol >= nivel_rol)
+                        .Select(x => x.id_rol)
                         .ToListAsync();
 
-                    if (roles.Count == 0) { 
-                        
-                    }
+                    var usuarios_id_rol = await _context.UsuarioModels.Where(x => roles.Contains(x.id_rol))
+                        .Select(x => x.id_usuario).ToListAsync();
 
-                    foreach(var r in roles)
+                    var reservas = await _context.ReservaModels.Where(x =>  usuarios_id_rol.Contains((long)x.id_usuario_reserva) && x.estado_reserva == "activo")
+                    .Select(reserva => new ReservaDTO()
                     {
-                        // Si el nivel_rol en la lista de roles es menor al nivel_rol dado
-                        // significa que podemos mostrar las resarvas vinculadas
-                        if (r <= nivel_rol)
-                        {
-                            
-                            // obtenemos todos los usuarios que contengan ese id_rol
-                            // luego obtenemos todos los id_unidad_organizacional para poder acceder a las reservas
-                            try {
-                                var reservas = await _context.UsuarioModels.Include(x => x.ForKeyUnidad_Usuario)
-                                .Where(res => res.id_rol == r).AnyAsync();
+                        id_reserva = reserva.id_reserva,
+                        nombre_unidad_organizacional = reserva.ForKeyUnidadOrg_Reserva.nombre_unidad_organizacional.UpperFirstChar(),
+                        nombre_submodulo = reserva.nombre_grupo,
+                        nombre_usuario_colaborador = reserva.nombre_usuario_colaborador,
+                        fecha_inicio_reserva = reserva.fecha_inicio_reserva,
+                        fecha_fin_reserva = reserva.fecha_fin_reserva,
 
-                                //DebugHelper.Log(reservas.ToString());
+                    }).ToListAsync();
 
+                    return reservas;
 
-
-                    } catch(Exception e) { 
-                                //DebugHelper.Log(e.ToString());
-                            }
-                        }
-
-                    };
-
-                return lista_reservas;
-                    
             }
 
             public async Task<InformeOcupacionSede> GetContarOcupacionAulas(long id_sede)
