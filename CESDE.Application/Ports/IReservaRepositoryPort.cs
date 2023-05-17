@@ -39,6 +39,8 @@ namespace CESDE.Application.Ports
 
             Task<InformeUnidadesReservadas> GetUnidadesReservadas(long id_unidad_organizacional);
 
+            Task<InformeCodigoPrograma> GetByCodigo(long id_sede, string codigo);
+
             Task<List<ReservaDTO>> GetfiltrarUsuariosPorRol(long nivel_rol, string area_rol);
       }
 }

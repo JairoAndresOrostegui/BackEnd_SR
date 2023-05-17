@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace CESDE.Domain.DTO.Reserva.Informe
 {
-    class InformeCodigoPrograma
+    public class InformeCodigoPrograma
     {
         public string codigo_programa { get; set; }
         public int cantidad_reserva { get; set; }
-
         public int jornada1 { get; set; }
         public int jornada2 { get; set; }
         public int jornada3 { get; set; }

@@ -207,6 +207,20 @@ namespace CESDE_API.Controllers
                   }
             }
 
+            [HttpGet("informe-codigo-programa")]
+            public async Task<IActionResult> GetByCodigo(long id_sede, string codigo)
+            {
+                  try
+                  {
+                        var unidades = await _reservaRepositoryPort.GetByCodigo(id_sede, codigo);
+                        return Ok(unidades);
+                  }
+                  catch (Exception ex)
+                  {
+                        return Ok(new { message = ex.Message });
+                  }
+            }
+
             [HttpGet("filtrar-rol-usuario")]
             public async Task<IActionResult> GetFiltrarUsuarioRol(long nivel_rol, string area_rol)
             {
