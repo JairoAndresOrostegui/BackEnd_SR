@@ -234,5 +234,19 @@ namespace CESDE_API.Controllers
                         return Ok(new { message = ex.Message });
                   }
             }
+
+            [HttpGet("informe-nombre-espacio")]
+            public async Task<IActionResult> GetContarNombreEspacio(long id_sede, long id_tipo_espacio)
+            {
+                  try
+                  {
+                        var unidades = await _reservaRepositoryPort.GetContarNombreEspacio(id_sede, id_tipo_espacio);
+                        return Ok(unidades);
+                  }
+                  catch (Exception ex)
+                  {
+                        return Ok(new { message = ex.Message });
+                  }
+            }
       }
 }

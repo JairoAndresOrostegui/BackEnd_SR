@@ -299,32 +299,23 @@ namespace CESDE.DataAdapter.repositories
                 _context.Update(existingReserva);
                 await _context.SaveChangesAsync();
 
+                var reservas_dia = await _context.ReservaDiaModels.Where(x => x.id_reserva == reserva.id_reserva).ToListAsync();
+                foreach (var res_dia in reservas_dia)
+                    _context.ReservaDiaModels.Remove(res_dia);
+
+                await _context.SaveChangesAsync();
 
                 foreach (var r in reserva.reservaDia)
                 {
-                    if (r.reserva_dia_id != 0)
+                    ReservaDiaModel newReservaDia = new ReservaDiaModel()
                     {
-                        var existingReservaDia = await _context.ReservaDiaModels.FindAsync(r.reserva_dia_id);
-                        if (existingReservaDia != null)
-                        {
-                            existingReservaDia.reserva_dia_dia = r.reserva_dia_dia;
-                            existingReservaDia.reserva_dia_hora_inicio = r.reserva_dia_hora_inicio;
-                            existingReservaDia.jornada = r.jornada;
-                            _context.Update(existingReservaDia);
-                        }
-                    }
-                    else
-                    {
-                        ReservaDiaModel newReservaDia = new ReservaDiaModel()
-                        {
-                            id_reserva = reserva.id_reserva,
-                            reserva_dia_dia = r.reserva_dia_dia,
-                            reserva_dia_hora_inicio = r.reserva_dia_hora_inicio,
-                            jornada = r.jornada,
-                            //reserva_dia_hora_fin = r.reserva_dia_hora_fin
-                        };
-                        _context.ReservaDiaModels.Add(newReservaDia);
-                    }
+                        id_reserva = reserva.id_reserva,
+                        reserva_dia_dia = r.reserva_dia_dia,
+                        reserva_dia_hora_inicio = r.reserva_dia_hora_inicio,
+                        jornada = r.jornada,
+                        //reserva_dia_hora_fin = r.reserva_dia_hora_fin
+                    };
+                    _context.ReservaDiaModels.Add(newReservaDia);
                 }
 
                 await _context.SaveChangesAsync();
@@ -493,6 +484,85 @@ namespace CESDE.DataAdapter.repositories
                     return reservas;
 
             }
+
+
+            public async Task<InformeNombreEspacio> GetContarNombreEspacio(long id_sede, long id_tipo_espacio)
+            {
+                  List<long> lsEspacios = new List<long>();
+                  int lsReservasDias = 0;
+                  List<long> lsCantidadReservasDias = new List<long>();
+
+                  lsEspacios = await _context.UnidadOrganizacionalModels.Where(x => x.id_unidad_organizacional_padre == id_sede &&
+                        x.estado_unidad_organizacional == "activo" && x.id_tipo_espacio == id_tipo_espacio).Select(x => x.id_unidad_organizacional).ToListAsync();
+
+                var nombre_espacio = await _context.TipoEspacioModels.Where(x => x.id_tipo_espacio == id_tipo_espacio)
+                    .Select(x => x.nombre_tipo_espacio).FirstAsync();
+
+                var lsReservas = await _context.ReservaModels.Where(x => x.estado_reserva.ToLower() == "activo" && lsEspacios.Contains(x.id_unidad_organizacional))
+                      .Select(x => x.id_reserva).ToListAsync();
+
+                int jornada1 = 0;
+                int jornada2 = 0;
+                int jornada3 = 0;
+                int jornada4 = 0;
+                int jornada5 = 0;
+
+                var contador_reservas_total = 0;
+
+                foreach (var item in lsReservas)
+                {
+                        
+                        //Obteniendo lista de las jornadas
+                        var jornadas = await _context.ReservaDiaModels.Where(x => x.id_reserva == item)
+                            .Select(x => x.jornada).ToListAsync();
+                        
+                        // Obteniendo el numero contador total de reservas_dia en base a id_reserva
+                        var reservas_dia_contador = await _context.ReservaDiaModels.Where(x => x.id_reserva == item)
+                            .CountAsync();
+
+                        jornadas.ForEach(jornada =>
+                        {
+                            if (jornada.ToLower() == Enums.jornada1)
+                            {
+                                  jornada1 += reservas_dia_contador;
+                            }
+                            else if (jornada.ToLower() == Enums.jornada2)
+                            {
+                                  jornada2 += reservas_dia_contador;
+                            }
+                            else if (jornada.ToLower() == Enums.jornada3)
+                            {
+                                  jornada3 += reservas_dia_contador;
+                            }
+                            else if (jornada.ToLower() == Enums.jornada4)
+                            {
+                                  jornada4 += reservas_dia_contador;
+                            }
+                            else if (jornada.ToLower() == Enums.jornada5)
+                            {
+                                  jornada5 += reservas_dia_contador;
+                            }
+                        });
+
+                        contador_reservas_total = contador_reservas_total + reservas_dia_contador;
+                  }
+
+
+                  var informe = new InformeNombreEspacio()
+                  {
+                        cantidad_tipoespacio = nombre_espacio,
+                        cantidad_reserva = contador_reservas_total,
+                        jornada1 = jornada1,
+                        jornada2 = jornada2,
+                        jornada3 = jornada3,
+                        jornada4 = jornada4,
+                        jornada5 = jornada5
+                  };
+
+                  return informe;
+            }
+
+            
 
             public async Task<InformeOcupacionSede> GetContarOcupacionAulas(long id_sede)
             {
