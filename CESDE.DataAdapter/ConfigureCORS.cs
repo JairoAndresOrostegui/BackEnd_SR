@@ -11,13 +11,14 @@ namespace CESDE.DataAdapter
                         options.AddPolicy(name: cesdeCORS,
                               builder =>
                               {
-                                    //builder.WithOrigins("http://190.217.58.177:58080")
-                                    //.AllowAnyHeader()
-                                    //.AllowAnyMethod();
-                                     builder.AllowAnyHeader()
-                                       .AllowAnyMethod()
-                                       .SetIsOriginAllowed(_ => true) // Allow any origin
-                                       .WithExposedHeaders("Access-Control-Allow-Origin"); // Expose the header in the response
+                                  builder.WithOrigins("http://190.217.58.176:44347/api/caracteristica")
+                                  .AllowAnyHeader()
+                                  .AllowAnyMethod()
+                                  .SetIsOriginAllowed(_ => true) // Allow any origin
+                                  .WithExposedHeaders("Access-Control-Allow-Origin"); // Expose the header in the response
+
+                                  builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                                       
                               });
                   });
             }
