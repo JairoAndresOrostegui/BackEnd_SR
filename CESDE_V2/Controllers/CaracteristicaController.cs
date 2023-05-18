@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CESDE_API.Controllers
 {
-      [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+      //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
       [Route("api/caracteristica")]
       [ApiController]
       public class CaracteristicaController : ControllerBase

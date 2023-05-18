@@ -18,7 +18,6 @@ namespace CESDE.DataAdapter
                                   //.WithExposedHeaders("Access-Control-Allow-Origin"); // Expose the header in the response
 
                                   //builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-                                       
                               });
                   });
             }
