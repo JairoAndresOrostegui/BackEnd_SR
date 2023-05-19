@@ -11,6 +11,8 @@ namespace CESDE.Domain.DTO.Usuario
         public string primer_nombre_persona { get; set; }
         public string primer_apellido_persona { get; set; }
         public long id_rol { get; set; }
+
+        public string area_rol { get; set; }
         public string nombre_rol { get; set; }
         public long id_unidad_organizacional { get; set; }
         public string nombre_unidad_organizacional { get; set; }

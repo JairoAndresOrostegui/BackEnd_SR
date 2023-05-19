@@ -172,6 +172,7 @@ namespace CESDE.DataAdapter.repositories
                 id_usuario = usuarioLoginDTO.id_usuario,
                 id_rol = usuarioLoginDTO.id_rol,
                 nombre_rol = usuarioLoginDTO.nombre_rol,
+                area_rol = usuarioLoginDTO.area_rol,
                 id_persona = usuarioLoginDTO.id_persona,
                 primer_nombre_persona = usuarioLoginDTO.primer_nombre_persona,
                 primer_apellido_persona = usuarioLoginDTO.primer_apellido_persona,
@@ -221,6 +222,7 @@ namespace CESDE.DataAdapter.repositories
                       nombre_unidad_organizacional = user.ForKeyUnidad_Usuario.nombre_unidad_organizacional,
                       nombre_rol = user.ForKeyRol_Usuario.nombre_rol,
                       id_rol = user.ForKeyRol_Usuario.id_rol,
+                      area_rol = user.ForKeyRol_Usuario.area_rol,
                       nivel_rol = user.ForKeyRol_Usuario.nivel_rol
                   }).FirstOrDefaultAsync();
 

@@ -2,6 +2,8 @@
 {
     public class UsuarioLoginDTO
     {
+        public string area_rol;
+
         public long id_usuario { get; set; }
         public string login_usuario { get; set; }
         public long id_persona { get; set; }
