@@ -6,30 +6,30 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CESDE_API.Controllers
 {
-      [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-      [Route("api/unidadrol")]
-      [ApiController]
-      public class UnidadRolController : ControllerBase
-      {
-            private readonly IUnidadRolRepositoryPort _unidadRolRepositoryPort;
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    [Route("api/unidadrol")]
+    [ApiController]
+    public class UnidadRolController : ControllerBase
+    {
+        private readonly IUnidadRolRepositoryPort _unidadRolRepositoryPort;
 
-            public UnidadRolController(IUnidadRolRepositoryPort unidadRolRepositoryPort)
-            {
-                  _unidadRolRepositoryPort = unidadRolRepositoryPort;
-            }
+        public UnidadRolController(IUnidadRolRepositoryPort unidadRolRepositoryPort)
+        {
+            _unidadRolRepositoryPort = unidadRolRepositoryPort;
+        }
 
-            [HttpGet]
-            public async Task<IActionResult> GetAllByUnidadRol(long id_rol)
+        [HttpGet]
+        public async Task<IActionResult> GetAllByUnidadRol(long id_rol)
+        {
+            try
             {
-                  try
-                  {
-                        var datos = await _unidadRolRepositoryPort.GetAllByUnidadRol(id_rol);
-                        return Ok(datos);
-                  }
-                  catch (Exception ex)
-                  {
-                        return Ok(new { message = ex.Message });
-                  }
+                var datos = await _unidadRolRepositoryPort.GetAllByUnidadRol(id_rol);
+                return Ok(datos);
             }
-      }
+            catch (Exception ex)
+            {
+                return Ok(new { message = ex.Message });
+            }
+        }
+    }
 }

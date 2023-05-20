@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using CESDE.Domain.DTO.Combo;
+﻿using CESDE.Domain.DTO.Combo;
 using CESDE.Domain.DTO.DTOForUsuario;
+using System.Collections.Generic;
 
 namespace CESDE.Domain.DTO.Usuario
 {

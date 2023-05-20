@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CESDE.DataAdapter
 {
-    
+
     public class CESDE_Context : DbContext
     {
         public CESDE_Context(DbContextOptions options) : base(options) { }

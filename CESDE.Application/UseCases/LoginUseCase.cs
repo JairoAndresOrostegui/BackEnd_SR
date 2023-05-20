@@ -1,10 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-
-using CESDE.Application.Ports;
-using CESDE.Domain.DTO.DTOForUsuario;
+﻿using CESDE.Application.Ports;
 using CESDE.Domain.DTO.Usuario;
 using CESDE.Domain.Models;
+using System.Threading.Tasks;
 
 namespace CESDE.Application.UseCases
 {

@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace CESDE.Application.UseCases
 {
-      public class ComponenteUseCase
-      {
-            private readonly IComponenteRepositoryPort _componenteRepository;
+    public class ComponenteUseCase
+    {
+        private readonly IComponenteRepositoryPort _componenteRepository;
 
-            public ComponenteUseCase(IComponenteRepositoryPort componenteRepository)
-            {
-                  _componenteRepository = componenteRepository;
-            }
+        public ComponenteUseCase(IComponenteRepositoryPort componenteRepository)
+        {
+            _componenteRepository = componenteRepository;
+        }
 
-            public async Task<List<ComboDTO>> GetAllCombo() => await _componenteRepository.GetAllCombo();
-      }
+        public async Task<List<ComboDTO>> GetAllCombo() => await _componenteRepository.GetAllCombo();
+    }
 }

@@ -9,158 +9,158 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CESDE_API.Controllers
 {
-      [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-      [Route("api/unidadorganizacional")]
-      [ApiController]
-      public class UnidadOrganizacionalController : ControllerBase
-      {
-            private readonly IUnidadOrganizacionalRepositoryPort _unidadOrganizacionalRepositoryPort;
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    [Route("api/unidadorganizacional")]
+    [ApiController]
+    public class UnidadOrganizacionalController : ControllerBase
+    {
+        private readonly IUnidadOrganizacionalRepositoryPort _unidadOrganizacionalRepositoryPort;
 
-            public UnidadOrganizacionalController(IUnidadOrganizacionalRepositoryPort unidadOrganizacionalRepositoryPort)
+        public UnidadOrganizacionalController(IUnidadOrganizacionalRepositoryPort unidadOrganizacionalRepositoryPort)
+        {
+            _unidadOrganizacionalRepositoryPort = unidadOrganizacionalRepositoryPort;
+        }
+
+
+        [HttpGet("{id_unidad_organizacional:long}")]
+        public async Task<IActionResult> GetById(long id_unidad_organizacional)
+        {
+            try
             {
-                  _unidadOrganizacionalRepositoryPort = unidadOrganizacionalRepositoryPort;
+                var unidadOrganizacional = await _unidadOrganizacionalRepositoryPort.GetById(id_unidad_organizacional);
+                return Ok(unidadOrganizacional);
             }
-
-
-            [HttpGet("{id_unidad_organizacional:long}")]
-            public async Task<IActionResult> GetById(long id_unidad_organizacional)
+            catch (Exception ex)
             {
-                  try
-                  {
-                        var unidadOrganizacional = await _unidadOrganizacionalRepositoryPort.GetById(id_unidad_organizacional);
-                        return Ok(unidadOrganizacional);
-                  }
-                  catch (Exception ex)
-                  {
-                        return Ok(new { message = ex.Message });
-                  }
+                return Ok(new { message = ex.Message });
             }
+        }
 
-            [HttpGet("combo")]
-            public async Task<IActionResult> GetAllCombo()
+        [HttpGet("combo")]
+        public async Task<IActionResult> GetAllCombo()
+        {
+            try
             {
-                  try
-                  {
-                        var unidadOrganizacional = await _unidadOrganizacionalRepositoryPort.GetAllCombo();
-                        return Ok(unidadOrganizacional);
-                  }
-                  catch (Exception ex)
-                  {
-                        return Ok(new { message = ex.Message });
-                  }
+                var unidadOrganizacional = await _unidadOrganizacionalRepositoryPort.GetAllCombo();
+                return Ok(unidadOrganizacional);
             }
+            catch (Exception ex)
+            {
+                return Ok(new { message = ex.Message });
+            }
+        }
 
-            [HttpPost("reserva")]
-            public async Task<IActionResult> GetByPadreAndTipoEspacio(ParametroReservaDTO parametroReservaDTO)
+        [HttpPost("reserva")]
+        public async Task<IActionResult> GetByPadreAndTipoEspacio(ParametroReservaDTO parametroReservaDTO)
+        {
+            try
             {
-                  try
-                  {
-                        var unidadOrganizacional = await _unidadOrganizacionalRepositoryPort.GetByPadreAndTipoEspacio(parametroReservaDTO);
-                        return Ok(unidadOrganizacional);
-                  }
-                  catch (Exception ex)
-                  {
-                        return Ok(new { message = ex.Message });
-                  }
+                var unidadOrganizacional = await _unidadOrganizacionalRepositoryPort.GetByPadreAndTipoEspacio(parametroReservaDTO);
+                return Ok(unidadOrganizacional);
             }
+            catch (Exception ex)
+            {
+                return Ok(new { message = ex.Message });
+            }
+        }
 
-            [HttpGet("combo/{id_tipo_espacio:long}")]
-            public async Task<IActionResult> GetByTipoEspacioCombo(int id_tipo_espacio)
+        [HttpGet("combo/{id_tipo_espacio:long}")]
+        public async Task<IActionResult> GetByTipoEspacioCombo(int id_tipo_espacio)
+        {
+            try
             {
-                  try
-                  {
-                        var unidadOrganizacional = await _unidadOrganizacionalRepositoryPort.GetByTipoEspacioCombo(id_tipo_espacio);
-                        return Ok(unidadOrganizacional);
-                  }
-                  catch (Exception ex)
-                  {
-                        return Ok(new { message = ex.Message });
-                  }
+                var unidadOrganizacional = await _unidadOrganizacionalRepositoryPort.GetByTipoEspacioCombo(id_tipo_espacio);
+                return Ok(unidadOrganizacional);
             }
+            catch (Exception ex)
+            {
+                return Ok(new { message = ex.Message });
+            }
+        }
 
-            [HttpGet("validatename")]
-            public async Task<IActionResult> ValidateNameUnidadOrganizacional(string nombre_unidad_organizacional, long id_sede)
+        [HttpGet("validatename")]
+        public async Task<IActionResult> ValidateNameUnidadOrganizacional(string nombre_unidad_organizacional, long id_sede)
+        {
+            try
             {
-                  try
-                  {
-                        var unidadOrganizacional = await _unidadOrganizacionalRepositoryPort
-                              .ValidateNameUnidadOrganizacional(nombre_unidad_organizacional, id_sede);
-                        return Ok(unidadOrganizacional);
-                  }
-                  catch (Exception ex)
-                  {
-                        return Ok(new { message = ex.Message });
-                  }
+                var unidadOrganizacional = await _unidadOrganizacionalRepositoryPort
+                      .ValidateNameUnidadOrganizacional(nombre_unidad_organizacional, id_sede);
+                return Ok(unidadOrganizacional);
             }
+            catch (Exception ex)
+            {
+                return Ok(new { message = ex.Message });
+            }
+        }
 
-            [HttpGet]
-            public async Task<IActionResult> GetAll(long id_sede)
+        [HttpGet]
+        public async Task<IActionResult> GetAll(long id_sede)
+        {
+            try
             {
-                  try
-                  {
-                        var unidadOrganizacional = await _unidadOrganizacionalRepositoryPort.GetAll(id_sede);
-                        return Ok(unidadOrganizacional);
-                  }
-                  catch (Exception ex)
-                  {
-                        return Ok(new { message = ex.Message });
-                  }
+                var unidadOrganizacional = await _unidadOrganizacionalRepositoryPort.GetAll(id_sede);
+                return Ok(unidadOrganizacional);
             }
+            catch (Exception ex)
+            {
+                return Ok(new { message = ex.Message });
+            }
+        }
 
-            [HttpGet("buscar")]
-            public async Task<IActionResult> GetBySearch(string type, string search, long id_sede)
+        [HttpGet("buscar")]
+        public async Task<IActionResult> GetBySearch(string type, string search, long id_sede)
+        {
+            try
             {
-                  try
-                  {
-                        var unidadOrganizacional = await _unidadOrganizacionalRepositoryPort.GetBySearch(type, search, id_sede);
-                        return Ok(unidadOrganizacional);
-                  }
-                  catch (Exception ex)
-                  {
-                        return Ok(new { message = ex.Message });
-                  }
+                var unidadOrganizacional = await _unidadOrganizacionalRepositoryPort.GetBySearch(type, search, id_sede);
+                return Ok(unidadOrganizacional);
             }
+            catch (Exception ex)
+            {
+                return Ok(new { message = ex.Message });
+            }
+        }
 
-            [HttpPost]
-            public async Task<IActionResult> SaveUnidadOrganizacional([FromBody] UnidadOrganizacional unidadOrganizacional)
+        [HttpPost]
+        public async Task<IActionResult> SaveUnidadOrganizacional([FromBody] UnidadOrganizacional unidadOrganizacional)
+        {
+            try
             {
-                  try
-                  {
-                        await _unidadOrganizacionalRepositoryPort.SaveUnidadOrganizacional(unidadOrganizacional);
-                        return Ok(new { message = Enums.MessageSave });
-                  }
-                  catch (Exception ex)
-                  {
-                        return Ok(new { message = ex.Message });
-                  }
+                await _unidadOrganizacionalRepositoryPort.SaveUnidadOrganizacional(unidadOrganizacional);
+                return Ok(new { message = Enums.MessageSave });
             }
+            catch (Exception ex)
+            {
+                return Ok(new { message = ex.Message });
+            }
+        }
 
-            [HttpPut]
-            public async Task<IActionResult> UpdateUnidadOrganizacional([FromBody] UnidadOrganizacional unidadOrganizacional)
+        [HttpPut]
+        public async Task<IActionResult> UpdateUnidadOrganizacional([FromBody] UnidadOrganizacional unidadOrganizacional)
+        {
+            try
             {
-                  try
-                  {
-                        await _unidadOrganizacionalRepositoryPort.UpdateUnidadOrganizacional(unidadOrganizacional);
-                        return Ok(new { message = Enums.MessageUpdate });
-                  }
-                  catch (Exception ex)
-                  {
-                        return Ok(new { message = ex.Message });
-                  }
+                await _unidadOrganizacionalRepositoryPort.UpdateUnidadOrganizacional(unidadOrganizacional);
+                return Ok(new { message = Enums.MessageUpdate });
             }
+            catch (Exception ex)
+            {
+                return Ok(new { message = ex.Message });
+            }
+        }
 
-            [HttpDelete("{id_unidad_organizacional:long}")]
-            public async Task<IActionResult> DeleteUnidadOrganizacional(long id_unidad_organizacional)
+        [HttpDelete("{id_unidad_organizacional:long}")]
+        public async Task<IActionResult> DeleteUnidadOrganizacional(long id_unidad_organizacional)
+        {
+            try
             {
-                  try
-                  {
-                        await _unidadOrganizacionalRepositoryPort.DeleteUnidadOrganizacional(id_unidad_organizacional);
-                        return Ok(new { message = Enums.MessageDelete });
-                  }
-                  catch (Exception ex)
-                  {
-                        return Ok(new { message = ex.Message });
-                  }
+                await _unidadOrganizacionalRepositoryPort.DeleteUnidadOrganizacional(id_unidad_organizacional);
+                return Ok(new { message = Enums.MessageDelete });
             }
-      }
+            catch (Exception ex)
+            {
+                return Ok(new { message = ex.Message });
+            }
+        }
+    }
 }

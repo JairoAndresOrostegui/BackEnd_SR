@@ -1,135 +1,132 @@
 ﻿using CESDE.Application.Ports;
 using CESDE.DataAdapter.helpers;
 using CESDE.Domain.Models;
-
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CESDE_API.Controllers
 {
-      //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-      [Route("api/caracteristica")]
-      [ApiController]
-      public class CaracteristicaController : ControllerBase
-      {
-            private readonly ICaracteristicaRepositoryPort _caracteristicaRepositoryPort;
+    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    [Route("api/caracteristica")]
+    [ApiController]
+    public class CaracteristicaController : ControllerBase
+    {
+        private readonly ICaracteristicaRepositoryPort _caracteristicaRepositoryPort;
 
-            public CaracteristicaController(ICaracteristicaRepositoryPort caracteristicaRepositoryPort)
-            {
-                  _caracteristicaRepositoryPort = caracteristicaRepositoryPort;
-            }
+        public CaracteristicaController(ICaracteristicaRepositoryPort caracteristicaRepositoryPort)
+        {
+            _caracteristicaRepositoryPort = caracteristicaRepositoryPort;
+        }
 
-            [HttpGet("{id_caracteristica:long}")]
-            public async Task<IActionResult> GetById(long id_caracteristica)
+        [HttpGet("{id_caracteristica:long}")]
+        public async Task<IActionResult> GetById(long id_caracteristica)
+        {
+            try
             {
-                  try
-                  {
-                        var caracteristica = await _caracteristicaRepositoryPort.GetById(id_caracteristica);
-                        return Ok(caracteristica);
-                  }
-                  catch (Exception ex)
-                  {
-                        return Ok(new { message = ex.Message });
-                  }
+                var caracteristica = await _caracteristicaRepositoryPort.GetById(id_caracteristica);
+                return Ok(caracteristica);
             }
+            catch (Exception ex)
+            {
+                return Ok(new { message = ex.Message });
+            }
+        }
 
-            [HttpGet]
-            public async Task<IActionResult> GetAll()
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            try
             {
-                  try
-                  {
-                        var caracteristica = await _caracteristicaRepositoryPort.GetAll();
-                        return Ok(caracteristica);
-                  }
-                  catch (Exception ex)
-                  {
-                        return Ok(new { message = ex.Message });
-                  }
+                var caracteristica = await _caracteristicaRepositoryPort.GetAll();
+                return Ok(caracteristica);
             }
+            catch (Exception ex)
+            {
+                return Ok(new { message = ex.Message });
+            }
+        }
 
-            [HttpGet("buscar")]
-            public async Task<IActionResult> GetBySearch(string type, string search)
+        [HttpGet("buscar")]
+        public async Task<IActionResult> GetBySearch(string type, string search)
+        {
+            try
             {
-                  try
-                  {
-                        var caracteristica = await _caracteristicaRepositoryPort.GetBySearch(type, search);
-                        return Ok(caracteristica);
-                  }
-                  catch (Exception ex)
-                  {
-                        return Ok(new { message = ex.Message });
-                  }
+                var caracteristica = await _caracteristicaRepositoryPort.GetBySearch(type, search);
+                return Ok(caracteristica);
             }
+            catch (Exception ex)
+            {
+                return Ok(new { message = ex.Message });
+            }
+        }
 
-            [HttpGet("validatename/{nombre_tipo_espacio}")]
-            public async Task<IActionResult> ValidateName(string nombre_tipo_espacio)
+        [HttpGet("validatename/{nombre_tipo_espacio}")]
+        public async Task<IActionResult> ValidateName(string nombre_tipo_espacio)
+        {
+            try
             {
-                  try
-                  {
-                        var caracteristica = await _caracteristicaRepositoryPort.ValidateName(nombre_tipo_espacio);
-                        return Ok(caracteristica);
-                  }
-                  catch (Exception ex)
-                  {
-                        return Ok(new { message = ex.Message });
-                  }
+                var caracteristica = await _caracteristicaRepositoryPort.ValidateName(nombre_tipo_espacio);
+                return Ok(caracteristica);
             }
+            catch (Exception ex)
+            {
+                return Ok(new { message = ex.Message });
+            }
+        }
 
-            [HttpGet("combo")]
-            public async Task<IActionResult> GetAllCombo()
+        [HttpGet("combo")]
+        public async Task<IActionResult> GetAllCombo()
+        {
+            try
             {
-                  try
-                  {
-                        var caracteristica = await _caracteristicaRepositoryPort.GetAllCombo();
-                        return Ok(caracteristica);
-                  }
-                  catch (Exception ex)
-                  {
-                        return Ok(new { message = ex.Message });
-                  }
+                var caracteristica = await _caracteristicaRepositoryPort.GetAllCombo();
+                return Ok(caracteristica);
             }
+            catch (Exception ex)
+            {
+                return Ok(new { message = ex.Message });
+            }
+        }
 
-            [HttpPost]
-            public async Task<IActionResult> SaveCaracteristica([FromBody] Caracteristica caracteristica)
+        [HttpPost]
+        public async Task<IActionResult> SaveCaracteristica([FromBody] Caracteristica caracteristica)
+        {
+            try
             {
-                  try
-                  {
-                        await _caracteristicaRepositoryPort.SaveCaracteristica(caracteristica);
-                        return Ok(new { message = Enums.MessageSave });
-                  }
-                  catch (Exception ex)
-                  {
-                        return Ok(new { message = ex.Message });
-                  }
+                await _caracteristicaRepositoryPort.SaveCaracteristica(caracteristica);
+                return Ok(new { message = Enums.MessageSave });
             }
+            catch (Exception ex)
+            {
+                return Ok(new { message = ex.Message });
+            }
+        }
 
-            [HttpPut]
-            public async Task<IActionResult> UpdateCaracteristica([FromBody] Caracteristica caracteristica)
+        [HttpPut]
+        public async Task<IActionResult> UpdateCaracteristica([FromBody] Caracteristica caracteristica)
+        {
+            try
             {
-                  try
-                  {
-                        await _caracteristicaRepositoryPort.UpdateCaracteristica(caracteristica);
-                        return Ok(new { message = Enums.MessageUpdate });
-                  }
-                  catch (Exception ex)
-                  {
-                        return Ok(new { message = ex.Message });
-                  }
+                await _caracteristicaRepositoryPort.UpdateCaracteristica(caracteristica);
+                return Ok(new { message = Enums.MessageUpdate });
             }
+            catch (Exception ex)
+            {
+                return Ok(new { message = ex.Message });
+            }
+        }
 
-            [HttpDelete("{id_caracteristica:long}")]
-            public async Task<IActionResult> DeleteCaracteristica(long id_caracteristica)
+        [HttpDelete("{id_caracteristica:long}")]
+        public async Task<IActionResult> DeleteCaracteristica(long id_caracteristica)
+        {
+            try
             {
-                  try
-                  {
-                        await _caracteristicaRepositoryPort.DeleteCaracteristica(id_caracteristica);
-                        return Ok(new { message = Enums.MessageDelete });
-                  }
-                  catch (Exception ex)
-                  {
-                        return Ok(new { message = ex.Message });
-                  }
+                await _caracteristicaRepositoryPort.DeleteCaracteristica(id_caracteristica);
+                return Ok(new { message = Enums.MessageDelete });
             }
-      }
+            catch (Exception ex)
+            {
+                return Ok(new { message = ex.Message });
+            }
+        }
+    }
 }

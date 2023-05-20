@@ -6,30 +6,30 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CESDE_API.Controllers
 {
-      [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-      [Route("api/componente")]
-      [ApiController]
-      public class ComponenteController : ControllerBase
-      {
-            private readonly IComponenteRepositoryPort _componenteRepositoryPort;
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    [Route("api/componente")]
+    [ApiController]
+    public class ComponenteController : ControllerBase
+    {
+        private readonly IComponenteRepositoryPort _componenteRepositoryPort;
 
-            public ComponenteController(IComponenteRepositoryPort componenteRepositoryPort)
-            {
-                  _componenteRepositoryPort = componenteRepositoryPort;
-            }
+        public ComponenteController(IComponenteRepositoryPort componenteRepositoryPort)
+        {
+            _componenteRepositoryPort = componenteRepositoryPort;
+        }
 
-            [HttpGet]
-            public async Task<IActionResult> GetAllCombo()
+        [HttpGet]
+        public async Task<IActionResult> GetAllCombo()
+        {
+            try
             {
-                  try
-                  {
-                        var componente = await _componenteRepositoryPort.GetAllCombo();
-                        return Ok(componente);
-                  }
-                  catch (Exception ex)
-                  {
-                        return Ok(new { message = ex.Message });
-                  }
+                var componente = await _componenteRepositoryPort.GetAllCombo();
+                return Ok(componente);
             }
-      }
+            catch (Exception ex)
+            {
+                return Ok(new { message = ex.Message });
+            }
+        }
+    }
 }

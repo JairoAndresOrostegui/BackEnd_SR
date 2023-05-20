@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CESDE.DataAdapter.helpers
+﻿namespace CESDE.DataAdapter.helpers
 {
     internal class InformesHelper
     {
@@ -14,7 +8,7 @@ namespace CESDE.DataAdapter.helpers
 
             for (int i = 0; i < jornadas.Length; i++)
             {
-                foreach(string jornada_enum in jornadas_enums)
+                foreach (string jornada_enum in jornadas_enums)
                 {
                     if (jornada_enum == jornada_actual)
                         jornadas[i] = reserva_dias_contador;

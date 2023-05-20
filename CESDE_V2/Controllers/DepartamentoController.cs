@@ -6,44 +6,44 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CESDE_API.Controllers
 {
-      [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-      [Route("api/departamento")]
-      [ApiController]
-      public class DepartamentoController : ControllerBase
-      {
-            private readonly IDepartamentoRepositoryPort _departamentoRepositoryPort;
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    [Route("api/departamento")]
+    [ApiController]
+    public class DepartamentoController : ControllerBase
+    {
+        private readonly IDepartamentoRepositoryPort _departamentoRepositoryPort;
 
-            public DepartamentoController(IDepartamentoRepositoryPort departamentoRepositoryPort)
-            {
-                  _departamentoRepositoryPort = departamentoRepositoryPort;
-            }
+        public DepartamentoController(IDepartamentoRepositoryPort departamentoRepositoryPort)
+        {
+            _departamentoRepositoryPort = departamentoRepositoryPort;
+        }
 
-            [HttpGet]
-            public async Task<IActionResult> GetAll()
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            try
             {
-                  try
-                  {
-                        var datos = await _departamentoRepositoryPort.GetAll();
-                        return Ok(datos);
-                  }
-                  catch (Exception ex)
-                  {
-                        return Ok(new { message = ex.Message });
-                  }
+                var datos = await _departamentoRepositoryPort.GetAll();
+                return Ok(datos);
             }
+            catch (Exception ex)
+            {
+                return Ok(new { message = ex.Message });
+            }
+        }
 
-            [HttpGet("{id_pais:long}")]
-            public async Task<IActionResult> GetAll(long id_pais)
+        [HttpGet("{id_pais:long}")]
+        public async Task<IActionResult> GetAll(long id_pais)
+        {
+            try
             {
-                  try
-                  {
-                        var datos = await _departamentoRepositoryPort.GetAllByPais(id_pais);
-                        return Ok(datos);
-                  }
-                  catch (Exception ex)
-                  {
-                        return Ok(new { message = ex.Message });
-                  }
+                var datos = await _departamentoRepositoryPort.GetAllByPais(id_pais);
+                return Ok(datos);
             }
-      }
+            catch (Exception ex)
+            {
+                return Ok(new { message = ex.Message });
+            }
+        }
+    }
 }

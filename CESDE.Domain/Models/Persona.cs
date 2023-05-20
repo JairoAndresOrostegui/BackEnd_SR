@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CESDE.Domain.Models
+﻿namespace CESDE.Domain.Models
 {
     internal class Persona
     {

@@ -2,26 +2,26 @@
 
 namespace CESDE.DataAdapter
 {
-      public static class ConfigureCORS
-      {
-            public static void AddConfigureCORS(this IServiceCollection services, string cesdeCORS)
+    public static class ConfigureCORS
+    {
+        public static void AddConfigureCORS(this IServiceCollection services, string cesdeCORS)
+        {
+            services.AddCors(options =>
             {
-                  services.AddCors(options =>
-                  {
-                        options.AddPolicy(name: cesdeCORS,
-                              builder =>
-                              {
-                                  builder.WithOrigins("*")
-                                  .AllowAnyHeader()
-                                  .AllowAnyMethod();
-                                  //.SetIsOriginAllowed(_ => true) // Allow any origin
-                                  //.WithExposedHeaders("Access-Control-Allow-Origin"); // Expose the header in the response
+                options.AddPolicy(name: cesdeCORS,
+                            builder =>
+                            {
+                                builder.WithOrigins("*")
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
+                                //.SetIsOriginAllowed(_ => true) // Allow any origin
+                                //.WithExposedHeaders("Access-Control-Allow-Origin"); // Expose the header in the response
 
-                                  //builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-                              });
-                  });
-            }
-      }
+                                //builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                            });
+            });
+        }
+    }
 }
 
 // DESARROLLO = http://localhost:4200

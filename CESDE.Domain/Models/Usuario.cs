@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CESDE.Domain.Models
 {
     internal class Usuario
     {
-        public long id_usuario{ get; set; }
+        public long id_usuario { get; set; }
         public long id_rol { get; set; }
         public long id_unidad_organizacional { get; set; }
         public string login_usuario { get; set; }

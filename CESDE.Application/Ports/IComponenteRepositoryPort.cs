@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace CESDE.Application.Ports
 {
-      public interface IComponenteRepositoryPort
-      {
-            Task<List<ComboDTO>> GetAllCombo();
-      }
+    public interface IComponenteRepositoryPort
+    {
+        Task<List<ComboDTO>> GetAllCombo();
+    }
 }

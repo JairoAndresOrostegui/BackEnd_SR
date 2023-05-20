@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 
 namespace CESDE.DataAdapter.helpers
 {
@@ -13,7 +8,7 @@ namespace CESDE.DataAdapter.helpers
         {
             string filePath = "log.txt";
 
-            using (StreamWriter sw = new (filePath))
+            using (StreamWriter sw = new(filePath))
             {
                 sw.Write(content);
             }

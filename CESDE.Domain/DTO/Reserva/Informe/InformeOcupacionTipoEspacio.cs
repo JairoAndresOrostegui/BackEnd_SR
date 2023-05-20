@@ -2,10 +2,10 @@
 
 namespace CESDE.Domain.DTO.Reserva.Informe
 {
-      public class InformeOcupacionTipoEspacio
-      {
-            public string nombre_tipoespacio { get; set; }
+    public class InformeOcupacionTipoEspacio
+    {
+        public string nombre_tipoespacio { get; set; }
 
-            public List<InformeOcupacionSede> lsInforme { get; set; }
-      }
+        public List<InformeOcupacionSede> lsInforme { get; set; }
+    }
 }

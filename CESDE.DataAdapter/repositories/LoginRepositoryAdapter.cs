@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-using CESDE.Application.Ports;
+﻿using CESDE.Application.Ports;
 using CESDE.DataAdapter.helpers;
 using CESDE.DataAdapter.models;
 using CESDE.Domain.DTO.Combo;
 using CESDE.Domain.DTO.DTOForUsuario;
 using CESDE.Domain.DTO.Usuario;
 using CESDE.Domain.Models;
-
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace CESDE.DataAdapter.repositories
 {

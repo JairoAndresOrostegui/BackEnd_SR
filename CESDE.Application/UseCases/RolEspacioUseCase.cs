@@ -1,21 +1,20 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-
-using CESDE.Application.Ports;
+﻿using CESDE.Application.Ports;
 using CESDE.Domain.DTO.Combo;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace CESDE.Application.UseCases
 {
-      public class RolEspacioUseCase
-      {
-            private readonly IRolEspacioRepositoryPort _rolEspacioRepository;
+    public class RolEspacioUseCase
+    {
+        private readonly IRolEspacioRepositoryPort _rolEspacioRepository;
 
-            public RolEspacioUseCase(IRolEspacioRepositoryPort rolEspacioRepository)
-            {
-                  _rolEspacioRepository = rolEspacioRepository;
-            }
+        public RolEspacioUseCase(IRolEspacioRepositoryPort rolEspacioRepository)
+        {
+            _rolEspacioRepository = rolEspacioRepository;
+        }
 
-            public async Task<List<ComboDTO>> GetAllByRolEspacio(long id_rol) =>
-                  await _rolEspacioRepository.GetAllByRolEspacio(id_rol);
-      }
+        public async Task<List<ComboDTO>> GetAllByRolEspacio(long id_rol) =>
+              await _rolEspacioRepository.GetAllByRolEspacio(id_rol);
+    }
 }
