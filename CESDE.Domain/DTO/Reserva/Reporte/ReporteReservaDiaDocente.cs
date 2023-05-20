@@ -17,7 +17,7 @@ namespace CESDE.Domain.DTO.Reserva.Reporte
             public string nombre_unidad_organizacional { get; set; }
             //public string submodulo_reserva { get; set; }
 
-            public string reserva_dia_hora_inicio { get; set; }
+            public int reserva_dia_hora_inicio { get; set; }
             public string reserva_dia_hora_fin { get; set; }
       }
 }

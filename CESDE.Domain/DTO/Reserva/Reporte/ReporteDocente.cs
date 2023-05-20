@@ -6,6 +6,6 @@ namespace CESDE.Domain.DTO.Reserva.Reporte
       {
             public string reserva_dia_dia { get; set; }
 
-            public List<ReporteReservaDiaDocente> reporteReservaDiaDocentes { get; set; }
+            public ReporteReservaDiaDocente reporteReservaDiaDocentes { get; set; }
       }
 }

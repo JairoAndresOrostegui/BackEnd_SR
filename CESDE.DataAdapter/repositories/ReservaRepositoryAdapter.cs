@@ -419,28 +419,36 @@ namespace CESDE.DataAdapter.repositories
 
             public async Task<List<ReporteDocente>> GetReporteDocente(long id_colaborador)
             {
-                  var lsReservaData = await _context.ReservaDiaModels.Include(x => x.ForKeyReserva_ReservaDia)
-                        .Where(reser => reser.ForKeyReserva_ReservaDia.id_usuario_colaborador == id_colaborador)
-                        .Select(enti => new ReporteDocente()
-                        {
-                              reserva_dia_dia = enti.reserva_dia_dia,
-                              reporteReservaDiaDocentes = enti.ForKeyReserva_ReservaDia.ForKeyReservaDia_Reserva
-                              .Select(ent => new ReporteReservaDiaDocente()
-                              {
-                                    nivel = ent.ForKeyReserva_ReservaDia.nivel,
-                                    codigo_programa = ent.ForKeyReserva_ReservaDia.codigo_programa,
-                                    fecha_fin_reserva = ent.ForKeyReserva_ReservaDia.fecha_fin_reserva,
-                                    fecha_inicio_reserva = ent.ForKeyReserva_ReservaDia.fecha_inicio_reserva,
-                                    nombre_grupo = ent.ForKeyReserva_ReservaDia.nombre_grupo,
-                                    nombre_programa = ent.ForKeyReserva_ReservaDia.nombre_programa,
-                                    nombre_unidad_organizacional = ent.ForKeyReserva_ReservaDia.ForKeyUnidadOrg_Reserva.nombre_unidad_organizacional,
-                                    //reserva_dia_hora_fin = ent.reserva_dia_hora_fin,
-                                    reserva_dia_hora_inicio = ent.reserva_dia_hora_inicio.ToString(),
-                                    //submodulo_reserva = ent.ForKeyReserva_ReservaDia.submodulo_reserva
-                              }).ToList()
-                        }).ToListAsync();
+                  var lsReservaData = await _context.ReservaModels.Where(x => x.id_usuario_colaborador == id_colaborador)
+                        .Include(x => x.ForKeyUnidadOrg_Reserva)
+                        .ToListAsync();
 
-                  return lsReservaData;
+                  var reporte_docente_lista = new List <ReporteDocente>();
+
+
+                  foreach(var obj in lsReservaData)
+                  {
+                      var reservas_dia = await _context.ReservaDiaModels.Where(x => x.id_reserva == obj.id_reserva)
+                      .Select(x => new ReporteDocente
+                      {
+                          reserva_dia_dia = x.reserva_dia_dia,
+                          reporteReservaDiaDocentes = new ReporteReservaDiaDocente
+                          {
+                              fecha_inicio_reserva = obj.fecha_inicio_reserva,
+                              fecha_fin_reserva = obj.fecha_fin_reserva,
+                              nombre_programa = obj.nombre_programa,
+                              nombre_unidad_organizacional = obj.ForKeyUnidadOrg_Reserva.nombre_unidad_organizacional,
+                              reserva_dia_hora_inicio = x.reserva_dia_hora_inicio,
+
+                          }
+                      }).ToListAsync();
+                    reporte_docente_lista.AddRange(reservas_dia);
+                  }
+                   
+                  //reporte_docente_lista.Sort(x => x.reporteReservaDiaDocentes.reserva_dia_hora_inicio)
+                  var lista_organizada = reporte_docente_lista.OrderBy(x => x.reporteReservaDiaDocentes.reserva_dia_hora_inicio).ToList();
+ 
+                  return lista_organizada;
             }
 
             public async Task<List<ComboDTO>> GetComboUsuarioColaborador()
