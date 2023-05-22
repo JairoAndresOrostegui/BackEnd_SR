@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 
 namespace CESDE.DataAdapter.repositories
@@ -560,87 +561,167 @@ namespace CESDE.DataAdapter.repositories
 
 
 
-        public async Task<InformeOcupacionSede> GetContarOcupacionAulas(long id_sede)
+        public async Task<InformeOcupacionSede> GetContarOcupacionAulas(long id_unidad_organizacional_padre)
         {
-            List<long> lsEspacios = new List<long>();
-            int lsReservasDias = 0;
-            List<long> lsCantidadReservasDias = new List<long>();
+            var list_informes_dia = new List<InformeDia>();
+            
+            var conteo_espacios = await _context.UnidadOrganizacionalModels.Where(x => x.id_unidad_organizacional_padre == id_unidad_organizacional_padre &&
+                  x.estado_unidad_organizacional == "activo").Select(x => x.id_unidad_organizacional).CountAsync();
 
-            lsEspacios = await _context.UnidadOrganizacionalModels.Where(x => x.id_unidad_organizacional_padre == id_sede &&
+            var espacios = await _context.UnidadOrganizacionalModels.Where(x => x.id_unidad_organizacional_padre == id_unidad_organizacional_padre &&
                   x.estado_unidad_organizacional == "activo").Select(x => x.id_unidad_organizacional).ToListAsync();
 
-            var lsReservas = await _context.ReservaModels.Where(x => x.estado_reserva.ToLower() == "activo" && lsEspacios.Contains(x.id_unidad_organizacional))
+            var reservas = await _context.ReservaModels.Where(x => x.estado_reserva == "activo" && espacios.Contains(x.id_unidad_organizacional))
                   .Select(x => x.id_reserva).ToListAsync();
 
-            int jornada1 = 0;
-            int jornada2 = 0;
-            int jornada3 = 0;
-            int jornada4 = 0;
-            int jornada5 = 0;
-
-            var contador_reservas_total = 0;
-
-            foreach (var item in lsReservas)
+            foreach(var reserva in reservas)
             {
-
-                //Obteniendo lista de las jornadas
-                var jornadas = await _context.ReservaDiaModels.Where(x => x.id_reserva == item)
-                    .Select(x => x.jornada).ToListAsync();
-
-                // Obteniendo el numero contador total de reservas_dia en base a id_reserva
-                var reservas_dia_contador = await _context.ReservaDiaModels.Where(x => x.id_reserva == item)
-                    .CountAsync();
-
-                jornadas.ForEach(jornada =>
+                var reserva_dia = await _context.ReservaDiaModels.Where(x => x.id_reserva == reserva).ToListAsync();
+                foreach(var dia in reserva_dia)
                 {
-                    if (jornada.ToLower() == Enums.jornada1)
+                    if (dia.reserva_dia_dia == "Lunes" && !list_informes_dia.Any(x => x.dia == "Lunes"))
                     {
-                        jornada1 += reservas_dia_contador;
+                        var conteo_jornada1 = await _context.ReservaDiaModels.Where(x => x.jornada == "01" && x.reserva_dia_dia == "Lunes").CountAsync();
+                        var conteo_jornada2 = await _context.ReservaDiaModels.Where(x => x.jornada == "02" && x.reserva_dia_dia == "Lunes").CountAsync();
+                        var conteo_jornada3 = await _context.ReservaDiaModels.Where(x => x.jornada == "03" && x.reserva_dia_dia == "Lunes").CountAsync();
+                        var conteo_jornada4 = await _context.ReservaDiaModels.Where(x => x.jornada == "04" && x.reserva_dia_dia == "Lunes").CountAsync();
+                        var conteo_jornada5 = await _context.ReservaDiaModels.Where(x => x.jornada == "05" && x.reserva_dia_dia == "Lunes").CountAsync();
+                        list_informes_dia.Add(new InformeDia
+                        {
+                            dia = dia.reserva_dia_dia,
+                            jornada1 = conteo_jornada1,
+                            jornada2 = conteo_jornada2,
+                            jornada3 = conteo_jornada3,
+                            jornada4 = conteo_jornada4,
+                            jornada5 = conteo_jornada5
+                        });
+                        continue;
                     }
-                    else if (jornada.ToLower() == Enums.jornada2)
+                    if (dia.reserva_dia_dia == "Martes" && !list_informes_dia.Any(x => x.dia == "Martes"))
                     {
-                        jornada2 += reservas_dia_contador;
+                        var conteo_jornada1 = await _context.ReservaDiaModels.Where(x => x.jornada == "01" && x.reserva_dia_dia == "Martes").CountAsync();
+                        var conteo_jornada2 = await _context.ReservaDiaModels.Where(x => x.jornada == "02" && x.reserva_dia_dia == "Martes").CountAsync();
+                        var conteo_jornada3 = await _context.ReservaDiaModels.Where(x => x.jornada == "03" && x.reserva_dia_dia == "Martes").CountAsync();
+                        var conteo_jornada4 = await _context.ReservaDiaModels.Where(x => x.jornada == "04" && x.reserva_dia_dia == "Martes").CountAsync();
+                        var conteo_jornada5 = await _context.ReservaDiaModels.Where(x => x.jornada == "05" && x.reserva_dia_dia == "Martes").CountAsync();
+                        list_informes_dia.Add(new InformeDia
+                        {
+                            dia = dia.reserva_dia_dia,
+                            jornada1 = conteo_jornada1,
+                            jornada2 = conteo_jornada2,
+                            jornada3 = conteo_jornada3,
+                            jornada4 = conteo_jornada4,
+                            jornada5 = conteo_jornada5
+                        });
+                        continue;
                     }
-                    else if (jornada.ToLower() == Enums.jornada3)
+                    if (dia.reserva_dia_dia == "Miércoles" && !list_informes_dia.Any(x => x.dia == "Miércoles"))
                     {
-                        jornada3 += reservas_dia_contador;
+                        var conteo_jornada1 = await _context.ReservaDiaModels.Where(x => x.jornada == "01" && x.reserva_dia_dia == "Miércoles").CountAsync();
+                        var conteo_jornada2 = await _context.ReservaDiaModels.Where(x => x.jornada == "02" && x.reserva_dia_dia == "Miércoles").CountAsync();
+                        var conteo_jornada3 = await _context.ReservaDiaModels.Where(x => x.jornada == "03" && x.reserva_dia_dia == "Miércoles").CountAsync();
+                        var conteo_jornada4 = await _context.ReservaDiaModels.Where(x => x.jornada == "04" && x.reserva_dia_dia == "Miércoles").CountAsync();
+                        var conteo_jornada5 = await _context.ReservaDiaModels.Where(x => x.jornada == "05" && x.reserva_dia_dia == "Miércoles").CountAsync();
+                        list_informes_dia.Add(new InformeDia
+                        {
+                            dia = dia.reserva_dia_dia,
+                            jornada1 = conteo_jornada1,
+                            jornada2 = conteo_jornada2,
+                            jornada3 = conteo_jornada3,
+                            jornada4 = conteo_jornada4,
+                            jornada5 = conteo_jornada5
+                        });
+                        continue;
                     }
-                    else if (jornada.ToLower() == Enums.jornada4)
+                    if (dia.reserva_dia_dia == "Jueves" && !list_informes_dia.Any(x => x.dia == "Jueves"))
                     {
-                        jornada4 += reservas_dia_contador;
+                        var conteo_jornada1 = await _context.ReservaDiaModels.Where(x => x.jornada == "01" && x.reserva_dia_dia == "Jueves").CountAsync();
+                        var conteo_jornada2 = await _context.ReservaDiaModels.Where(x => x.jornada == "02" && x.reserva_dia_dia == "Jueves").CountAsync();
+                        var conteo_jornada3 = await _context.ReservaDiaModels.Where(x => x.jornada == "03" && x.reserva_dia_dia == "Jueves").CountAsync();
+                        var conteo_jornada4 = await _context.ReservaDiaModels.Where(x => x.jornada == "04" && x.reserva_dia_dia == "Jueves").CountAsync();
+                        var conteo_jornada5 = await _context.ReservaDiaModels.Where(x => x.jornada == "05" && x.reserva_dia_dia == "Jueves").CountAsync();
+                        list_informes_dia.Add(new InformeDia
+                        {
+                            dia = dia.reserva_dia_dia,
+                            jornada1 = conteo_jornada1,
+                            jornada2 = conteo_jornada2,
+                            jornada3 = conteo_jornada3,
+                            jornada4 = conteo_jornada4,
+                            jornada5 = conteo_jornada5
+                        });
+                        continue;
                     }
-                    else if (jornada.ToLower() == Enums.jornada5)
+                    if (dia.reserva_dia_dia == "Viernes" && !list_informes_dia.Any(x => x.dia == "Viernes"))
                     {
-                        jornada5 += reservas_dia_contador;
+                        var conteo_jornada1 = await _context.ReservaDiaModels.Where(x => x.jornada == "01" && x.reserva_dia_dia == "Viernes").CountAsync();
+                        var conteo_jornada2 = await _context.ReservaDiaModels.Where(x => x.jornada == "02" && x.reserva_dia_dia == "Viernes").CountAsync();
+                        var conteo_jornada3 = await _context.ReservaDiaModels.Where(x => x.jornada == "03" && x.reserva_dia_dia == "Viernes").CountAsync();
+                        var conteo_jornada4 = await _context.ReservaDiaModels.Where(x => x.jornada == "04" && x.reserva_dia_dia == "Viernes").CountAsync();
+                        var conteo_jornada5 = await _context.ReservaDiaModels.Where(x => x.jornada == "05" && x.reserva_dia_dia == "Viernes").CountAsync();
+                        list_informes_dia.Add(new InformeDia
+                        {
+                            dia = dia.reserva_dia_dia,
+                            jornada1 = conteo_jornada1,
+                            jornada2 = conteo_jornada2,
+                            jornada3 = conteo_jornada3,
+                            jornada4 = conteo_jornada4,
+                            jornada5 = conteo_jornada5
+                        });
+                        continue;
                     }
-                });
-
-                contador_reservas_total += reservas_dia_contador;
+                    if (dia.reserva_dia_dia == "Sábado" && !list_informes_dia.Any(x => x.dia == "Sábado"))
+                    {
+                        var conteo_jornada1 = await _context.ReservaDiaModels.Where(x => x.jornada == "01" && x.reserva_dia_dia == "Sábado").CountAsync();
+                        var conteo_jornada2 = await _context.ReservaDiaModels.Where(x => x.jornada == "02" && x.reserva_dia_dia == "Sábado").CountAsync();
+                        var conteo_jornada3 = await _context.ReservaDiaModels.Where(x => x.jornada == "03" && x.reserva_dia_dia == "Sábado").CountAsync();
+                        var conteo_jornada4 = await _context.ReservaDiaModels.Where(x => x.jornada == "04" && x.reserva_dia_dia == "Sábado").CountAsync();
+                        var conteo_jornada5 = await _context.ReservaDiaModels.Where(x => x.jornada == "05" && x.reserva_dia_dia == "Sábado").CountAsync();
+                        list_informes_dia.Add(new InformeDia
+                        {
+                            dia = dia.reserva_dia_dia,
+                            jornada1 = conteo_jornada1,
+                            jornada2 = conteo_jornada2,
+                            jornada3 = conteo_jornada3,
+                            jornada4 = conteo_jornada4,
+                            jornada5 = conteo_jornada5
+                        });
+                        continue;
+                    }
+                    if (dia.reserva_dia_dia == "Domingo" && !list_informes_dia.Any(x => x.dia == "Domingo"))
+                    {
+                        var conteo_jornada1 = await _context.ReservaDiaModels.Where(x => x.jornada == "01" && x.reserva_dia_dia == "Domingo").CountAsync();
+                        var conteo_jornada2 = await _context.ReservaDiaModels.Where(x => x.jornada == "02" && x.reserva_dia_dia == "Domingo").CountAsync();
+                        var conteo_jornada3 = await _context.ReservaDiaModels.Where(x => x.jornada == "03" && x.reserva_dia_dia == "Domingo").CountAsync();
+                        var conteo_jornada4 = await _context.ReservaDiaModels.Where(x => x.jornada == "04" && x.reserva_dia_dia == "Domingo").CountAsync();
+                        var conteo_jornada5 = await _context.ReservaDiaModels.Where(x => x.jornada == "05" && x.reserva_dia_dia == "Domingo").CountAsync();
+                        list_informes_dia.Add(new InformeDia
+                        {
+                            dia = dia.reserva_dia_dia,
+                            jornada1 = conteo_jornada1,
+                            jornada2 = conteo_jornada2,
+                            jornada3 = conteo_jornada3,
+                            jornada4 = conteo_jornada4,
+                            jornada5 = conteo_jornada5
+                        });
+                        continue;
+                    }
+                }
             }
 
-
-            var informe = new InformeOcupacionSede()
+            var informe_ocupacion = new InformeOcupacionSede
             {
-                cantidad_tipoespacio = lsEspacios.Count(),
-                cantidad_reserva = contador_reservas_total,
-                jornada1 = jornada1,
-                jornada2 = jornada2,
-                jornada3 = jornada3,
-                jornada4 = jornada4,
-                jornada5 = jornada5
+                ocupacion_total = conteo_espacios,
+                Dias = list_informes_dia
             };
 
-            return informe;
+            
+            return informe_ocupacion;
         }
 
         public async Task<InformeUnidadesReservadas> GetUnidadesReservadas(long id_unidad_organizacional)
         {
-            int jornada1 = 0;
-            int jornada2 = 0;
-            int jornada3 = 0;
-            int jornada4 = 0;
-            int jornada5 = 0;
 
+            var list_informes_dia = new List<InformeDia>();
             var unidades_reservadas = await _context.ReservaModels.Where(x =>
                 x.id_unidad_organizacional == id_unidad_organizacional &&
                 x.estado_reserva.ToLower() == "activo"
@@ -655,53 +736,147 @@ namespace CESDE.DataAdapter.repositories
                 throw new Exception("No existen unidades reservadas");
             }
 
-            var contador_reservas_total = 0;
-
-            foreach (var item in unidades_reservadas)
+            foreach (var reserva in unidades_reservadas)
             {
-                //Obteniendo lista de las jornadas
-                var jornadas = await _context.ReservaDiaModels.Where(x => x.id_reserva == item.id_reserva)
-                    .Select(x => x.jornada).ToListAsync();
-
-                // Obteniendo el numero contador total de reservas_dia en base a id_reserva
-                var reservas_dia_contador = await _context.ReservaDiaModels.Where(x => x.id_reserva == item.id_reserva)
-                    .CountAsync();
-
-                jornadas.ForEach(jornada =>
+                var reserva_dia = await _context.ReservaDiaModels.Where(x => x.id_reserva == reserva.id_reserva).ToListAsync();
+                foreach (var dia in reserva_dia)
                 {
-                    if (jornada.ToLower() == Enums.jornada1)
+                    if (dia.reserva_dia_dia == "Lunes" && !list_informes_dia.Any(x => x.dia == "Lunes"))
                     {
-                        jornada1 += reservas_dia_contador;
+                        var conteo_jornada1 = await _context.ReservaDiaModels.Where(x => x.jornada == "01" && x.reserva_dia_dia == "Lunes").CountAsync();
+                        var conteo_jornada2 = await _context.ReservaDiaModels.Where(x => x.jornada == "02" && x.reserva_dia_dia == "Lunes").CountAsync();
+                        var conteo_jornada3 = await _context.ReservaDiaModels.Where(x => x.jornada == "03" && x.reserva_dia_dia == "Lunes").CountAsync();
+                        var conteo_jornada4 = await _context.ReservaDiaModels.Where(x => x.jornada == "04" && x.reserva_dia_dia == "Lunes").CountAsync();
+                        var conteo_jornada5 = await _context.ReservaDiaModels.Where(x => x.jornada == "05" && x.reserva_dia_dia == "Lunes").CountAsync();
+                        list_informes_dia.Add(new InformeDia
+                        {
+                            dia = dia.reserva_dia_dia,
+                            jornada1 = conteo_jornada1,
+                            jornada2 = conteo_jornada2,
+                            jornada3 = conteo_jornada3,
+                            jornada4 = conteo_jornada4,
+                            jornada5 = conteo_jornada5
+                        });
+                        continue;
                     }
-                    else if (jornada.ToLower() == Enums.jornada2)
+                    if (dia.reserva_dia_dia == "Martes" && !list_informes_dia.Any(x => x.dia == "Martes"))
                     {
-                        jornada2 += reservas_dia_contador;
+                        var conteo_jornada1 = await _context.ReservaDiaModels.Where(x => x.jornada == "01" && x.reserva_dia_dia == "Martes").CountAsync();
+                        var conteo_jornada2 = await _context.ReservaDiaModels.Where(x => x.jornada == "02" && x.reserva_dia_dia == "Martes").CountAsync();
+                        var conteo_jornada3 = await _context.ReservaDiaModels.Where(x => x.jornada == "03" && x.reserva_dia_dia == "Martes").CountAsync();
+                        var conteo_jornada4 = await _context.ReservaDiaModels.Where(x => x.jornada == "04" && x.reserva_dia_dia == "Martes").CountAsync();
+                        var conteo_jornada5 = await _context.ReservaDiaModels.Where(x => x.jornada == "05" && x.reserva_dia_dia == "Martes").CountAsync();
+                        list_informes_dia.Add(new InformeDia
+                        {
+                            dia = dia.reserva_dia_dia,
+                            jornada1 = conteo_jornada1,
+                            jornada2 = conteo_jornada2,
+                            jornada3 = conteo_jornada3,
+                            jornada4 = conteo_jornada4,
+                            jornada5 = conteo_jornada5
+                        });
+                        continue;
                     }
-                    else if (jornada.ToLower() == Enums.jornada3)
+                    if (dia.reserva_dia_dia == "Miércoles" && !list_informes_dia.Any(x => x.dia == "Miércoles"))
                     {
-                        jornada3 += reservas_dia_contador;
+                        var conteo_jornada1 = await _context.ReservaDiaModels.Where(x => x.jornada == "01" && x.reserva_dia_dia == "Miércoles").CountAsync();
+                        var conteo_jornada2 = await _context.ReservaDiaModels.Where(x => x.jornada == "02" && x.reserva_dia_dia == "Miércoles").CountAsync();
+                        var conteo_jornada3 = await _context.ReservaDiaModels.Where(x => x.jornada == "03" && x.reserva_dia_dia == "Miércoles").CountAsync();
+                        var conteo_jornada4 = await _context.ReservaDiaModels.Where(x => x.jornada == "04" && x.reserva_dia_dia == "Miércoles").CountAsync();
+                        var conteo_jornada5 = await _context.ReservaDiaModels.Where(x => x.jornada == "05" && x.reserva_dia_dia == "Miércoles").CountAsync();
+                        list_informes_dia.Add(new InformeDia
+                        {
+                            dia = dia.reserva_dia_dia,
+                            jornada1 = conteo_jornada1,
+                            jornada2 = conteo_jornada2,
+                            jornada3 = conteo_jornada3,
+                            jornada4 = conteo_jornada4,
+                            jornada5 = conteo_jornada5
+                        });
+                        continue;
                     }
-                    else if (jornada.ToLower() == Enums.jornada4)
+                    if (dia.reserva_dia_dia == "Jueves" && !list_informes_dia.Any(x => x.dia == "Jueves"))
                     {
-                        jornada4 += reservas_dia_contador;
+                        var conteo_jornada1 = await _context.ReservaDiaModels.Where(x => x.jornada == "01" && x.reserva_dia_dia == "Jueves").CountAsync();
+                        var conteo_jornada2 = await _context.ReservaDiaModels.Where(x => x.jornada == "02" && x.reserva_dia_dia == "Jueves").CountAsync();
+                        var conteo_jornada3 = await _context.ReservaDiaModels.Where(x => x.jornada == "03" && x.reserva_dia_dia == "Jueves").CountAsync();
+                        var conteo_jornada4 = await _context.ReservaDiaModels.Where(x => x.jornada == "04" && x.reserva_dia_dia == "Jueves").CountAsync();
+                        var conteo_jornada5 = await _context.ReservaDiaModels.Where(x => x.jornada == "05" && x.reserva_dia_dia == "Jueves").CountAsync();
+                        list_informes_dia.Add(new InformeDia
+                        {
+                            dia = dia.reserva_dia_dia,
+                            jornada1 = conteo_jornada1,
+                            jornada2 = conteo_jornada2,
+                            jornada3 = conteo_jornada3,
+                            jornada4 = conteo_jornada4,
+                            jornada5 = conteo_jornada5
+                        });
+                        continue;
                     }
-                    else if (jornada.ToLower() == Enums.jornada5)
+                    if (dia.reserva_dia_dia == "Viernes" && !list_informes_dia.Any(x => x.dia == "Viernes"))
                     {
-                        jornada5 += reservas_dia_contador;
+                        var conteo_jornada1 = await _context.ReservaDiaModels.Where(x => x.jornada == "01" && x.reserva_dia_dia == "Viernes").CountAsync();
+                        var conteo_jornada2 = await _context.ReservaDiaModels.Where(x => x.jornada == "02" && x.reserva_dia_dia == "Viernes").CountAsync();
+                        var conteo_jornada3 = await _context.ReservaDiaModels.Where(x => x.jornada == "03" && x.reserva_dia_dia == "Viernes").CountAsync();
+                        var conteo_jornada4 = await _context.ReservaDiaModels.Where(x => x.jornada == "04" && x.reserva_dia_dia == "Viernes").CountAsync();
+                        var conteo_jornada5 = await _context.ReservaDiaModels.Where(x => x.jornada == "05" && x.reserva_dia_dia == "Viernes").CountAsync();
+                        list_informes_dia.Add(new InformeDia
+                        {
+                            dia = dia.reserva_dia_dia,
+                            jornada1 = conteo_jornada1,
+                            jornada2 = conteo_jornada2,
+                            jornada3 = conteo_jornada3,
+                            jornada4 = conteo_jornada4,
+                            jornada5 = conteo_jornada5
+                        });
+                        continue;
                     }
-                });
-                contador_reservas_total += reservas_dia_contador;
+                    if (dia.reserva_dia_dia == "Sábado" && !list_informes_dia.Any(x => x.dia == "Sábado"))
+                    {
+                        var conteo_jornada1 = await _context.ReservaDiaModels.Where(x => x.jornada == "01" && x.reserva_dia_dia == "Sábado").CountAsync();
+                        var conteo_jornada2 = await _context.ReservaDiaModels.Where(x => x.jornada == "02" && x.reserva_dia_dia == "Sábado").CountAsync();
+                        var conteo_jornada3 = await _context.ReservaDiaModels.Where(x => x.jornada == "03" && x.reserva_dia_dia == "Sábado").CountAsync();
+                        var conteo_jornada4 = await _context.ReservaDiaModels.Where(x => x.jornada == "04" && x.reserva_dia_dia == "Sábado").CountAsync();
+                        var conteo_jornada5 = await _context.ReservaDiaModels.Where(x => x.jornada == "05" && x.reserva_dia_dia == "Sábado").CountAsync();
+                        list_informes_dia.Add(new InformeDia
+                        {
+                            dia = dia.reserva_dia_dia,
+                            jornada1 = conteo_jornada1,
+                            jornada2 = conteo_jornada2,
+                            jornada3 = conteo_jornada3,
+                            jornada4 = conteo_jornada4,
+                            jornada5 = conteo_jornada5
+                        });
+                        continue;
+                    }
+                    if (dia.reserva_dia_dia == "Domingo" && !list_informes_dia.Any(x => x.dia == "Domingo"))
+                    {
+                        var conteo_jornada1 = await _context.ReservaDiaModels.Where(x => x.jornada == "01" && x.reserva_dia_dia == "Domingo").CountAsync();
+                        var conteo_jornada2 = await _context.ReservaDiaModels.Where(x => x.jornada == "02" && x.reserva_dia_dia == "Domingo").CountAsync();
+                        var conteo_jornada3 = await _context.ReservaDiaModels.Where(x => x.jornada == "03" && x.reserva_dia_dia == "Domingo").CountAsync();
+                        var conteo_jornada4 = await _context.ReservaDiaModels.Where(x => x.jornada == "04" && x.reserva_dia_dia == "Domingo").CountAsync();
+                        var conteo_jornada5 = await _context.ReservaDiaModels.Where(x => x.jornada == "05" && x.reserva_dia_dia == "Domingo").CountAsync();
+                        list_informes_dia.Add(new InformeDia
+                        {
+                            dia = dia.reserva_dia_dia,
+                            jornada1 = conteo_jornada1,
+                            jornada2 = conteo_jornada2,
+                            jornada3 = conteo_jornada3,
+                            jornada4 = conteo_jornada4,
+                            jornada5 = conteo_jornada5
+                        });
+                        continue;
+                    }
+                }
             }
-            var informe = new InformeUnidadesReservadas()
+
+            var informe = new InformeUnidadesReservadas
             {
                 nombre_unidad_organizacional = unidades_reservadas.First().nombre_unidad,
-                cantidad_reserva = contador_reservas_total,
-                jornada1 = jornada1,
-                jornada2 = jornada2,
-                jornada3 = jornada3,
-                jornada4 = jornada4,
-                jornada5 = jornada5
+                Dias = list_informes_dia
             };
+
+
             return informe;
         }
 
@@ -784,84 +959,40 @@ namespace CESDE.DataAdapter.repositories
             List<InformeOcupacionTodasSede> lsInforme = new List<InformeOcupacionTodasSede>();
 
             //TODAS LAS SEDES
-            var lsSedes = await _context.UnidadOrganizacionalModels.Include(x => x.ForKeyTipoEspacioUnidad)
-                  .Where(x => x.id_tipo_espacio == Enums.Id_Sede_TipoEspacio)
-                  .Select(x => new
-                  {
-                      id_unidad = x.id_unidad_organizacional,
-                      nombre_sede = x.nombre_unidad_organizacional
-                  }).ToListAsync();
+            var lsSedes = await _context.UnidadOrganizacionalModels
+                  .Where(x => x.id_tipo_espacio == 2)
+                  .ToListAsync();
+
+
+            var list_informes_dia = new List<InformeDia>();
 
             //RECORRO CADA SEDE
             foreach (var sede in lsSedes)
             {
-                //RESET DE VARIABLES
-                lsReservasDias = 0;
-                //informe = null;
-                int jornada1 = 0;
-                int jornada2 = 0;
-                int jornada3 = 0;
-                int jornada4 = 0;
-                int jornada5 = 0;
+                var reservas = await _context.ReservaModels.Where(x => x.estado_reserva == "disponible" && x.id_unidad_organizacional == sede.id_unidad_organizacional)
+                  .Select(x => x.id_reserva).ToListAsync();
 
-                //BUSCO TODAS LOS ESPACIOS DE ESA SEDE
-                lsEspacios = await _context.UnidadOrganizacionalModels.Where(x => x.id_unidad_organizacional_padre == sede.id_unidad &&
-                      x.estado_unidad_organizacional == "activo").Select(x => x.id_unidad_organizacional).ToListAsync();
+                var reserva_dia = await _context.ReservaDiaModels.Where(x => reservas.Contains(x.id_reserva)).ToListAsync();
 
-                //BUSCO TODAS LAS RESERVAS DE ESOS ESPACIOS
-                var lsReservas = await _context.ReservaModels.Where(x => x.estado_reserva.ToLower() == "activo" && lsEspacios.Contains(x.id_unidad_organizacional))
-                      .Select(x => x.id_reserva).ToListAsync();
-
-                //RECORRO CADA RESERVA
-                foreach (var item in lsReservas)
-                {
-                    var jornadas = await _context.ReservaDiaModels.Where(x => x.id_reserva == item)
-                    .Select(x => x.jornada).ToListAsync();
-
-                    // Obteniendo el numero contador total de reservas_dia en base a id_reserva
-                    var reservas_dia_contador = await _context.ReservaDiaModels.Where(x => x.id_reserva == item)
-                    .CountAsync();
-
-                    jornadas.ForEach(jornada =>
+               foreach(var dia in reserva_dia)
+               {
+                    list_informes_dia.Add(new InformeDia
                     {
-                        if (jornada.ToLower() == Enums.jornada1)
-                        {
-                            jornada1 += reservas_dia_contador;
-                        }
-                        else if (jornada.ToLower() == Enums.jornada2)
-                        {
-                            jornada2 += reservas_dia_contador;
-                        }
-                        else if (jornada.ToLower() == Enums.jornada3)
-                        {
-                            jornada3 += reservas_dia_contador;
-                        }
-                        else if (jornada.ToLower() == Enums.jornada4)
-                        {
-                            jornada4 += reservas_dia_contador;
-                        }
-                        else if (jornada.ToLower() == Enums.jornada5)
-                        {
-                            jornada5 += reservas_dia_contador;
-                        }
-                        lsReservasDias += reservas_dia_contador;
+                        dia = dia.reserva_dia_dia,
+                        jornada1 = 0,
+                        jornada2 = 0,
+                        jornada3 = 0,
+                        jornada4 = 0,
+                        jornada5 = 0
                     });
-
+                    lsInforme.Add(new InformeOcupacionTodasSede
+                    {
+                        nombre_sede = sede.nombre_unidad_organizacional,
+                        ocupacion_total = 0,
+                        Dias = list_informes_dia
+                    });
                 }
 
-                informe = new InformeOcupacionTodasSede()
-                {
-                    nombre_sede = sede.nombre_sede,
-                    cantidad_tipoespacio = lsEspacios.Count(),
-                    cantidad_reserva = lsReservasDias,
-                    jornada1 = jornada1,
-                    jornada2 = jornada2,
-                    jornada3 = jornada3,
-                    jornada4 = jornada4,
-                    jornada5 = jornada5
-                };
-
-                lsInforme.Add(informe);
             }
 
             return lsInforme;

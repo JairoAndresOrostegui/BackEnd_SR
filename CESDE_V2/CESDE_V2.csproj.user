@@ -7,4 +7,7 @@
     <ActiveDebugProfile>IIS Express</ActiveDebugProfile>
     <NameOfLastUsedPublishProfile>C:\Users\karlo\Downloads\BackEnd-main Nuevo %281%29\BackEnd-main Nuevo\CESDE_V2\Properties\PublishProfiles\FolderProfile27.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
+  </PropertyGroup>
 </Project>

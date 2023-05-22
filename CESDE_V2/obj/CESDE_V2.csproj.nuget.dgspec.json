@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\zirox\\OneDrive\\Escritorio\\work\\BackEnd_SR\\CESDE_V2\\CESDE_V2.csproj": {}
+    "C:\\Users\\jazmi\\source\\repos\\BackEnd_SR\\CESDE_V2\\CESDE_V2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\zirox\\OneDrive\\Escritorio\\work\\BackEnd_SR\\CESDE.Application\\CESDE.Application.csproj": {
+    "C:\\Users\\jazmi\\source\\repos\\BackEnd_SR\\CESDE.Application\\CESDE.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zirox\\OneDrive\\Escritorio\\work\\BackEnd_SR\\CESDE.Application\\CESDE.Application.csproj",
+        "projectUniqueName": "C:\\Users\\jazmi\\source\\repos\\BackEnd_SR\\CESDE.Application\\CESDE.Application.csproj",
         "projectName": "CESDE.Application",
-        "projectPath": "C:\\Users\\zirox\\OneDrive\\Escritorio\\work\\BackEnd_SR\\CESDE.Application\\CESDE.Application.csproj",
-        "packagesPath": "C:\\Users\\zirox\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zirox\\OneDrive\\Escritorio\\work\\BackEnd_SR\\CESDE.Application\\obj\\",
+        "projectPath": "C:\\Users\\jazmi\\source\\repos\\BackEnd_SR\\CESDE.Application\\CESDE.Application.csproj",
+        "packagesPath": "C:\\Users\\jazmi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jazmi\\source\\repos\\BackEnd_SR\\CESDE.Application\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\zirox\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\jazmi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -32,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\zirox\\OneDrive\\Escritorio\\work\\BackEnd_SR\\CESDE.Domain\\CESDE.Domain.csproj": {
-                "projectPath": "C:\\Users\\zirox\\OneDrive\\Escritorio\\work\\BackEnd_SR\\CESDE.Domain\\CESDE.Domain.csproj"
+              "C:\\Users\\jazmi\\source\\repos\\BackEnd_SR\\CESDE.Domain\\CESDE.Domain.csproj": {
+                "projectPath": "C:\\Users\\jazmi\\source\\repos\\BackEnd_SR\\CESDE.Domain\\CESDE.Domain.csproj"
               }
             }
           }
@@ -73,25 +69,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.105\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\zirox\\OneDrive\\Escritorio\\work\\BackEnd_SR\\CESDE.DataAdapter\\CESDE.DataAdapter.csproj": {
+    "C:\\Users\\jazmi\\source\\repos\\BackEnd_SR\\CESDE.DataAdapter\\CESDE.DataAdapter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zirox\\OneDrive\\Escritorio\\work\\BackEnd_SR\\CESDE.DataAdapter\\CESDE.DataAdapter.csproj",
+        "projectUniqueName": "C:\\Users\\jazmi\\source\\repos\\BackEnd_SR\\CESDE.DataAdapter\\CESDE.DataAdapter.csproj",
         "projectName": "CESDE.DataAdapter",
-        "projectPath": "C:\\Users\\zirox\\OneDrive\\Escritorio\\work\\BackEnd_SR\\CESDE.DataAdapter\\CESDE.DataAdapter.csproj",
-        "packagesPath": "C:\\Users\\zirox\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zirox\\OneDrive\\Escritorio\\work\\BackEnd_SR\\CESDE.DataAdapter\\obj\\",
+        "projectPath": "C:\\Users\\jazmi\\source\\repos\\BackEnd_SR\\CESDE.DataAdapter\\CESDE.DataAdapter.csproj",
+        "packagesPath": "C:\\Users\\jazmi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jazmi\\source\\repos\\BackEnd_SR\\CESDE.DataAdapter\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\zirox\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\jazmi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -105,8 +97,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\zirox\\OneDrive\\Escritorio\\work\\BackEnd_SR\\CESDE.Application\\CESDE.Application.csproj": {
-                "projectPath": "C:\\Users\\zirox\\OneDrive\\Escritorio\\work\\BackEnd_SR\\CESDE.Application\\CESDE.Application.csproj"
+              "C:\\Users\\jazmi\\source\\repos\\BackEnd_SR\\CESDE.Application\\CESDE.Application.csproj": {
+                "projectPath": "C:\\Users\\jazmi\\source\\repos\\BackEnd_SR\\CESDE.Application\\CESDE.Application.csproj"
               }
             }
           }
@@ -156,25 +148,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.105\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\zirox\\OneDrive\\Escritorio\\work\\BackEnd_SR\\CESDE.Domain\\CESDE.Domain.csproj": {
+    "C:\\Users\\jazmi\\source\\repos\\BackEnd_SR\\CESDE.Domain\\CESDE.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zirox\\OneDrive\\Escritorio\\work\\BackEnd_SR\\CESDE.Domain\\CESDE.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\jazmi\\source\\repos\\BackEnd_SR\\CESDE.Domain\\CESDE.Domain.csproj",
         "projectName": "CESDE.Domain",
-        "projectPath": "C:\\Users\\zirox\\OneDrive\\Escritorio\\work\\BackEnd_SR\\CESDE.Domain\\CESDE.Domain.csproj",
-        "packagesPath": "C:\\Users\\zirox\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zirox\\OneDrive\\Escritorio\\work\\BackEnd_SR\\CESDE.Domain\\obj\\",
+        "projectPath": "C:\\Users\\jazmi\\source\\repos\\BackEnd_SR\\CESDE.Domain\\CESDE.Domain.csproj",
+        "packagesPath": "C:\\Users\\jazmi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jazmi\\source\\repos\\BackEnd_SR\\CESDE.Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\zirox\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\jazmi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -221,25 +209,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.105\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\zirox\\OneDrive\\Escritorio\\work\\BackEnd_SR\\CESDE_V2\\CESDE_V2.csproj": {
+    "C:\\Users\\jazmi\\source\\repos\\BackEnd_SR\\CESDE_V2\\CESDE_V2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zirox\\OneDrive\\Escritorio\\work\\BackEnd_SR\\CESDE_V2\\CESDE_V2.csproj",
+        "projectUniqueName": "C:\\Users\\jazmi\\source\\repos\\BackEnd_SR\\CESDE_V2\\CESDE_V2.csproj",
         "projectName": "CESDE_V2",
-        "projectPath": "C:\\Users\\zirox\\OneDrive\\Escritorio\\work\\BackEnd_SR\\CESDE_V2\\CESDE_V2.csproj",
-        "packagesPath": "C:\\Users\\zirox\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zirox\\OneDrive\\Escritorio\\work\\BackEnd_SR\\CESDE_V2\\obj\\",
+        "projectPath": "C:\\Users\\jazmi\\source\\repos\\BackEnd_SR\\CESDE_V2\\CESDE_V2.csproj",
+        "packagesPath": "C:\\Users\\jazmi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jazmi\\source\\repos\\BackEnd_SR\\CESDE_V2\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\zirox\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\jazmi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -247,20 +231,21 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\zirox\\OneDrive\\Escritorio\\work\\BackEnd_SR\\CESDE.Application\\CESDE.Application.csproj": {
-                "projectPath": "C:\\Users\\zirox\\OneDrive\\Escritorio\\work\\BackEnd_SR\\CESDE.Application\\CESDE.Application.csproj"
+              "C:\\Users\\jazmi\\source\\repos\\BackEnd_SR\\CESDE.Application\\CESDE.Application.csproj": {
+                "projectPath": "C:\\Users\\jazmi\\source\\repos\\BackEnd_SR\\CESDE.Application\\CESDE.Application.csproj"
               },
-              "C:\\Users\\zirox\\OneDrive\\Escritorio\\work\\BackEnd_SR\\CESDE.DataAdapter\\CESDE.DataAdapter.csproj": {
-                "projectPath": "C:\\Users\\zirox\\OneDrive\\Escritorio\\work\\BackEnd_SR\\CESDE.DataAdapter\\CESDE.DataAdapter.csproj"
+              "C:\\Users\\jazmi\\source\\repos\\BackEnd_SR\\CESDE.DataAdapter\\CESDE.DataAdapter.csproj": {
+                "projectPath": "C:\\Users\\jazmi\\source\\repos\\BackEnd_SR\\CESDE.DataAdapter\\CESDE.DataAdapter.csproj"
               },
-              "C:\\Users\\zirox\\OneDrive\\Escritorio\\work\\BackEnd_SR\\CESDE.Domain\\CESDE.Domain.csproj": {
-                "projectPath": "C:\\Users\\zirox\\OneDrive\\Escritorio\\work\\BackEnd_SR\\CESDE.Domain\\CESDE.Domain.csproj"
+              "C:\\Users\\jazmi\\source\\repos\\BackEnd_SR\\CESDE.Domain\\CESDE.Domain.csproj": {
+                "projectPath": "C:\\Users\\jazmi\\source\\repos\\BackEnd_SR\\CESDE.Domain\\CESDE.Domain.csproj"
               }
             }
           }
@@ -303,7 +288,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.105\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
