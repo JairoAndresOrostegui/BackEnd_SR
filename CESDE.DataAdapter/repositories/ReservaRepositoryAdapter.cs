@@ -1140,27 +1140,17 @@ namespace CESDE.DataAdapter.repositories
             //RECORRO CADA SEDE
             foreach (var sede in lsSedes)
             {
-                var reservas = await _context.ReservaModels.Where(x => x.estado_reserva == "activo" && x.id_unidad_organizacional == sede.id_unidad_organizacional)
+                var reservas = await _context.ReservaModels.Where(x => x.estado_reserva == "disponible" && x.id_unidad_organizacional == sede.id_unidad_organizacional)
                   .Select(x => x.id_reserva).ToListAsync();
 
                 var reserva_dia = await _context.ReservaDiaModels.Where(x => reservas.Contains(x.id_reserva)).ToListAsync();
 
                foreach(var dia in reserva_dia)
                {
-                    list_informes_dia.Add(new InformeDia
-                    {
-                        dia = dia.reserva_dia_dia,
-                        jornada1 = 0,
-                        jornada2 = 0,
-                        jornada3 = 0,
-                        jornada4 = 0,
-                        jornada5 = 0
-                    });
                     lsInforme.Add(new InformeOcupacionTodasSede
                     {
                         nombre_sede = sede.nombre_unidad_organizacional,
                         ocupacion_total = 0,
-                        Dias = list_informes_dia
                     });
                 }
 
