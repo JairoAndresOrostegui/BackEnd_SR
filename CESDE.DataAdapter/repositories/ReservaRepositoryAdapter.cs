@@ -493,7 +493,7 @@ namespace CESDE.DataAdapter.repositories
             var nombre_espacio = await _context.TipoEspacioModels.Where(x => x.id_tipo_espacio == id_tipo_espacio)
                 .Select(x => x.nombre_tipo_espacio).FirstAsync();
 
-            var reservas = await _context.ReservaModels.Where(x => x.estado_reserva.ToLower() == "disponible" && espacios.Contains(x.id_unidad_organizacional))
+            var reservas = await _context.ReservaModels.Where(x => x.estado_reserva.ToLower() == "activo" && espacios.Contains(x.id_unidad_organizacional))
                   .Select(x => x.id_reserva).ToListAsync();
 
             foreach (var reserva in reservas)
@@ -973,7 +973,7 @@ namespace CESDE.DataAdapter.repositories
                 throw new Exception("No hay registros disponibles vinculados a id_sede");
             }
 
-            var reservas = await _context.ReservaModels.Where(x => x.estado_reserva.ToLower() == "disponible" && lsEspacios.Contains(x.id_unidad_organizacional) && x.codigo_programa.ToLower() == codigo.ToLower())
+            var reservas = await _context.ReservaModels.Where(x => x.estado_reserva.ToLower() == "activo" && lsEspacios.Contains(x.id_unidad_organizacional) && x.codigo_programa.ToLower() == codigo.ToLower())
                   .Select(x => x.id_reserva).ToListAsync();
 
             foreach (var reserva in reservas)
@@ -1140,7 +1140,7 @@ namespace CESDE.DataAdapter.repositories
             //RECORRO CADA SEDE
             foreach (var sede in lsSedes)
             {
-                var reservas = await _context.ReservaModels.Where(x => x.estado_reserva == "disponible" && x.id_unidad_organizacional == sede.id_unidad_organizacional)
+                var reservas = await _context.ReservaModels.Where(x => x.estado_reserva == "activo" && x.id_unidad_organizacional == sede.id_unidad_organizacional)
                   .Select(x => x.id_reserva).ToListAsync();
 
                 var reserva_dia = await _context.ReservaDiaModels.Where(x => reservas.Contains(x.id_reserva)).ToListAsync();
