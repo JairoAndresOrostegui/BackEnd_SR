@@ -647,7 +647,7 @@ namespace CESDE.DataAdapter.repositories
         {
             var list_informes_dia = new List<InformeDia>();
 
-            var nombre_sede = await _context.UnidadOrganizacionalModels.Where(x => x.id_unidad_organizacional_padre == id_unidad_organizacional_padre &&
+            var nombre_sede = await _context.UnidadOrganizacionalModels.Include(f => f.ForKeyTipoEspacioUnidad).Where(x => x.id_unidad_organizacional_padre == id_unidad_organizacional_padre &&
                   x.estado_unidad_organizacional == "activo").Select(x => x.nombre_unidad_organizacional).ToListAsync();
 
             var conteo_espacios = await _context.UnidadOrganizacionalModels.Where(x => x.id_unidad_organizacional_padre == id_unidad_organizacional_padre &&
@@ -800,7 +800,7 @@ namespace CESDE.DataAdapter.repositories
 
             var informe_ocupacion = new InformeOcupacionSede
             {
-                nombre_sede = nombre_sede.First(),
+  
                 ocupacion_total = conteo_espacios,
                 Dias = list_informes_dia
             };
@@ -822,9 +822,8 @@ namespace CESDE.DataAdapter.repositories
                 nombre_unidad = x.ForKeyUnidadOrg_Reserva.nombre_unidad_organizacional
             }).ToListAsync();
 
-            var cantidad_espacios = await _context.UnidadOrganizacionalModels.Where(x =>
-                x.estado_unidad_organizacional.ToLower() == "activo"
-            ).Select(x => x.id_unidad_organizacional_padre).CountAsync();
+            var cantidad_espacios = await _context.UnidadOrganizacionalModels.Where(x => x.estado_unidad_organizacional == "activo" && x.id_unidad_organizacional == id_unidad_organizacional)
+                .Select(x => x.id_unidad_organizacional_padre).CountAsync();
 
             var cantidad_reservadas = await _context.ReservaModels.Where(x =>
                 x.id_unidad_organizacional == id_unidad_organizacional &&
@@ -1139,25 +1138,37 @@ namespace CESDE.DataAdapter.repositories
             return informe;
         }
 
-        public async Task<List<InformeOcupacionSede>> GetContarOcupacionTodosEspacios()
+        public async Task<List<InformeOcupacionTodasSede>> GetContarOcupacionTodosEspacios()
         {
-            var lista_informes_ocupacion = new List<InformeOcupacionSede>();
+            var lista_informes_ocupacion = new List<InformeOcupacionTodasSede>();
 
             var unidades_orgs = await _context.UnidadOrganizacionalModels.Include(x => x.ForKeyTipoEspacioUnidad)
-                    //.Where(x => x.id_tipo_espacio == Enums.Id_Sede_TipoEspacio)
+                    .Where(x => x.id_tipo_espacio == Enums.Id_Sede_TipoEspacio)
                     .Select(x => new
                      {
                         id_unidad = x.id_unidad_organizacional,
-                        nombre_sede = x.id_unidad_organizacional_padre
+                        nombre_sede = x.nombre_unidad_organizacional
                       }).ToListAsync();
 
             foreach (var uni in unidades_orgs)
             {
-                var informe = await this.GetContarOcupacionAulas(uni.id_unidad);
+                var informe = await this.GetUnidadesReservadas(uni.id_unidad);
 
-                if (informe.nombre_sede != null)
+                if (informe.nombre_unidad_organizacional != null)
                 {
-                    lista_informes_ocupacion.Add(informe);
+                    if (informe.Dias.Count != 0)
+                    {
+                        var conteo_espacios = await _context.UnidadOrganizacionalModels.Where(x => x.id_unidad_organizacional == uni.id_unidad &&
+                            x.estado_unidad_organizacional == "activo").Select(x => x.id_unidad_organizacional_padre).CountAsync();
+
+                        var informeTODO = new InformeOcupacionTodasSede
+                        {
+                            nombre_sede = uni.nombre_sede,
+                            ocupacion_total = conteo_espacios,
+                            informes = informe
+                        };
+                        lista_informes_ocupacion.Add(informeTODO);
+                    }
                 }
             } 
 

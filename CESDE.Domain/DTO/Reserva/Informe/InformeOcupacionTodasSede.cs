@@ -7,7 +7,7 @@ namespace CESDE.Domain.DTO.Reserva.Informe
         public string nombre_sede { get; set; }
 
         public int ocupacion_total { get; set; }
-        
-        public List<InformeDia> Dias { get; set; }
+
+        public InformeUnidadesReservadas informes { get; set; }
     }
 }
