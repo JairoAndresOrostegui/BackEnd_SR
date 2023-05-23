@@ -1129,7 +1129,7 @@ namespace CESDE.DataAdapter.repositories
 
             foreach(var uni in unidades_orgs)
             {
-                var informe = await this.GetContarOcupacionAulas(5);
+                var informe = await this.GetContarOcupacionAulas(uni);
                 lista_informes_ocupacion.Add(informe);
             }
 
