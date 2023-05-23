@@ -42,7 +42,7 @@ namespace CESDE.Application.UseCases
 
         public async Task<InformeOcupacionSede> GetContarOcupacionAulas(long id_sede) => await _reservaRepository.GetContarOcupacionAulas(id_sede);
 
-        public async Task<List<InformeOcupacionSede>> GetContarOcupacionTodosEspacios() =>
+        public async Task<List<InformeUnidadesReservadas>> GetContarOcupacionTodosEspacios() =>
               await _reservaRepository.GetContarOcupacionTodosEspacios();
 
         public async Task<InformeUnidadesReservadas> GetUnidadesReservadas(long id_unidad_organizacional) =>
