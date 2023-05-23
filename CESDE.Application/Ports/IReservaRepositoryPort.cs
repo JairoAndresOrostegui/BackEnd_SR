@@ -34,7 +34,7 @@ namespace CESDE.Application.Ports
 
         Task<InformeOcupacionSede> GetContarOcupacionAulas(long id_sede);
 
-        Task<List<InformeOcupacionTodasSede>> GetContarOcupacionTodosEspacios();
+        Task<List<InformeOcupacionSede>> GetContarOcupacionTodosEspacios();
 
         Task<InformeUnidadesReservadas> GetUnidadesReservadas(long id_unidad_organizacional);
 

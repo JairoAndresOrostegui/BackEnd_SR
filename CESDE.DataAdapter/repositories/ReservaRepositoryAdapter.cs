@@ -1120,46 +1120,23 @@ namespace CESDE.DataAdapter.repositories
             return informe;
         }
 
-        public async Task<List<InformeOcupacionTodasSede>> GetContarOcupacionTodosEspacios()
+        public async Task<List<InformeOcupacionSede>> GetContarOcupacionTodosEspacios()
         {
-            List<long> lsEspacios = new List<long>();
-            int lsReservasDias = 0;
-            List<long> lsCantidadReservasDias = new List<long>();
+            var lista_informes_ocupacion = new List<InformeOcupacionSede>();
 
-            InformeOcupacionTodasSede informe = new InformeOcupacionTodasSede();
-            List<InformeOcupacionTodasSede> lsInforme = new List<InformeOcupacionTodasSede>();
+            var unidades_orgs = await _context.UnidadOrganizacionalModels
+                .Select(x => x.id_unidad_organizacional_padre).ToListAsync();
 
-            //TODAS LAS SEDES
-            var lsSedes = await _context.UnidadOrganizacionalModels
-                  .Where(x => x.id_tipo_espacio == 2)
-                  .ToListAsync();
-
-
-            var list_informes_dia = new List<InformeDia>();
-
-            //RECORRO CADA SEDE
-            foreach (var sede in lsSedes)
+            foreach(var uni in unidades_orgs)
             {
-                var reservas = await _context.ReservaModels.Where(x => x.estado_reserva == "disponible" && x.id_unidad_organizacional == sede.id_unidad_organizacional)
-                  .Select(x => x.id_reserva).ToListAsync();
-
-                var reserva_dia = await _context.ReservaDiaModels.Where(x => reservas.Contains(x.id_reserva)).ToListAsync();
-
-               foreach(var dia in reserva_dia)
-               {
-                    lsInforme.Add(new InformeOcupacionTodasSede
-                    {
-                        nombre_sede = sede.nombre_unidad_organizacional,
-                        ocupacion_total = 0,
-                    });
-                }
-
+                var informe = await this.GetContarOcupacionAulas(5);
+                lista_informes_ocupacion.Add(informe);
             }
 
-            return lsInforme;
+            return lista_informes_ocupacion;
         }
 
-        //public async Task<InformeOcupacionTipoEspacio> GetContarOcupacionPorTipoEspacio(long id_sede)
+        //public async Task<Informe|OcupacionTipoEspacio> GetContarOcupacionPorTipoEspacio(long id_sede)
         //{
         //      List<long> lsEspacios = new List<long>();
         //      int lsReservasDias = 0;
