@@ -388,7 +388,7 @@ namespace CESDE.DataAdapter.repositories
                 .Select(x => new ReporteHorario
                 {
                     codigo_programa = obj.codigo_programa,
-                    nombre_programa = obj.nombre_grupo,
+                    nombre_programa = obj.nombre_programa,
                     nombre_grupo = obj.nombre_grupo,
                     fecha_inicio_reserva = obj.fecha_inicio_reserva,
                     reservaDias = new ReporteReservaDia
