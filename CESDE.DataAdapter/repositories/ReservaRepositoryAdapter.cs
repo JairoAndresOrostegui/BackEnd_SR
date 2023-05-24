@@ -486,7 +486,7 @@ namespace CESDE.DataAdapter.repositories
         public async Task<List<InformeNombreEspacio>> GetContarNombreEspacio(long id_sede)
         {
             var lista_informes_ocupacion = new List<InformeNombreEspacio>();
-
+            
             var unidades_orgs = await _context.UnidadOrganizacionalModels.Include(x => x.ForKeyTipoEspacioUnidad)
                     .Where(x => x.id_unidad_organizacional_padre == id_sede)
                     .Select(x => new
@@ -495,29 +495,23 @@ namespace CESDE.DataAdapter.repositories
                         id_espacio = x.id_tipo_espacio,
                         id_unidad = x.id_unidad_organizacional,
                         id_sede = x.id_unidad_organizacional_padre,
-                        nombre_sede = x.nombre_unidad_organizacional
+                        nombre_sede = x.ForKeyTipoEspacioUnidad.nombre_tipo_espacio
                     }).ToListAsync();
 
             foreach (var uni in unidades_orgs)
             {
-                var informe = await this.GetUnidadesReservadas(uni.id_unidad);
+                var informe = await InformesHelper.ObtenerDiasInforme(uni.id_unidad, _context);
 
-                if (informe.nombre_unidad_organizacional != null)
+                var conteo_espacios = await _context.UnidadOrganizacionalModels.Where(x => x.id_unidad_organizacional_padre == uni.id_sede &&
+                                    x.estado_unidad_organizacional == "activo").CountAsync();
+
+                var informeTODO = new InformeNombreEspacio
                 {
-                    if (informe.Dias.Count != 0)
-                    {
-                        var conteo_espacios = await _context.UnidadOrganizacionalModels.Where(x => x.id_unidad_organizacional_padre == uni.id_sede &&
-                                    x.estado_unidad_organizacional == "activo" && x.id_tipo_espacio == uni.id_espacio).CountAsync();
-
-                        var informeTODO = new InformeNombreEspacio
-                        {
-                            nombre_espacio = uni.nombre_espacio,
-                            cantidad_tipoespacio = conteo_espacios,
-                            informes = informe
-                        };
-                        lista_informes_ocupacion.Add(informeTODO);
-                    }
-                }
+                    nombre_espacio = uni.nombre_sede,
+                    cantidad_tipoespacio = conteo_espacios,
+                    informes = informe
+                };
+                lista_informes_ocupacion.Add(informeTODO);
             }
 
             return lista_informes_ocupacion;
@@ -854,7 +848,7 @@ namespace CESDE.DataAdapter.repositories
 
             var informe = new InformeUnidadesReservadas
             {
-                nombre_unidad_organizacional = unidades_reservadas.First().nombre_unidad,
+                //nombre_unidad_organizacional = unidades_reservadas.First().nombre_unidad,
                 Dias = list_informes_dia
             };
 
@@ -1025,7 +1019,7 @@ namespace CESDE.DataAdapter.repositories
             var lista_informes_ocupacion = new List<InformeOcupacionTodasSede>();
 
             var unidades_orgs = await _context.UnidadOrganizacionalModels.Include(x => x.ForKeyTipoEspacioUnidad)
-                    //.Where(x => x.id_tipo_espacio == Enums.Id_Sede_TipoEspacio)
+                    .Where(x => x.id_tipo_espacio == Enums.Id_Sede_TipoEspacio)
                     .Select(x => new
                      {
                         id_unidad = x.id_unidad_organizacional,
@@ -1035,24 +1029,18 @@ namespace CESDE.DataAdapter.repositories
 
             foreach (var uni in unidades_orgs)
             {
-                var informe = await this.GetUnidadesReservadas(uni.id_unidad);
+                var informe = await InformesHelper.ObtenerDiasInforme(uni.id_unidad, _context);
 
-                if (informe.nombre_unidad_organizacional != null)
-                {
-                    if (informe.Dias.Count != 0)
-                    {
-                        var conteo_espacios = await _context.UnidadOrganizacionalModels.Where(x => x.id_unidad_organizacional_padre == uni.id_sede &&
+                var conteo_espacios = await _context.UnidadOrganizacionalModels.Where(x => x.id_unidad_organizacional_padre == uni.id_sede &&
                                     x.estado_unidad_organizacional == "activo").CountAsync();
 
-                        var informeTODO = new InformeOcupacionTodasSede
-                        {
-                            //nombre_sede = uni.nombre_sede,
-                            ocupacion_total = conteo_espacios,
-                            informes = informe
-                        };
-                        lista_informes_ocupacion.Add(informeTODO);
-                    }
-                }
+                var informeTODO = new InformeOcupacionTodasSede
+                {
+                    nombre_sede = uni.nombre_sede,
+                    ocupacion_total = conteo_espacios,
+                    informes = informe
+                };
+                lista_informes_ocupacion.Add(informeTODO);
             } 
 
             return lista_informes_ocupacion;
