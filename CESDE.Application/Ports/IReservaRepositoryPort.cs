@@ -42,6 +42,6 @@ namespace CESDE.Application.Ports
 
         Task<List<ReservaDTO>> GetfiltrarUsuariosPorRol(long nivel_rol, string area_rol);
 
-        Task<InformeNombreEspacio> GetContarNombreEspacio(long id_sede, long id_tipo_espacio);
+        Task<List<InformeNombreEspacio>> GetContarNombreEspacio(long id_sede);
     }
 }

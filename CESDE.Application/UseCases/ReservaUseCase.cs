@@ -54,7 +54,7 @@ namespace CESDE.Application.UseCases
         public async Task<List<ReservaDTO>> GetfiltrarUsuariosPorRol(long nivel_rol, string area_rol) =>
             await _reservaRepository.GetfiltrarUsuariosPorRol(nivel_rol, area_rol);
 
-        public async Task<InformeNombreEspacio> GetContarNombreEspacio(long id_sede, long id_tipo_espacio) =>
-            await _reservaRepository.GetContarNombreEspacio(id_sede, id_tipo_espacio);
+        public async Task<List<InformeNombreEspacio>> GetContarNombreEspacio(long id_sede) =>
+            await _reservaRepository.GetContarNombreEspacio(id_sede);
     }
 }

@@ -231,11 +231,11 @@ namespace CESDE_API.Controllers
         }
 
         [HttpGet("informe-nombre-espacio")]
-        public async Task<IActionResult> GetContarNombreEspacio(long id_sede, long id_tipo_espacio)
+        public async Task<IActionResult> GetContarNombreEspacio(long id_sede)
         {
             try
             {
-                var unidades = await _reservaRepositoryPort.GetContarNombreEspacio(id_sede, id_tipo_espacio);
+                var unidades = await _reservaRepositoryPort.GetContarNombreEspacio(id_sede);
                 return Ok(unidades);
             }
             catch (Exception ex)
