@@ -1143,10 +1143,11 @@ namespace CESDE.DataAdapter.repositories
             var lista_informes_ocupacion = new List<InformeOcupacionTodasSede>();
 
             var unidades_orgs = await _context.UnidadOrganizacionalModels.Include(x => x.ForKeyTipoEspacioUnidad)
-                    .Where(x => x.id_tipo_espacio == Enums.Id_Sede_TipoEspacio)
+                    //.Where(x => x.id_tipo_espacio == Enums.Id_Sede_TipoEspacio)
                     .Select(x => new
                      {
                         id_unidad = x.id_unidad_organizacional,
+                        id_sede = x.id_unidad_organizacional_padre,
                         nombre_sede = x.nombre_unidad_organizacional
                       }).ToListAsync();
 
@@ -1158,8 +1159,8 @@ namespace CESDE.DataAdapter.repositories
                 {
                     if (informe.Dias.Count != 0)
                     {
-                        var conteo_espacios = await _context.UnidadOrganizacionalModels.Where(x => x.id_unidad_organizacional == uni.id_unidad &&
-                            x.estado_unidad_organizacional == "activo").Select(x => x.id_unidad_organizacional_padre).CountAsync();
+                        var conteo_espacios = await _context.UnidadOrganizacionalModels.Where(x => x.id_unidad_organizacional_padre == uni.id_sede &&
+                                    x.estado_unidad_organizacional == "activo").CountAsync();
 
                         var informeTODO = new InformeOcupacionTodasSede
                         {
