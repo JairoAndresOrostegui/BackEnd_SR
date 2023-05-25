@@ -25,7 +25,7 @@ namespace CESDE.Application.UseCases
 
         public async Task<List<ReservaDTO>> GetAll() => await _reservaRepository.GetAll();
 
-        public async Task<List<ReservaDTO>> GetBySearch(string type, string search) => await _reservaRepository.GetBySearch(type, search);
+        public async Task<List<BuscarDTO>> GetBySearch(string type, string search) => await _reservaRepository.GetBySearch(type, search);
 
         public async Task UpdateReserva(InsertarReservaDTO reserva) => await _reservaRepository.UpdateReserva(reserva);
 
@@ -56,5 +56,8 @@ namespace CESDE.Application.UseCases
 
         public async Task<List<InformeNombreEspacio>> GetContarNombreEspacio(long id_sede) =>
             await _reservaRepository.GetContarNombreEspacio(id_sede);
+
+        public async Task<int> GetCapacidadTotal(long id_sede) =>
+            await _reservaRepository.GetCapacidadTotal(id_sede);
     }
 }

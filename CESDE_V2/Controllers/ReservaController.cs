@@ -243,5 +243,19 @@ namespace CESDE_API.Controllers
                 return Ok(new { message = ex.Message });
             }
         }
+
+        [HttpGet("obtener-capacidad")]
+        public async Task<IActionResult> ObtenerCapacidad(long id_sede)
+        {
+            try
+            {
+                var unidades = await _reservaRepositoryPort.GetCapacidadTotal(id_sede);
+                return Ok(unidades);
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { message = ex.Message });
+            }
+        }
     }
 }

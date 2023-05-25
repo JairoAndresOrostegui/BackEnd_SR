@@ -12,13 +12,14 @@ namespace CESDE.Application.Ports
 {
     public interface IReservaRepositoryPort
     {
+        Task<int> GetCapacidadTotal(long id_sede);
         Task SaveReserva(InsertarReservaDTO reserva);
 
         Task<Reserva> GetById(long id_reserva);
 
         Task<List<ReservaDTO>> GetAll();
 
-        Task<List<ReservaDTO>> GetBySearch(string type, string search);
+        Task<List<BuscarDTO>> GetBySearch(string type, string search);
 
         Task UpdateReserva(InsertarReservaDTO reserva);
 

@@ -26,6 +26,13 @@ namespace CESDE.DataAdapter.repositories
             _context = context;
         }
 
+        public async Task<int> GetCapacidadTotal(long id_sede)
+        {
+            var caps = await _context.UnidadOrganizacionalModels.Where(x => x.id_unidad_organizacional_padre == id_sede).Select(x => x.capacidad_unidad_organizacional).ToListAsync();
+
+            return caps.Sum();
+        }
+
         public async Task DeleteReserva(long id_reserva)
         {
             var validate = await _context.ReservaModels.AnyAsync(sear => sear.id_reserva == id_reserva);
@@ -112,10 +119,10 @@ namespace CESDE.DataAdapter.repositories
             return entidadMap;
         }
 
-        public async Task<List<ReservaDTO>> GetBySearch(string type, string search)
+        public async Task<List<BuscarDTO>> GetBySearch(string type, string search)
         {
             List<ReservaModel> lsReservaModel = new List<ReservaModel>();
-            List<ReservaDTO> lsReserva = new List<ReservaDTO>();
+            var lsReserva = new List<BuscarDTO>();
 
             if (type == "unidad_organizacional")
             {
@@ -147,12 +154,25 @@ namespace CESDE.DataAdapter.repositories
 
             foreach (var reserva in lsReservaModel)
             {
-                lsReserva.Add(new ReservaDTO()
+                var unidad_rol = await _context.UnidadRolModels.Include(unidad => unidad.ForKeyRol_UnidadRol)
+                    .Where(x => x.id_unidad_organizacional == reserva.id_unidad_organizacional).Select(x => x.id_rol).ToListAsync();
+
+                var area_rol = await _context.RolModels
+                    .Where(x => unidad_rol.Contains(x.id_rol)).Select(x => x.area_rol).FirstAsync();
+
+                var nombre_rol = await _context.RolModels
+                    .Where(x => unidad_rol.Contains(x.id_rol)).Select(x => x.nombre_rol).FirstAsync();
+
+                lsReserva.Add(new BuscarDTO()
                 {
                     id_reserva = reserva.id_reserva,
                     nombre_unidad_organizacional = reserva.ForKeyUnidadOrg_Reserva.nombre_unidad_organizacional.UpperFirstChar(),
-                    nombre_submodulo = reserva.nombre_grupo,
+                    nombre_submodulo = reserva.submodulo,
                     nombre_usuario_colaborador = reserva.nombre_usuario_colaborador,
+                    nombre_programa = reserva.nombre_programa,
+                    codigo_programa = reserva.codigo_programa,
+                    area_rol = area_rol,
+                    nombre_rol = nombre_rol,
                     fecha_inicio_reserva = reserva.fecha_inicio_reserva,
                     fecha_fin_reserva = reserva.fecha_fin_reserva,
                     descripcion_reserva = reserva.descripcion_reserva.UpperFirstChar(),
