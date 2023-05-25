@@ -179,7 +179,7 @@ namespace CESDE.DataAdapter.helpers
             var informe = new InformeUnidadesReservadas
             {
                 //nombre_unidad_organizacional = unidades_reservadas.First().nombre_unidad,
-                Dias = list_informes_dia
+                //Dias = list_informes_dia
             };
 
 

@@ -5,8 +5,28 @@ namespace CESDE.Domain.DTO.Reserva.Informe
     public class InformeNombreEspacio
     {
         public string nombre_espacio { get; set; }
-        public int cantidad_tipoespacio { get; set; }
+        public int ocupacion_total { get; set; }
+        public int lunes_conteo_jornada1 { get; set; }
+        public int lunes_conteo_jornada2 { get; set; }
+        public int lunes_conteo_jornada3 { get; set; }
 
-        public InformeUnidadesReservadas informes {get; set;}
+        public int martes_conteo_jornada1 { get; set; }
+        public int martes_conteo_jornada2 { get; set; }
+        public int martes_conteo_jornada3 { get; set; }
+
+        public int miercoles_conteo_jornada1 { get; set; }
+        public int miercoles_conteo_jornada2 { get; set; }
+        public int miercoles_conteo_jornada3 { get; set; }
+
+        public int jueves_conteo_jornada1 { get; set; }
+        public int jueves_conteo_jornada2 { get; set; }
+        public int jueves_conteo_jornada3 { get; set; }
+
+        public int viernes_conteo_jornada1 { get; set; }
+        public int viernes_conteo_jornada2 { get; set; }
+        public int viernes_conteo_jornada3 { get; set; }
+
+        public int sadado_conteo_jornada4 { get; set; }
+        public int domingo_conteo_jornada5 { get; set; }
     }
 }
