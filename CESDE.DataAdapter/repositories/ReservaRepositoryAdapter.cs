@@ -28,7 +28,8 @@ namespace CESDE.DataAdapter.repositories
 
         public async Task<int> GetCapacidadTotal(long id_sede)
         {
-            var caps = await _context.UnidadOrganizacionalModels.Where(x => x.id_unidad_organizacional_padre == id_sede).Select(x => x.capacidad_unidad_organizacional).ToListAsync();
+            var caps = await _context.UnidadOrganizacionalModels.Where(x => x.id_unidad_organizacional_padre == id_sede)
+                .Select(x => x.capacidad_unidad_organizacional).ToListAsync();
 
             return caps.Sum();
         }
@@ -128,14 +129,14 @@ namespace CESDE.DataAdapter.repositories
             {
                 lsReservaModel = await _context.ReservaModels.Include(unidad => unidad.ForKeyUnidadOrg_Reserva)
                       .Include(diaReser => diaReser.ForKeyReservaDia_Reserva)
-                      .Where(sear => sear.id_unidad_organizacional == Convert.ToInt64(search)).ToListAsync();
+                      .Where(sear => sear.ForKeyUnidadOrg_Reserva.id_unidad_organizacional_padre == Convert.ToInt64(search)).ToListAsync();
             }
 
             if (type == "programa")
             {
                 lsReservaModel = await _context.ReservaModels.Include(unidad => unidad.ForKeyUnidadOrg_Reserva)
                       .Include(diaReser => diaReser.ForKeyReservaDia_Reserva)
-                      .Where(sear => sear.id_unidad_organizacional == Convert.ToInt64(search)).ToListAsync();
+                      .Where(sear => sear.ForKeyUnidadOrg_Reserva.id_unidad_organizacional_padre == Convert.ToInt64(search)).ToListAsync();
             }
 
             if (type == "submodulo")
@@ -157,11 +158,7 @@ namespace CESDE.DataAdapter.repositories
                 var unidad_rol = await _context.UnidadRolModels.Include(unidad => unidad.ForKeyRol_UnidadRol)
                     .Where(x => x.id_unidad_organizacional == reserva.id_unidad_organizacional).Select(x => x.id_rol).ToListAsync();
 
-                var area_rol = await _context.RolModels
-                    .Where(x => unidad_rol.Contains(x.id_rol)).Select(x => x.area_rol).FirstAsync();
-
-                var nombre_rol = await _context.RolModels
-                    .Where(x => unidad_rol.Contains(x.id_rol)).Select(x => x.nombre_rol).FirstAsync();
+;
 
                 lsReserva.Add(new BuscarDTO()
                 {
@@ -171,8 +168,8 @@ namespace CESDE.DataAdapter.repositories
                     nombre_usuario_colaborador = reserva.nombre_usuario_colaborador,
                     nombre_programa = reserva.nombre_programa,
                     codigo_programa = reserva.codigo_programa,
-                    area_rol = area_rol,
-                    nombre_rol = nombre_rol,
+                    area_rol = "foo",
+                    nombre_rol = "var",
                     fecha_inicio_reserva = reserva.fecha_inicio_reserva,
                     fecha_fin_reserva = reserva.fecha_fin_reserva,
                     descripcion_reserva = reserva.descripcion_reserva.UpperFirstChar(),
