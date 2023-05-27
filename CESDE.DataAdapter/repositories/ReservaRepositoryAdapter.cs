@@ -124,6 +124,8 @@ namespace CESDE.DataAdapter.repositories
         {
             List<ReservaModel> lsReservaModel = new List<ReservaModel>();
             var lsReserva = new List<BuscarDTO>();
+            string nombre_rol = "";
+            string area_rol = "";
 
             if (type == "unidad_organizacional")
             {
@@ -155,8 +157,21 @@ namespace CESDE.DataAdapter.repositories
 
             foreach (var reserva in lsReservaModel)
             {
-                var unidad_rol = await _context.UnidadOrganizacionalModels.Include(unidad => unidad.ForKeyUnidadRol_UnidadOrgani)
-                    .Where(x => x.id_unidad_organizacional_padre == reserva.id_unidad_organizacional).Select(x => x.ForKeyUnidadRol_UnidadOrgani).ToListAsync();
+                var usuario = await _context.UsuarioModels.Where(x => x.id_usuario == reserva.id_usuario_reserva)
+                           .Select(x => x.id_rol).ToListAsync();
+
+                if (usuario.Count != 0)
+                {
+                    var rol = await _context.RolModels.Where(x => x.id_rol == usuario.First())
+                        .Select(x => new
+                        {
+                            nombre_rol = x.nombre_rol,
+                            area_rol = x.area_rol
+                        }).FirstAsync();
+
+                    area_rol = rol.area_rol;
+                    nombre_rol = rol.nombre_rol;
+                }
 
 
                 lsReserva.Add(new BuscarDTO()
@@ -167,8 +182,8 @@ namespace CESDE.DataAdapter.repositories
                     nombre_usuario_colaborador = reserva.nombre_usuario_colaborador,
                     nombre_programa = reserva.nombre_programa,
                     codigo_programa = reserva.codigo_programa,
-                    area_rol = "foo",
-                    nombre_rol = "var",
+                    area_rol = area_rol,
+                    nombre_rol = nombre_rol,
                     fecha_inicio_reserva = reserva.fecha_inicio_reserva,
                     fecha_fin_reserva = reserva.fecha_fin_reserva,
                     descripcion_reserva = reserva.descripcion_reserva.UpperFirstChar(),
