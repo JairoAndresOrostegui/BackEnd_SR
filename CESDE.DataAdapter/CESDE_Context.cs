@@ -91,12 +91,11 @@ namespace CESDE.DataAdapter
                   .HasOne(fr => fr.ForKeyRol_UnidadRol).WithMany(fr => fr.ForKeyUnidadRol_Rol)
                   .HasForeignKey(key => key.id_rol);
 
-            // Auditoria model
-            //modelBuilder.Entity<AuditoriaModel>()
-            //       .HasKey(key => key.ID);
+            modelBuilder.Entity<AuditoriaModel>()
+                   .HasKey(key => key.ID);
         }
 
-        //public DbSet<AuditoriaModel> AuditoriaModels { get; set; }
+        public DbSet<AuditoriaModel> AuditoriaModels { get; set; }
         public DbSet<DepartamentoModel> DepartamentoModels { get; set; }
         public DbSet<UsuarioModel> UsuarioModels { get; set; }
         public DbSet<MunicipioModel> MunicipioModels { get; set; }

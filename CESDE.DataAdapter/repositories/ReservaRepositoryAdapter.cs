@@ -51,6 +51,20 @@ namespace CESDE.DataAdapter.repositories
 
             _context.ReservaModels.Remove(new ReservaModel() { id_reserva = id_reserva });
             await _context.SaveChangesAsync();
+
+            var d = DateTime.Now;
+            var usuario_reserva = await _context.ReservaModels.Where(x => x.id_reserva == id_reserva).Select(x => x.id_usuario_colaborador).FirstAsync();
+            var usuario = await _context.UsuarioModels.Where(x => x.id_usuario == usuario_reserva).Select(x => x.login_usuario).FirstAsync();
+
+            _context.AuditoriaModels.Add(new AuditoriaModel
+            {
+                accion = "reserva eliminada",
+                tipo = "DELETE",
+                usuario = usuario,
+                fecha = d
+            });
+
+            await _context.SaveChangesAsync();
         }
 
         public async Task<List<ReservaDTO>> GetAll()
@@ -287,6 +301,17 @@ namespace CESDE.DataAdapter.repositories
                     await _context.SaveChangesAsync();
 
                 }
+                var usuario = await Utilities.ObtenerUsuario(_context, reserva.id_usuario_reserva);
+                var d = DateTime.Now;
+                _context.AuditoriaModels.Add(new AuditoriaModel
+                {
+                    accion = "Nueva reserva agregada",
+                    tipo = "POST",
+                    usuario = usuario,
+                    fecha = d
+                });
+
+                await _context.SaveChangesAsync();
             }
             catch (Exception e)
             {
@@ -343,6 +368,18 @@ namespace CESDE.DataAdapter.repositories
                     };
                     _context.ReservaDiaModels.Add(newReservaDia);
                 }
+
+                await _context.SaveChangesAsync();
+
+                var usuario = await Utilities.ObtenerUsuario(_context, reserva.id_usuario_reserva);
+                var d = DateTime.Now;
+                _context.AuditoriaModels.Add(new AuditoriaModel
+                {
+                    accion = "Nueva reserva actualizada",
+                    tipo = "PUT",
+                    usuario = usuario,
+                    fecha = d
+                });
 
                 await _context.SaveChangesAsync();
             }
@@ -1017,6 +1054,11 @@ namespace CESDE.DataAdapter.repositories
                 }
             }
 
+            if (unidades_fijas.Count == 0)
+            {
+                throw new Exception("No hay espacios ocupados");
+            }
+
 
             return unidades_fijas;
         }
@@ -1043,7 +1085,7 @@ namespace CESDE.DataAdapter.repositories
             await Utilities.FiltrarDiaHora(_context, lista_posibles_no, lista_no, parametros);
             // coger lista_no de unidades_organizacionales sin repetirse
             // teniendo la lista_no (long) comparo con los campos de unidad_organizacional de la lista unidades
-            // Y si el valor de esa lista_no de longs es == la unidad_organizacional de la lista de unidades, agregarlo a las unidades_fijas
+            // Y si el valor de esa lista_no de longs es != la unidad_organizacional de la lista de unidades, agregarlo a las unidades_fijas
             // devolver unidades_fijas
             var lista_no_longs = lista_no.Select(x => x.unidad_organizacional).ToList();
 
@@ -1057,6 +1099,11 @@ namespace CESDE.DataAdapter.repositories
                         label = unidad.nombre_unidad_organizacional
                     });
                 }
+            }
+
+            if (unidades_fijas.Count == 0)
+            {
+                throw new Exception("No hay espacios disponibles");
             }
 
 

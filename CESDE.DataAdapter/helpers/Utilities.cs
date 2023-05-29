@@ -27,6 +27,14 @@ namespace CESDE.DataAdapter.helpers
             return new string(chars);
         }
 
+        public static async Task<string> ObtenerUsuario(CESDE_Context _context, long id_usuario_reserva)
+        {
+            var user = await _context.UsuarioModels.Where(x => x.id_usuario == id_usuario_reserva)
+                .Select(x => x.login_usuario).FirstAsync();
+
+            return user;
+        }
+
         public static async Task<List<UnidadOrganizacionalModel>> ObtenerUnidades(CESDE_Context _context, long id_tipo_espacio, long id_sede, long capacidad)
         {
             var por_tipo = await _context.UnidadOrganizacionalModels.Where(
