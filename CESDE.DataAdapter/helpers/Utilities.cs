@@ -3,6 +3,7 @@ using CESDE.Domain.DTO.Combo;
 using CESDE.Domain.DTO.Reserva;
 using CESDE.Domain.DTO.UnidadOrganizacional;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -39,15 +40,18 @@ namespace CESDE.DataAdapter.helpers
 
         public static async Task FiltrarFecha(CESDE_Context _context, List<ComboDTO> unidades_fijas, List<ComboReservaDTO> posibles_no, List<ReservaFechaDTO> reservas_fecha, ParametroReserva2DTO parametros)
         {
+            var p_fecha_inicio = DateTime.Parse(parametros.fecha_inicio_reserva.ToString("yyyy-MM-dd"));
+            var p_fecha_fin = DateTime.Parse(parametros.fecha_fin_reserva.ToString("yyyy-MM-dd"));
+
             foreach (var reserva in reservas_fecha)
             {
                 var fecha_inicio = reserva.fecha_inicio_reserva;
                 var fecha_fin = reserva.fecha_fin_reserva;
 
                 if (
-                    parametros.fecha_inicio_reserva >= fecha_inicio && parametros.fecha_inicio_reserva <= fecha_fin ||
-                    parametros.fecha_fin_reserva >= fecha_inicio && parametros.fecha_fin_reserva <= fecha_fin ||
-                    parametros.fecha_inicio_reserva < fecha_inicio && parametros.fecha_fin_reserva > fecha_fin
+                    p_fecha_inicio >= fecha_inicio && p_fecha_inicio <= fecha_fin ||
+                    p_fecha_fin >= fecha_inicio && p_fecha_fin <= fecha_fin ||
+                    p_fecha_inicio < fecha_inicio && p_fecha_fin > fecha_fin
                    )
                 {
                     posibles_no.Add(new ComboReservaDTO
