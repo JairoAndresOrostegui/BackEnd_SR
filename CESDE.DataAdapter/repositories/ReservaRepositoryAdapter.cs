@@ -53,14 +53,14 @@ namespace CESDE.DataAdapter.repositories
             await _context.SaveChangesAsync();
 
             var d = DateTime.Now;
-            var usuario_reserva = await _context.ReservaModels.Where(x => x.id_reserva == id_reserva).Select(x => x.id_usuario_colaborador).FirstAsync();
-            var usuario = await _context.UsuarioModels.Where(x => x.id_usuario == usuario_reserva).Select(x => x.login_usuario).FirstAsync();
+            //var usuario_reserva = await _context.ReservaModels.Where(x => x.id_reserva == id_reserva).Select(x => x.id_usuario_colaborador).FirstAsync();
+            //var usuario = await _context.UsuarioModels.Where(x => x.id_usuario == usuario_reserva).Select(x => x.login_usuario).FirstAsync();
 
             _context.AuditoriaModels.Add(new AuditoriaModel
             {
                 accion = "reserva eliminada",
                 tipo = "DELETE",
-                usuario = usuario,
+                usuario = "foo",
                 fecha = d
             });
 
