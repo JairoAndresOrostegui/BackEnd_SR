@@ -257,5 +257,33 @@ namespace CESDE_API.Controllers
                 return Ok(new { message = ex.Message });
             }
         }
+
+        [HttpPost("obtener-espacios-ocupados")]
+        public async Task<IActionResult> ObtenerEspaciosOcupados([FromBody] ParametroReserva2DTO parametros)
+        {
+            try
+            {
+                var unidades = await _reservaRepositoryPort.GetEspaciosOcupados(parametros);
+                return Ok(unidades);
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { message = ex.Message });
+            }
+        }
+
+        [HttpPost("obtener-espacios-disponibles")]
+        public async Task<IActionResult> ObtenerEspaciosDisponibles([FromBody] ParametroReserva2DTO parametros)
+        {
+            try
+            {
+                var unidades = await _reservaRepositoryPort.GetEspaciosDisponibles(parametros);
+                return Ok(unidades);
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { message = ex.Message });
+            }
+        }
     }
 }

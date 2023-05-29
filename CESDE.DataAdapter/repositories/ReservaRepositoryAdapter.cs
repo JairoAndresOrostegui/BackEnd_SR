@@ -6,6 +6,7 @@ using CESDE.Domain.DTO.Reserva;
 using CESDE.Domain.DTO.Reserva.Filtros;
 using CESDE.Domain.DTO.Reserva.Informe;
 using CESDE.Domain.DTO.Reserva.Reporte;
+using CESDE.Domain.DTO.UnidadOrganizacional;
 using CESDE.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -978,6 +979,89 @@ namespace CESDE.DataAdapter.repositories
             return lista_informes_ocupacion;
         }
 
+        public async Task<List<ComboDTO>> GetEspaciosOcupados(ParametroReserva2DTO parametros)
+        {
+            var unidades_fijas = new List<ComboDTO>();
+            var lista_posibles_no = new List<ComboReservaDTO>();
+            var lista_no = new List<ComboReservaDTO>();
+
+            var unidades_organizacionales = await Utilities.ObtenerUnidades(
+                _context, parametros.id_tipo_espacio, parametros.id_unidad_organizacional_padre, parametros.capacidad_unidad_organizacional
+            );
+            if (unidades_organizacionales.Count == 0)
+            {
+                throw new Exception("No se pudo obtener unidades");
+            }
+            var reservas = await Utilities.ObtenerReservas(_context, unidades_organizacionales);
+            if (unidades_organizacionales.Count == 0)
+            {
+                throw new Exception("No se pudo obtener reservas");
+            }
+            await Utilities.FiltrarFecha(_context, unidades_fijas, lista_posibles_no, reservas, parametros);
+            await Utilities.FiltrarDiaHora(_context, lista_posibles_no, lista_no, parametros);
+            // coger lista_no de unidades_organizacionales sin repetirse
+            // teniendo la lista_no (long) comparo con los campos de unidad_organizacional de la lista unidades
+            // Y si el valor de esa lista_no de longs es == la unidad_organizacional de la lista de unidades, agregarlo a las unidades_fijas
+            // devolver unidades_fijas
+            var lista_no_longs = lista_no.Select(x => x.unidad_organizacional).ToList();
+
+            foreach(var unidad in unidades_organizacionales)
+            {
+                if (lista_no_longs.Contains(unidad.id_unidad_organizacional))
+                {
+                    unidades_fijas.Add(new ComboDTO
+                    {
+                        value = unidad.id_unidad_organizacional,
+                        label = unidad.nombre_unidad_organizacional
+                    });
+                }
+            }
+
+
+            return unidades_fijas;
+        }
+
+        public async Task<List<ComboDTO>> GetEspaciosDisponibles(ParametroReserva2DTO parametros)
+        {
+            var unidades_fijas = new List<ComboDTO>();
+            var lista_posibles_no = new List<ComboReservaDTO>();
+            var lista_no = new List<ComboReservaDTO>();
+
+            var unidades_organizacionales = await Utilities.ObtenerUnidades(
+                _context, parametros.id_tipo_espacio, parametros.id_unidad_organizacional_padre, parametros.capacidad_unidad_organizacional
+            );
+            if (unidades_organizacionales.Count == 0)
+            {
+                throw new Exception("No se pudo obtener unidades");
+            }
+            var reservas = await Utilities.ObtenerReservas(_context, unidades_organizacionales);
+            if (unidades_organizacionales.Count == 0)
+            {
+                throw new Exception("No se pudo obtener reservas");
+            }
+            await Utilities.FiltrarFecha(_context, unidades_fijas, lista_posibles_no, reservas, parametros);
+            await Utilities.FiltrarDiaHora(_context, lista_posibles_no, lista_no, parametros);
+            // coger lista_no de unidades_organizacionales sin repetirse
+            // teniendo la lista_no (long) comparo con los campos de unidad_organizacional de la lista unidades
+            // Y si el valor de esa lista_no de longs es == la unidad_organizacional de la lista de unidades, agregarlo a las unidades_fijas
+            // devolver unidades_fijas
+            var lista_no_longs = lista_no.Select(x => x.unidad_organizacional).ToList();
+
+            foreach (var unidad in unidades_organizacionales)
+            {
+                if (!lista_no_longs.Contains(unidad.id_unidad_organizacional))
+                {
+                    unidades_fijas.Add(new ComboDTO
+                    {
+                        value = unidad.id_unidad_organizacional,
+                        label = unidad.nombre_unidad_organizacional
+                    });
+                }
+            }
+
+
+            return unidades_fijas;
+        }
         //public async Task<Informe|OcupacionTipoEspacio> GetContarOcupacionPorTipoEspacio(long id_sede)
         //{
         //      List<long> lsEspacios = new List<long>();

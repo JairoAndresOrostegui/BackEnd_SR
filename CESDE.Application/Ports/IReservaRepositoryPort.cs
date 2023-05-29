@@ -12,6 +12,8 @@ namespace CESDE.Application.Ports
 {
     public interface IReservaRepositoryPort
     {
+        Task<List<ComboDTO>> GetEspaciosOcupados(ParametroReserva2DTO parametros);
+        Task<List<ComboDTO>> GetEspaciosDisponibles(ParametroReserva2DTO parametros);
         Task<int> GetCapacidadTotal(long id_sede);
         Task SaveReserva(InsertarReservaDTO reserva);
 

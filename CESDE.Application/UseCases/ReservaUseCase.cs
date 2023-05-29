@@ -19,6 +19,12 @@ namespace CESDE.Application.UseCases
             _reservaRepository = reservaRepository;
         }
 
+        public async Task<List<ComboDTO>> GetEspaciosDisponibles(ParametroReserva2DTO parametros) =>
+            await _reservaRepository.GetEspaciosDisponibles(parametros);
+
+        public async Task<List<ComboDTO>> GetEspaciosOcupados(ParametroReserva2DTO parametros) =>
+            await _reservaRepository.GetEspaciosOcupados(parametros);
+
         public async Task SaveReserva(InsertarReservaDTO reserva) => await _reservaRepository.SaveReserva(reserva);
 
         public async Task<Reserva> GetById(long id_reserva) => await _reservaRepository.GetById(id_reserva);
