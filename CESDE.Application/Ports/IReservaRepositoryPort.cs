@@ -29,7 +29,7 @@ namespace CESDE.Application.Ports
 
         Task<List<FiltroReservaDTO>> GetProgramaByEscuela(string id_submodulo);
 
-        Task<List<ReporteHorario>> GetReportePrograma(string grupo, int nivel, string codigo_programa);
+        Task<List<ReporteHorario>> GetReportePrograma(string grupo, string nivel, string codigo_programa);
 
         Task<List<ReporteDocente>> GetReporteDocente(long id_colaborador);
 

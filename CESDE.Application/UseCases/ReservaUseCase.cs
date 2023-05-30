@@ -43,7 +43,7 @@ namespace CESDE.Application.UseCases
 
         public async Task<List<FiltroReservaDTO>> GetProgramaByEscuela(string id_submodulo) => await _reservaRepository.GetProgramaByEscuela(id_submodulo);
 
-        public async Task<List<ReporteHorario>> GetReporteDocenteEstudiante(string grupo, int nivel, string codigo_programa) =>
+        public async Task<List<ReporteHorario>> GetReporteDocenteEstudiante(string grupo, string nivel, string codigo_programa) =>
                   await _reservaRepository.GetReportePrograma(grupo, nivel, codigo_programa);
 
         public async Task<InformeOcupacionSede> GetContarOcupacionAulas(long id_sede) => await _reservaRepository.GetContarOcupacionAulas(id_sede);

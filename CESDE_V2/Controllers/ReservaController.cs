@@ -104,7 +104,7 @@ namespace CESDE_API.Controllers
         }
 
         [HttpGet("reporte-programa")]
-        public async Task<IActionResult> GetReporteDocenteEstudiante(string grupo, int nivel, string codigo_programa)
+        public async Task<IActionResult> GetReporteDocenteEstudiante(string grupo, string nivel, string codigo_programa)
         {
             try
             {

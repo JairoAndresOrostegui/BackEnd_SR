@@ -41,6 +41,8 @@ namespace CESDE.DataAdapter.repositories
             if (!validate)
                 throw new Exception(Enums.MessageDoesNotExist);
 
+            var usuario_reserva = await _context.ReservaModels.Where(x => x.id_reserva == id_reserva).Select(x => x.id_usuario_colaborador).FirstAsync();
+
             var idReservaDia = await _context.ReservaDiaModels.Where(sear => sear.id_reserva == id_reserva)
                   .Select(id => id.reserva_dia_id).ToListAsync();
 
@@ -53,18 +55,21 @@ namespace CESDE.DataAdapter.repositories
             await _context.SaveChangesAsync();
 
             var d = DateTime.Now;
-            //var usuario_reserva = await _context.ReservaModels.Where(x => x.id_reserva == id_reserva).Select(x => x.id_usuario_colaborador).FirstAsync();
-            //var usuario = await _context.UsuarioModels.Where(x => x.id_usuario == usuario_reserva).Select(x => x.login_usuario).FirstAsync();
-
-            _context.AuditoriaModels.Add(new AuditoriaModel
+            
+            if (usuario_reserva != 0)
             {
-                accion = "reserva eliminada",
-                tipo = "DELETE",
-                usuario = "foo",
-                fecha = d
-            });
+                var usuario = await _context.UsuarioModels.Where(x => x.id_usuario == usuario_reserva).Select(x => x.login_usuario).FirstAsync();
 
-            await _context.SaveChangesAsync();
+                _context.AuditoriaModels.Add(new AuditoriaModel
+                {
+                    accion = "reserva eliminada",
+                    tipo = "DELETE",
+                    usuario = usuario,
+                    fecha = d
+                });
+
+                await _context.SaveChangesAsync();
+            }
         }
 
         public async Task<List<ReservaDTO>> GetAll()
@@ -438,7 +443,7 @@ namespace CESDE.DataAdapter.repositories
             return reservaDTOs;
         }
 
-        public async Task<List<ReporteHorario>> GetReportePrograma(string grupo, int nivel, string codigo_programa)
+        public async Task<List<ReporteHorario>> GetReportePrograma(string grupo, string nivel, string codigo_programa)
         {
             var lsReservaData = await _context.ReservaModels.Where(
                     x => x.nombre_grupo == grupo &&
