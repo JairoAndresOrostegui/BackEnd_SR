@@ -1070,7 +1070,7 @@ namespace CESDE.DataAdapter.repositories
 
         public async Task<List<ComboDTO>> GetEspaciosDisponibles(ParametroReserva2DTO parametros)
         {
-            bool existe_caracteristica = true;
+            bool existe_caracteristica = false;
             var unidades_fijas = new List<ComboDTO>();
             var lista_posibles_no = new List<ComboReservaDTO>();
             var lista_no = new List<ComboReservaDTO>();
@@ -1089,11 +1089,9 @@ namespace CESDE.DataAdapter.repositories
                 );
                 if (unidades_organizacionales.Count == 0)
                 {
-                    existe_caracteristica = false;
-                    unidades_organizacionales = await Utilities.ObtenerUnidades(
-                    _context, parametros.id_tipo_espacio, parametros.id_unidad_organizacional_padre, parametros.capacidad_unidad_organizacional
-                    );
+                    throw new Exception("No existe espacio con esa caracteristica");
                 }
+                existe_caracteristica = true;
             }
 
             if (unidades_organizacionales.Count == 0)
@@ -1105,28 +1103,36 @@ namespace CESDE.DataAdapter.repositories
             {
                 throw new Exception("No se pudo obtener reservas");
             }
-            
-            if (existe_caracteristica)
-            {
-                await Utilities.FiltrarFecha(_context, unidades_fijas, lista_posibles_no, reservas, parametros);
-                await Utilities.FiltrarDiaHora(_context, lista_posibles_no, lista_no, parametros);
-                // coger lista_no de unidades_organizacionales sin repetirse
-                // teniendo la lista_no (long) comparo con los campos de unidad_organizacional de la lista unidades
-                // Y si el valor de esa lista_no de longs es != la unidad_organizacional de la lista de unidades, agregarlo a las unidades_fijas
-                // devolver unidades_fijas
-            }
 
+            await Utilities.FiltrarFecha(_context, unidades_fijas, lista_posibles_no, reservas, parametros);
+            await Utilities.FiltrarDiaHora(_context, lista_posibles_no, lista_no, parametros);
             var lista_no_longs = lista_no.Select(x => x.unidad_organizacional).ToList();
 
-            foreach (var unidad in unidades_organizacionales)
+            if (!existe_caracteristica)
             {
-                if (!lista_no_longs.Contains(unidad.id_unidad_organizacional))
+                foreach (var unidad in unidades_organizacionales)
                 {
-                    unidades_fijas.Add(new ComboDTO
+                    if (!lista_no_longs.Contains(unidad.id_unidad_organizacional))
                     {
-                        value = unidad.id_unidad_organizacional,
-                        label = unidad.nombre_unidad_organizacional
-                    });
+                        unidades_fijas.Add(new ComboDTO
+                        {
+                            value = unidad.id_unidad_organizacional,
+                            label = unidad.nombre_unidad_organizacional
+                        });
+                    }
+                }
+            } else
+            {
+                foreach (var unidad in unidades_organizacionales)
+                {
+                    if (lista_no_longs.Contains(unidad.id_unidad_organizacional))
+                    {
+                        unidades_fijas.Add(new ComboDTO
+                        {
+                            value = unidad.id_unidad_organizacional,
+                            label = unidad.nombre_unidad_organizacional
+                        });
+                    }
                 }
             }
 
