@@ -1070,13 +1070,32 @@ namespace CESDE.DataAdapter.repositories
 
         public async Task<List<ComboDTO>> GetEspaciosDisponibles(ParametroReserva2DTO parametros)
         {
+            bool existe_caracteristica = true;
             var unidades_fijas = new List<ComboDTO>();
             var lista_posibles_no = new List<ComboReservaDTO>();
             var lista_no = new List<ComboReservaDTO>();
+            var unidades_organizacionales = new List<UnidadOrganizacionalModel>();
 
-            var unidades_organizacionales = await Utilities.ObtenerUnidades(
+            if (parametros.id_caracteristica == 0)
+            {
+                unidades_organizacionales = await Utilities.ObtenerUnidades(
                 _context, parametros.id_tipo_espacio, parametros.id_unidad_organizacional_padre, parametros.capacidad_unidad_organizacional
-            );
+                );
+            } else
+            {
+                // obtener unidadeds por caracteristica por ejemplo:
+                unidades_organizacionales = await Utilities.ObtenerUnidadesPorCaracteristica(
+                _context, parametros.id_tipo_espacio, parametros.id_unidad_organizacional_padre, parametros.capacidad_unidad_organizacional, parametros.id_caracteristica
+                );
+                if (unidades_organizacionales.Count == 0)
+                {
+                    existe_caracteristica = false;
+                    unidades_organizacionales = await Utilities.ObtenerUnidades(
+                    _context, parametros.id_tipo_espacio, parametros.id_unidad_organizacional_padre, parametros.capacidad_unidad_organizacional
+                    );
+                }
+            }
+
             if (unidades_organizacionales.Count == 0)
             {
                 throw new Exception("No se pudo obtener unidades");
@@ -1086,12 +1105,17 @@ namespace CESDE.DataAdapter.repositories
             {
                 throw new Exception("No se pudo obtener reservas");
             }
-            await Utilities.FiltrarFecha(_context, unidades_fijas, lista_posibles_no, reservas, parametros);
-            await Utilities.FiltrarDiaHora(_context, lista_posibles_no, lista_no, parametros);
-            // coger lista_no de unidades_organizacionales sin repetirse
-            // teniendo la lista_no (long) comparo con los campos de unidad_organizacional de la lista unidades
-            // Y si el valor de esa lista_no de longs es != la unidad_organizacional de la lista de unidades, agregarlo a las unidades_fijas
-            // devolver unidades_fijas
+            
+            if (existe_caracteristica)
+            {
+                await Utilities.FiltrarFecha(_context, unidades_fijas, lista_posibles_no, reservas, parametros);
+                await Utilities.FiltrarDiaHora(_context, lista_posibles_no, lista_no, parametros);
+                // coger lista_no de unidades_organizacionales sin repetirse
+                // teniendo la lista_no (long) comparo con los campos de unidad_organizacional de la lista unidades
+                // Y si el valor de esa lista_no de longs es != la unidad_organizacional de la lista de unidades, agregarlo a las unidades_fijas
+                // devolver unidades_fijas
+            }
+
             var lista_no_longs = lista_no.Select(x => x.unidad_organizacional).ToList();
 
             foreach (var unidad in unidades_organizacionales)

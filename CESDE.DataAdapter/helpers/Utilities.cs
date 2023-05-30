@@ -46,6 +46,26 @@ namespace CESDE.DataAdapter.helpers
 
         }
 
+        public static async Task<List<UnidadOrganizacionalModel>> ObtenerUnidadesPorCaracteristica(CESDE_Context _context, long id_tipo_espacio, long id_sede, long capacidad, long id_caracteristica)
+        {
+            var por_caracteristica = new List<UnidadOrganizacionalModel>();
+            var existe_caracteristica = _context.UnidadOrganizacionalCaracteristicaModels.Where(x => x.id_caracteristica == id_caracteristica).Any();
+
+            por_caracteristica = await _context.UnidadOrganizacionalModels
+                .Include(carac => carac.ForKeyUOC_UnidadOrgani)
+                .Where(
+                    x => x.id_tipo_espacio == id_tipo_espacio &&
+                    x.id_unidad_organizacional_padre == id_sede &&
+                    x.capacidad_unidad_organizacional >= capacidad &&
+                    x.estado_unidad_organizacional == "activo" &&
+                    existe_caracteristica
+                )
+                .ToListAsync();
+
+            return por_caracteristica;
+
+        }
+
         public static async Task FiltrarFecha(CESDE_Context _context, List<ComboDTO> unidades_fijas, List<ComboReservaDTO> posibles_no, List<ReservaFechaDTO> reservas_fecha, ParametroReserva2DTO parametros)
         {
             var p_fecha_inicio = DateTime.Parse(parametros.fecha_inicio_reserva.ToString("yyyy-MM-dd"));
