@@ -1070,69 +1070,62 @@ namespace CESDE.DataAdapter.repositories
 
         public async Task<List<ComboDTO>> GetEspaciosDisponibles(ParametroReserva2DTO parametros)
         {
-            bool existe_caracteristica = false;
             var unidades_fijas = new List<ComboDTO>();
             var lista_posibles_no = new List<ComboReservaDTO>();
             var lista_no = new List<ComboReservaDTO>();
             var unidades_organizacionales = new List<UnidadOrganizacionalModel>();
 
+            // Aquí se selecciona que tipo de unidades vamos a filtrar, con o sin caracteristica.
             if (parametros.id_caracteristica == 0)
             {
+                // obtener unidades organizacional sin caracteristica
                 unidades_organizacionales = await Utilities.ObtenerUnidades(
-                _context, parametros.id_tipo_espacio, parametros.id_unidad_organizacional_padre, parametros.capacidad_unidad_organizacional
+                    _context, 
+                    parametros.id_tipo_espacio, 
+                    parametros.id_unidad_organizacional_padre, 
+                    parametros.capacidad_unidad_organizacional
                 );
+                if (unidades_organizacionales.Count == 0)
+                {
+                    throw new Exception("No se pudo obtener espacios");
+                }
             } else
             {
-                // obtener unidadeds por caracteristica por ejemplo:
+                // obtener unidades organizacional según caracteristica
                 unidades_organizacionales = await Utilities.ObtenerUnidadesPorCaracteristica(
-                _context, parametros.id_tipo_espacio, parametros.id_unidad_organizacional_padre, parametros.capacidad_unidad_organizacional, parametros.id_caracteristica
+                    _context, 
+                    parametros.id_tipo_espacio, 
+                    parametros.id_unidad_organizacional_padre, 
+                    parametros.capacidad_unidad_organizacional, 
+                    parametros.id_caracteristica
                 );
                 if (unidades_organizacionales.Count == 0)
                 {
                     throw new Exception("No existe espacio con esa caracteristica");
                 }
-                existe_caracteristica = true;
             }
 
-            if (unidades_organizacionales.Count == 0)
-            {
-                throw new Exception("No se pudo obtener unidades");
-            }
+            // obtener espacios ocupados en caso de unidades filtradas existentes
             var reservas = await Utilities.ObtenerReservas(_context, unidades_organizacionales);
             if (unidades_organizacionales.Count == 0)
             {
                 throw new Exception("No se pudo obtener reservas");
             }
-
             await Utilities.FiltrarFecha(_context, unidades_fijas, lista_posibles_no, reservas, parametros);
             await Utilities.FiltrarDiaHora(_context, lista_posibles_no, lista_no, parametros);
-            var lista_no_longs = lista_no.Select(x => x.unidad_organizacional).ToList();
+            var espacios_ocupados = lista_no.Select(x => x.unidad_organizacional).ToList();
 
-            if (!existe_caracteristica)
+            // Añadiendo las unidades_organizacionales filtradas a la lista de espacios que retorna este servicio
+            // Se excluyen los espacios ya ocupados y no se agregan a la lista
+            foreach (var unidad in unidades_organizacionales)
             {
-                foreach (var unidad in unidades_organizacionales)
+                if (!espacios_ocupados.Contains(unidad.id_unidad_organizacional))
                 {
-                    if (!lista_no_longs.Contains(unidad.id_unidad_organizacional))
+                    unidades_fijas.Add(new ComboDTO
                     {
-                        unidades_fijas.Add(new ComboDTO
-                        {
-                            value = unidad.id_unidad_organizacional,
-                            label = unidad.nombre_unidad_organizacional
-                        });
-                    }
-                }
-            } else
-            {
-                foreach (var unidad in unidades_organizacionales)
-                {
-                    if (lista_no_longs.Contains(unidad.id_unidad_organizacional))
-                    {
-                        unidades_fijas.Add(new ComboDTO
-                        {
-                            value = unidad.id_unidad_organizacional,
-                            label = unidad.nombre_unidad_organizacional
-                        });
-                    }
+                        value = unidad.id_unidad_organizacional,
+                        label = unidad.nombre_unidad_organizacional
+                    });
                 }
             }
 
@@ -1140,7 +1133,6 @@ namespace CESDE.DataAdapter.repositories
             {
                 throw new Exception("No hay espacios disponibles");
             }
-
 
             return unidades_fijas;
         }

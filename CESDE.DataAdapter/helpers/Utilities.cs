@@ -58,7 +58,7 @@ namespace CESDE.DataAdapter.helpers
                     x.id_unidad_organizacional_padre == id_sede &&
                     x.capacidad_unidad_organizacional >= capacidad &&
                     x.estado_unidad_organizacional == "activo" &&
-                    existe_caracteristica
+                    x.ForKeyUOC_UnidadOrgani.Any(x => x.id_caracteristica == id_caracteristica)
                 )
                 .ToListAsync();
 
