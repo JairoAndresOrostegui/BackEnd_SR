@@ -541,7 +541,7 @@ namespace CESDE.DataAdapter.repositories
             var usuarios_id_rol = await _context.UsuarioModels.Where(x => roles.Contains(x.id_rol))
                 .Select(x => x.id_usuario).ToListAsync();
 
-            var reservas = await _context.ReservaModels.Where(x => usuarios_id_rol.Contains((long)x.id_usuario_reserva) && x.estado_reserva == "activo")
+            var reservas = await _context.ReservaModels.Where(x => usuarios_id_rol.Contains((long)x.id_usuario_reserva) && x.estado_reserva.ToLower() == "activo")
             .Select(reserva => new ReservaDTO()
             {
                 id_reserva = reserva.id_reserva,
@@ -577,7 +577,7 @@ namespace CESDE.DataAdapter.repositories
             {
                 var informe = await InformesHelper.ObtenerSede(uni.id_unidad, _context);
                 var conteo_espacios = await _context.UnidadOrganizacionalModels.Where(x => x.id_unidad_organizacional_padre == uni.id_sede &&
-                   x.estado_unidad_organizacional == "activo").Select(x => x.id_unidad_organizacional).CountAsync();
+                   x.estado_unidad_organizacional.ToLower() == "activo").Select(x => x.id_unidad_organizacional).CountAsync();
 
                 var informe_espacios = new InformeNombreEspacio
                 {
@@ -621,15 +621,15 @@ namespace CESDE.DataAdapter.repositories
             var list_informes_dia = new List<InformeDia>();
 
             var nombre_sede = await _context.UnidadOrganizacionalModels.Include(f => f.ForKeyTipoEspacioUnidad).Where(x => x.id_unidad_organizacional_padre == id_unidad_organizacional_padre &&
-                  x.estado_unidad_organizacional == "activo").Select(x => x.nombre_unidad_organizacional).ToListAsync();
+                  x.estado_unidad_organizacional.ToLower() == "activo").Select(x => x.nombre_unidad_organizacional).ToListAsync();
 
             var conteo_espacios = await _context.UnidadOrganizacionalModels.Where(x => x.id_unidad_organizacional_padre == id_unidad_organizacional_padre &&
-                  x.estado_unidad_organizacional == "activo").Select(x => x.id_unidad_organizacional).CountAsync();
+                  x.estado_unidad_organizacional.ToLower() == "activo").Select(x => x.id_unidad_organizacional).CountAsync();
 
             var espacios = await _context.UnidadOrganizacionalModels.Where(x => x.id_unidad_organizacional_padre == id_unidad_organizacional_padre &&
-                  x.estado_unidad_organizacional == "activo").Select(x => x.id_unidad_organizacional).ToListAsync();
+                  x.estado_unidad_organizacional.ToLower() == "activo").Select(x => x.id_unidad_organizacional).ToListAsync();
 
-            var reservas = await _context.ReservaModels.Where(x => x.estado_reserva == "activo" && espacios.Contains(x.id_unidad_organizacional))
+            var reservas = await _context.ReservaModels.Where(x => x.estado_reserva.ToLower() == "activo" && espacios.Contains(x.id_unidad_organizacional))
                   .ToListAsync();
 
             int lunes_conteo_jornada1 = 0;
@@ -825,15 +825,15 @@ namespace CESDE.DataAdapter.repositories
             var list_informes_dia = new List<InformeDia>();
 
             var nombre_sede = await _context.UnidadOrganizacionalModels.Include(f => f.ForKeyTipoEspacioUnidad).Where(x => x.id_unidad_organizacional_padre == id_sede &&
-                  x.estado_unidad_organizacional == "activo").Select(x => x.nombre_unidad_organizacional).ToListAsync();
+                  x.estado_unidad_organizacional.ToLower() == "activo").Select(x => x.nombre_unidad_organizacional).ToListAsync();
 
             var conteo_espacios = await _context.UnidadOrganizacionalModels.Where(x => x.id_unidad_organizacional_padre == id_sede &&
-                  x.estado_unidad_organizacional == "activo").Select(x => x.id_unidad_organizacional).CountAsync();
+                  x.estado_unidad_organizacional.ToLower() == "activo").Select(x => x.id_unidad_organizacional).CountAsync();
 
             var espacios = await _context.UnidadOrganizacionalModels.Where(x => x.id_unidad_organizacional_padre == id_sede &&
-                  x.estado_unidad_organizacional == "activo").Select(x => x.id_unidad_organizacional).ToListAsync();
+                  x.estado_unidad_organizacional.ToLower() == "activo").Select(x => x.id_unidad_organizacional).ToListAsync();
 
-            var reservas = await _context.ReservaModels.Where(x => x.estado_reserva == "activo" && x.codigo_programa == codigo && espacios.Contains(x.id_unidad_organizacional))
+            var reservas = await _context.ReservaModels.Where(x => x.estado_reserva.ToLower() == "activo" && x.codigo_programa == codigo && espacios.Contains(x.id_unidad_organizacional))
                   .ToListAsync();
 
             int lunes_conteo_jornada1 = 0;
@@ -1008,7 +1008,7 @@ namespace CESDE.DataAdapter.repositories
                 var informe = await InformesHelper.ObtenerSede(uni.id_unidad, _context);
 
                 var conteo_espacios = await _context.UnidadOrganizacionalModels.Where(x => x.id_unidad_organizacional_padre == uni.id_unidad &&
-                   x.estado_unidad_organizacional == "activo").Select(x => x.id_unidad_organizacional).CountAsync();
+                   x.estado_unidad_organizacional.ToLower() == "activo").Select(x => x.id_unidad_organizacional).CountAsync();
 
                 var informeTODO = new InformeOcupacionTodasSede
                 {

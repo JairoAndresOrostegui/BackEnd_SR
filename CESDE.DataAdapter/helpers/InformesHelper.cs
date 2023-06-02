@@ -190,9 +190,9 @@ namespace CESDE.DataAdapter.helpers
         {
       
             var espacios = await _context.UnidadOrganizacionalModels.Where(x => x.id_unidad_organizacional_padre == id_unidad_organizacional &&
-                  x.estado_unidad_organizacional == "activo").Select(x => x.id_unidad_organizacional).ToListAsync();
+                  x.estado_unidad_organizacional.ToLower() == "activo").Select(x => x.id_unidad_organizacional).ToListAsync();
 
-            var reservas = await _context.ReservaModels.Where(x => x.estado_reserva == "activo" && espacios.Contains(x.id_unidad_organizacional))
+            var reservas = await _context.ReservaModels.Where(x => x.estado_reserva.ToLower() == "activo" && espacios.Contains(x.id_unidad_organizacional))
                   .ToListAsync();
 
             int lunes_conteo_jornada1 = 0;

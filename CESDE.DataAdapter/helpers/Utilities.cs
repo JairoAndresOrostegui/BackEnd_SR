@@ -38,7 +38,7 @@ namespace CESDE.DataAdapter.helpers
         public static async Task<List<UnidadOrganizacionalModel>> ObtenerUnidades(CESDE_Context _context, long id_tipo_espacio, long id_sede, long capacidad)
         {
             var por_tipo = await _context.UnidadOrganizacionalModels.Where(
-                    x => x.id_tipo_espacio == id_tipo_espacio && x.id_unidad_organizacional_padre == id_sede && x.capacidad_unidad_organizacional >= capacidad && x.estado_unidad_organizacional == "activo"
+                    x => x.id_tipo_espacio == id_tipo_espacio && x.id_unidad_organizacional_padre == id_sede && x.capacidad_unidad_organizacional >= capacidad && x.estado_unidad_organizacional.ToLower() == "activo"
                 )
                 .ToListAsync();
 
@@ -57,7 +57,7 @@ namespace CESDE.DataAdapter.helpers
                     x => x.id_tipo_espacio == id_tipo_espacio &&
                     x.id_unidad_organizacional_padre == id_sede &&
                     x.capacidad_unidad_organizacional >= capacidad &&
-                    x.estado_unidad_organizacional == "activo" &&
+                    x.estado_unidad_organizacional.ToLower() == "activo" &&
                     x.ForKeyUOC_UnidadOrgani.Any(x => x.id_caracteristica == id_caracteristica)
                 )
                 .ToListAsync();
@@ -123,7 +123,7 @@ namespace CESDE.DataAdapter.helpers
         {
             var reservas = await _context.ReservaModels
                 .Include(dia => dia.ForKeyReservaDia_Reserva)
-                .Where(x => unidades.Select(x => x.id_unidad_organizacional).Contains(x.id_unidad_organizacional) && x.estado_reserva == "activo")
+                .Where(x => unidades.Select(x => x.id_unidad_organizacional).Contains(x.id_unidad_organizacional) && x.estado_reserva.ToLower() == "activo")
                 .Select(x => new ReservaFechaDTO
                 {
                     id_reserva = x.id_reserva,
