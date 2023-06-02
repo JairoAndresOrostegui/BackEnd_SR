@@ -235,6 +235,7 @@ namespace CESDE.DataAdapter.repositories
                     ent.nombre_programa == reserva.nombre_programa &&
                     ent.nombre_grupo == reserva.nombre_grupo &&
                     ent.nivel == reserva.nivel &&
+                    ent.id_unidad_organizacional == reserva.id_unidad_organizacional &&
                     ent.fecha_inicio_reserva.Equals(reserva.fecha_inicio_reserva) &&
                     ent.fecha_fin_reserva.Equals(reserva.fecha_fin_reserva)
                 ).Select(ent => ent.id_reserva).ToList();
